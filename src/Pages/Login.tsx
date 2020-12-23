@@ -9,13 +9,11 @@ import Divbox from '.././Components/DivBox'
 
 export const Login = () => (
   <main>
-    <div>
-      <Divbox>
-        <Texts />
-        <Logo />
-        <Form />
-      </Divbox>
-    </div>
+    <Divbox>
+      <Texts />
+      <Logo />
+      <Form />
+    </Divbox>
   </main>
 )
 
