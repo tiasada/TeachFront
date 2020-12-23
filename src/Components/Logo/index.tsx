@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyledLogo } from './styles'
+import Img from '../Images/LoginIcon.png'
 
 const Logo = () => (
-    <StyledLogo src='../Images/LoginIcon.png'/>
+    <StyledLogo src= {Img}/>
 )
 export default Logo

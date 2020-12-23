@@ -6,8 +6,8 @@ import Logo from '.././Components/Logo'
 // Esta função retorna HTML (JSX), então logo ela é um COMPONENTE
 export const Login = () => (
   <main>
-    <Logo />
     <Texts />
+    <Logo />
   </main>
 )
 
