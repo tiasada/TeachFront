@@ -1,11 +1,7 @@
 import React from 'react'
 import { DivBx } from './styles'
 
-type Props ={
-    children: JSX.Element[]
-}
-
-const Divbox = ({ children }: Props) => (
+const Divbox: React.FC = ({ children }) => (
     <DivBx>{ children }</DivBx>
 )
 

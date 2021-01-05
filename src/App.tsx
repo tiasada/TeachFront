@@ -1,10 +1,9 @@
 import React from 'react'
-import Login from './Pages/Login'
+import PagesApp from './routes'
 
 // Com return (quando temos mais código além de apenas um retorno)
 export const App = () => (
-  <Login />
-  
+  <PagesApp />
 )
 
 export default App
