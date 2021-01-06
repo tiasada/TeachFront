@@ -1,12 +1,17 @@
 import React from 'react'
 import { Section } from './styles'
-import { LoginTitle } from './Titles/styles'
+import { LoginTitle, ScheduleTitle } from './Titles/styles'
 
 
-const Texts = () => (
+
+export const TextLogin = () => (
   <Section>
     <LoginTitle>Login</LoginTitle>
   </Section>
 )
 
-export default Texts
+export const TitleSchedule = () => (
+  <Section>
+    <ScheduleTitle>Agenda ano</ScheduleTitle>
+  </Section>
+)

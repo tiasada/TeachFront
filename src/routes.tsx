@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from './Pages/Login'
-import Schedule from './Pages/School'
+import Schedule from './Pages/Schedule'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 export default function App() {

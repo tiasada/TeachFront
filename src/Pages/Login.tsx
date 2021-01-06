@@ -1,5 +1,5 @@
 import React from 'react'
-import Texts from '.././Components/Texts'
+import { TextLogin } from '.././Components/Texts'
 import Logo from '.././Components/Logo'
 import Form from '.././Components/Form'
 import Divbox from '.././Components/DivBox'
@@ -10,7 +10,7 @@ import Divbox from '.././Components/DivBox'
 export const Login = () => (
   <main>
     <Divbox>
-      <Texts />
+      <TextLogin />
       <Logo />
       <Form />
     </Divbox>
