@@ -1,12 +1,17 @@
 import React from 'react'
 import { Section } from './styles'
-import { LoginTitle, ScheduleTitle } from './Titles/styles'
+import { LoginTitle, MainTitle, ScheduleTitle } from './Titles/styles'
 
 
 
 export const TextLogin = () => (
   <Section>
     <LoginTitle>Teach</LoginTitle>
+  </Section>
+)
+export const TextTMain = () => (
+  <Section>
+    <MainTitle>Teach</MainTitle>
   </Section>
 )
 

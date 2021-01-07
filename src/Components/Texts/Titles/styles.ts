@@ -7,6 +7,12 @@ export const LoginTitle = styled.h1`
   text-align: center;
   margin-bottom: 0px;
 `
+export const MainTitle = styled.h3`
+  font-size: 18px;
+  font-family: "Comic Sans", "Courier New", monospace;
+  text-align: left;
+  margin-bottom: 0px;
+`
 export const ScheduleTitle = styled(LoginTitle)`
   font-size: 35px;
   margin: 100px;
