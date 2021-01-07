@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import GlobalStyle from './globalStyles';
 import PagesApp from './routes'
 
-// Com return (quando temos mais código além de apenas um retorno)
-export const App = () => (
-  <PagesApp />
-)
+function App() {
+  return (
+    <Fragment>
+      <GlobalStyle />
+      <PagesApp />
+    </Fragment>
+  );
+}
+
+// export const App = () => (
+//   <PagesApp />
+// )
 
 export default App

@@ -6,7 +6,7 @@ import { LoginTitle, ScheduleTitle } from './Titles/styles'
 
 export const TextLogin = () => (
   <Section>
-    <LoginTitle>Login</LoginTitle>
+    <LoginTitle>Teach</LoginTitle>
   </Section>
 )
 
