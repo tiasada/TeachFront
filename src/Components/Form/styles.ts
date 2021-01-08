@@ -11,11 +11,12 @@ export const LoginForm = styled.form`
   margin-left: auto;
   margin-right: auto;
   display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
 }
   
 input:focus {
-  background-color: #8AC1D8;
+  background-color: #D1F6FF;
   outline: none;
 }
 button {
@@ -27,9 +28,10 @@ button {
   margin-right: auto;
   display: block;
   color: #858585;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } 
 button:focus {
-  background-color: #8AC1D8;
+  background-color: #D1F6FF;
   outline: none;
 }
 `

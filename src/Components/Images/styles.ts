@@ -5,4 +5,5 @@ export const MenuIconSt = styled.img`
     height: 20px;
     display: block;
     margin-top: 0px;
+    
 `
