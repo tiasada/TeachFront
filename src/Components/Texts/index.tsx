@@ -9,7 +9,7 @@ export const TextLogin = () => (
     <LoginTitle>Teach</LoginTitle>
   </Section>
 )
-export const TextTMain = () => (
+export const TextMain = () => (
   <Section>
     <MainTitle>Teach</MainTitle>
   </Section>
