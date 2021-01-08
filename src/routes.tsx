@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './Pages/Login'
 import Schedule from './Pages/Schedule'
-import Main from './Pages/MainPage'
+import Main from './Pages/TeachersPages/MainPage'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 

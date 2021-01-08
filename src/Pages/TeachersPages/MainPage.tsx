@@ -1,7 +1,7 @@
 import React from 'react'
-import { IconMenu } from '../Components/Images'
-import Divbox from '../Components/DivBox'
-import { MainTitle } from '../Components/Texts/Titles/styles'
+import { IconMenu } from '../../Components/Images'
+import Divbox from '../../Components/DivBox'
+import { MainTitle } from '../../Components/Texts/Titles/styles'
 
 export const MainPage = () => (
   <main>

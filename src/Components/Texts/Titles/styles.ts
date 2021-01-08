@@ -10,10 +10,8 @@ export const LoginTitle = styled.h1`
 export const MainTitle = styled.h3`
   font-size: 18px;
   font-family: "Comic Sans", "Courier New", monospace;
-  text-align: left;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-right: 90%;
   display: flex;
   
 `
