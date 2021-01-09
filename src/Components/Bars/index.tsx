@@ -3,7 +3,7 @@ import SearchBarMatters from './styles'
 
 const Search = () => (
   <div>
-    <SearchBarMatters defaultValue="Search" type="text" />
+    <SearchBarMatters placeholder="Search..." type="text" />
   </div>
 )
 
