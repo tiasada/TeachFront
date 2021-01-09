@@ -3,7 +3,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #aaf1f8;
+    background: #efefef;
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
 `;

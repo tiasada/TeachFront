@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const DivBx = styled.div`
   border: none;
-  background-image: linear-gradient(to right, rgba(0,152,219,0.5), rgba(0,152,219,100) );
+  background-image: linear-gradient(to right, rgba(0,152,219,0.5), rgba(0,152,219,100) , rgba(0,116,166,65) );
   width: 100%;
   height: 25px;
   margin-right: auto;
