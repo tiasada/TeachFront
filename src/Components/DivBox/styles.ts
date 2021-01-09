@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const DivBx = styled.div`
   border: none;
-  background-color: #0098DB;
+  background-image: linear-gradient(to right, rgba(0,152,219,0.5), rgba(0,152,219,100) );
   width: 100%;
   height: 25px;
   margin-right: auto;
@@ -14,4 +14,7 @@ export const DivBx = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  top: 0px;
+  
 `

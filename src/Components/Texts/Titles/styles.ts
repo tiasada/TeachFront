@@ -12,8 +12,7 @@ export const MainTitle = styled.h3`
   font-family: "Comic Sans", "Courier New", monospace;
   margin-top: 0px;
   margin-bottom: 0px;
-  display: flex;
-  
+  display: flex;  
 `
 export const ScheduleTitle = styled(LoginTitle)`
   font-size: 35px;
