@@ -4,8 +4,9 @@ export const SearchBar = styled.input`
   padding: 12px 25px;
   width: 200px;
   border: none;
+  border-radius: 40px;
   background-color: #E5E5E5;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   margin-top: 4px;
   margin-left: auto;
   margin-right: auto;
