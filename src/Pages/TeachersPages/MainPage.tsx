@@ -1,9 +1,6 @@
 import React from 'react'
-import { IconMenu } from '../../Components/Images'
-import Divbox from '../../Components/DivBox'
-import { LoginTitle, MainTitle } from '../../Components/Texts/Titles/styles'
-import { DropCont, Dropdnw } from '../../Components/DivBox/Dropdowns'
-import { MnBtn, ClassesButton } from '../../Components/Buttons'
+import { ClassTitle, MainTitle } from '../../Components/Texts/Titles/styles'
+import { ClassesButton } from '../../Components/Buttons'
 import Search from '../../Components/Bars'
 import { DivClasslist } from '../../Components/DivBox/Overflows'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
@@ -20,11 +17,11 @@ export const MainPage = () => (
              <DropCont><MnBtn>Menu</MnBtn></DropCont>
             </Dropdnw>
         </Divbox> */}
-        <div style= {{ width: "auto" }}>
-          <LoginTitle>Escola E.E.F.Rubrivira</LoginTitle>
+        <div>
+          <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
         </div>
         <div>
-          <LoginTitle>Suas Turmas</LoginTitle>
+          <ClassTitle>Suas Turmas</ClassTitle>
           <Search/>
           <DivClasslist>
             <ClassesButton>Turma A</ClassesButton>

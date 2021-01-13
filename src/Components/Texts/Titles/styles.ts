@@ -16,5 +16,7 @@ export const MainTitle = styled.h3`
 `
 export const ScheduleTitle = styled(LoginTitle)`
   font-size: 35px;
-  margin: 100px;
+`
+export const ClassTitle = styled(LoginTitle)`
+  font-size: 35px;
 `
