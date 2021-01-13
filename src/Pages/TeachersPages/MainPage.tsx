@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconMenu } from '../../Components/Images'
 import Divbox from '../../Components/DivBox'
-import { LoginTitle, MainTitle } from '../../Components/Texts/Titles/styles'
+import { ClassTitle, MainTitle } from '../../Components/Texts/Titles/styles'
 import { DropCont, Dropdnw } from '../../Components/DivBox/Dropdowns'
 import { MnBtn, ClassesButton } from '../../Components/Buttons'
 import Search from '../../Components/Bars'
@@ -21,10 +21,10 @@ export const MainPage = () => (
             </Dropdnw>
         </Divbox> */}
         <div>
-          <LoginTitle>Escola E.E.F.Rubrivira</LoginTitle>
+          <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
         </div>
         <div>
-          <LoginTitle>Suas Turmas</LoginTitle>
+          <ClassTitle>Suas Turmas</ClassTitle>
           <Search/>
           <DivClasslist>
             <ClassesButton>Turma A</ClassesButton>
