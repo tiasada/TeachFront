@@ -26,6 +26,7 @@ export const ClsBtn = styled.button`
   min-width: 20%;
   margin: 4px;
   border: none;
+  border-radius: 4px;
   display: inline;
   color: #858585;
   background-color: #ddd;

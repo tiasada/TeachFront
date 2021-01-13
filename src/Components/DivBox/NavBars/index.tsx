@@ -1,10 +1,20 @@
 import React from 'react'
 import { Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import { Navmenu} from './styles'
+import Logo from '../../Images/TeachLogoB.png'
 
 export const Navbarmenu = () => (
     <Navmenu expand="lg">
-        <Navmenu.Brand href="#home">Teach</Navmenu.Brand>
+        <Navmenu.Brand href="#home">
+            <img
+                alt=""
+                src={Logo}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+            />{' '}
+            Teach
+        </Navmenu.Brand>
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

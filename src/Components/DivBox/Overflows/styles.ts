@@ -5,7 +5,8 @@ export const ClassOvFlow = styled.div`
     overflow: auto;
     max-width: 75%;
     min-width: 50%;
-    height: 500px;
+    height: 400px;
+    border-radius: 40px;
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
