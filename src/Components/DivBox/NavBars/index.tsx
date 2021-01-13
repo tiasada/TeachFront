@@ -3,7 +3,7 @@ import { Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import { Navmenu} from './styles'
 
 export const Navbarmenu = () => (
-    <Navmenu bg="light" expand="lg">
+    <Navmenu expand="lg">
         <Navmenu.Brand href="#home">Teach</Navmenu.Brand>
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">

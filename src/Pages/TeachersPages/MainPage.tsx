@@ -12,7 +12,7 @@ import { Navbarmenu } from '../../Components/DivBox/NavBars'
 export const MainPage = () => (
   <main>
     <header role="banner">
-      <div><Navbarmenu/></div>
+      <div ><Navbarmenu/></div>
         {/* <Divbox>
             <MainTitle>Teach</MainTitle>
             <Dropdnw>

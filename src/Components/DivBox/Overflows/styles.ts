@@ -8,6 +8,7 @@ export const ClassOvFlow = styled.div`
     height: 500px;
     margin-left: auto;
     margin-right: auto;
+    flex-direction: column;
     &::-webkit-scrollbar {
         display: none;
     }
