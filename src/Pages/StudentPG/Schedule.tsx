@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScheduleTitle } from '../../Components/Texts/Titles/styles'
 import { ClassOvFlow } from '../../Components/DivBox/Overflows/styles'
-import DivClasslist from '../../Components/DivBox/Overflows'
+import { DivSchedule } from '../../Components/DivBox/Overflows'
 import { DivBx } from '../../Components/DivBox/styles'
 
 
@@ -13,8 +13,7 @@ export const Schedule = () => (
       <div>
         <ScheduleTitle>Agenda ano</ScheduleTitle>
       </div>
-      <DivBx>
-        <DivClasslist>
+        <DivSchedule>
           <ClassOvFlow>Agenda ano</ClassOvFlow>
           <ClassOvFlow>Agenda ano</ClassOvFlow>
           <ClassOvFlow>Agenda ano</ClassOvFlow>
@@ -39,8 +38,7 @@ export const Schedule = () => (
           <ClassOvFlow>Agenda ano</ClassOvFlow>
           <ClassOvFlow>Agenda ano</ClassOvFlow>
           <ClassOvFlow>Agenda ano</ClassOvFlow>
-        </DivClasslist>
-      </DivBx>
+        </DivSchedule>
     </header>
   </main>
 )

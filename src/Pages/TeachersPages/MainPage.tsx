@@ -5,7 +5,7 @@ import { ClassTitle, MainTitle } from '../../Components/Texts/Titles/styles'
 import { DropCont, Dropdnw } from '../../Components/DivBox/Dropdowns'
 import { MnBtn, ClassesButton } from '../../Components/Buttons'
 import Search from '../../Components/Bars'
-import DivClasslist from '../../Components/DivBox/Overflows'
+import { DivClasslist } from '../../Components/DivBox/Overflows'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
 
 
