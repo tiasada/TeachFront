@@ -12,3 +12,33 @@ export const DivBx = styled.div`
   border: 1px solid #000000;
   box-sizing: border-box;
 `
+export const DivTabBox = styled.div`
+  position: static;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  height: 400px;
+  display: flex;
+  overflow: auto;
+
+ 
+  box-sizing: border-box;
+` 
+export const DivTabR = styled.div`
+  position: relative;
+  width: 50%;
+  height: auto;
+  display: inline;
+
+  box-sizing: border-box;
+`
+export const DivTabL = styled.div`
+  position: relative;
+  width: 15%;
+  height: auto;
+  display: inline;
+
+  box-sizing: border-box;
+`

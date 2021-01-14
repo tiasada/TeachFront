@@ -1,6 +1,6 @@
 import React from 'react'
 import { ClassTitle, MainTitle } from '../../Components/Texts/Titles/styles'
-import { ClassesButton } from '../../Components/Buttons'
+import { ClassesButton } from '../../Ui/Buttons'
 import Search from '../../Components/Bars'
 import { DivClasslist } from '../../Components/DivBox/Overflows'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'

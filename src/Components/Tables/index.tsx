@@ -1,5 +1,5 @@
 import React from 'react'
-import Tab, {cabecalho} from './styles'
+import Tab from './styles'
 
 const ClassTable : React.FC = ({ children }) => (
     <Tab>{ children}</Tab>

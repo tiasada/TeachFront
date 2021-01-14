@@ -20,7 +20,4 @@ td{
     padding: 5px 40px;
 }
 `
-export const cabecalho = styled.th`
-    background-color: red;
-`
 export default ClassTable;

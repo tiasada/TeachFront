@@ -1,23 +1,38 @@
 import React from 'react'
-import Login from './Pages/Login'
-import Schedule from './Pages/StudentPG/Schedule'
-import Main from './Pages/TeachersPages/MainPage'
-import Cordein from './Pages/CoordenationPG/studentPage'
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import{
+    Login,
+    TeacherMain,
+    TeacherStudent,
+    TeacherClass ,
+    CoordStudent,
+    Schedule
+} from './Pages'
+
+import{ Home } from './Pages/Home'
+import{ About } from './Pages/About'
+
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 export default function App() {
     return (
-        <BrowserRouter>
-					<Switch>
-						<Route path="/login" component={Login}/>
-						<Route path="/schedule" component={Schedule}/>
-						<Route path="/teacher" component={Main}/>
-						<Route path="/coordenation" component={Cordein}/>
-
-					</Switch>
-        </BrowserRouter>
+        <Router>
+				<Switch>
+					<Route path="/login" component={Login}/>
+					<Route path="/schedule" component={Schedule}/>
+					<Route path="/teacher" component={TeacherMain}>
+						<Switch>
+							<Route path="/teacher/class" component={TeacherClass}/>
+							<Route path="/teacher" component={TeacherMain}/>
+						</Switch>
+					</Route>
+					<Route path="/coordenation" component={CoordStudent}/>
+					<Route path="/home" component={Home}/>
+					<Route path="/about" component={About}/>
+				</Switch>
+        </Router>
     )
 } 
 
