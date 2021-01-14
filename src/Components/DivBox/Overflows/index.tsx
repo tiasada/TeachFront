@@ -11,6 +11,10 @@ export const DivClasslist: React.FC = ({ children }) => (
     
 )
 export const DivSchedule: React.FC = ({ children }) => (
-    <OvFlowSchedule>{ children }</OvFlowSchedule>
+    <OvFlowSchedule> 
+        <Container>
+            <Row className="justify-content-center">{ children }</Row>
+        </Container>
+    </OvFlowSchedule>
 )
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from './Pages/Login'
-import Schedule from './Pages/StudentPG/Schedule'
+import Schedule from './Pages/StudentPages/Schedule'
 import Main from './Pages/TeachersPages/MainPage'
 import Cordein from './Pages/CoordenationPG/studentPage'
 import "bootstrap/dist/css/bootstrap.min.css";
