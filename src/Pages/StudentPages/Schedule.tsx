@@ -1,7 +1,6 @@
 import React from 'react'
-import { ClassTitle, ScheduleTitle } from '../../Components/Texts/Titles/styles'
-import { DivClasslist, DivSchedule } from '../../Components/DivBox/Overflows/index'
-import DivBox from '../../Components/DivBox/index'
+import { ScheduleTitle } from '../../Components/Texts/Titles/styles'
+import { DivSchedule } from '../../Components/DivBox/Overflows/index'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
 
 

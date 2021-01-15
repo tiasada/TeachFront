@@ -7,14 +7,12 @@ const navs = [
 export const Layout = (props) => (
     <div>
         <ul>
-            <li>
-                {navs.map(NavItem => (
-                    <li>
-                        <Link to={NavItem.path}>{NavItem.name}</Link>
-                    </li>
-                ))}
-            </li>
+            {navs.map((NavItem, index) => (
+                <li key={index}>
+                    <Link to={NavItem.path}>{NavItem.name}</Link>
+                </li>
+            ))}
         </ul>
         {props.children}
-        </div>
+    </div>
 )

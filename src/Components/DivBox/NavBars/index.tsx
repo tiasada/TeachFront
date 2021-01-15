@@ -18,8 +18,8 @@ export const Navbarmenu = () => (
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="/login">Home</Nav.Link>
+            <Nav.Link href="/class/:id">Turmas</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Chamadas</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Notas</NavDropdown.Item>
@@ -28,10 +28,6 @@ export const Navbarmenu = () => (
             <NavDropdown.Item href="#action/3.4">Agenda</NavDropdown.Item>
             </NavDropdown>
         </Nav>
-        <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-        </Form>
         </Navmenu.Collapse>
     </Navmenu>
 )
