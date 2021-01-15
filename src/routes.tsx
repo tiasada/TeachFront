@@ -7,7 +7,7 @@ import{
     TeacherStudent,
     TeacherClass ,
     CoordStudent,
-    Schedule
+	Schedule
 } from './Pages'
 
 import{ Home } from './Pages/Home'
