@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconMenu } from '../../Components/Images'
+import { IconMenu } from '../../assets/Images'
 import Divbox from '../../Components/DivBox'
 import { LoginTitle, MainTitle } from '../../Components/Texts/Titles/styles'
 import { DropCont, Dropdnw } from '../../Components/DivBox/Dropdowns'

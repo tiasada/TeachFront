@@ -22,11 +22,8 @@ export default function App() {
 				<Switch>
 					<Route path="/login" component={Login}/>
 					<Route path="/schedule" component={Schedule}/>
+					<Route path="/class/:id" component={TeacherClass}/>
 					<Route path="/teacher" component={TeacherMain}>
-						<Switch>
-							<Route path="/teacher/class" component={TeacherClass}/>
-							<Route path="/teacher" component={TeacherMain}/>
-						</Switch>
 					</Route>
 					<Route path="/coordenation" component={CoordStudent}/>
 					<Route path="/home" component={Home}/>

@@ -1,12 +1,42 @@
 import React from 'react'
-import { ClassTitle, MainTitle } from '../../Components/Texts/Titles/styles'
+import { ClassTitle } from '../../Components/Texts/Titles/styles'
 import { ClassesButton } from '../../Ui/Buttons'
 import Search from '../../Components/Bars'
 import { DivClasslist } from '../../Components/DivBox/Overflows'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
+import { useHistory } from 'react-router-dom'
+
+const classrooms = [
+  {
+    id:"1",
+    name: "class1"
+  },
+  {
+    id:"2",
+    name: "class2"
+  },
+  {
+    id:"3",
+    name: "class3"
+  },
+  {
+    id:"4",
+    name: "class4"
+  },
+  {
+    id:"5",
+    name: "class5"
+  }
+]
 
 
-export const MainPage = () => (
+export const MainPage = () => {
+  let history = useHistory()
+
+  function handleClick(id:string) {
+    history.push(`/class/${id}`)
+  }
+  return(
   <main>
     <header role="banner">
       <div ><Navbarmenu/></div>
@@ -24,62 +54,22 @@ export const MainPage = () => (
           <ClassTitle>Suas Turmas</ClassTitle>
           <Search/>
           <DivClasslist>
-            <ClassesButton>Turma A</ClassesButton>
-            <ClassesButton>Turma B</ClassesButton>
-            <ClassesButton>Turma C</ClassesButton>
-            <ClassesButton>Turma D</ClassesButton>
-            <ClassesButton>Turma E</ClassesButton>
-            <ClassesButton>Turma F</ClassesButton>
-            <ClassesButton>Turma G</ClassesButton>
-            <ClassesButton>Turma H</ClassesButton>
-            <ClassesButton>Turma I</ClassesButton>
-            <ClassesButton>Turma J</ClassesButton>
-            <ClassesButton>Turma K</ClassesButton>
-            <ClassesButton>Turma L</ClassesButton>
-            <ClassesButton>Turma M</ClassesButton>
-            <ClassesButton>Turma N</ClassesButton>
-            <ClassesButton>Turma O</ClassesButton>
-            <ClassesButton>Turma P</ClassesButton>
-            <ClassesButton>Turma Q</ClassesButton>
-            <ClassesButton>Turma R</ClassesButton>
-            <ClassesButton>Turma S</ClassesButton>
-            <ClassesButton>Turma T</ClassesButton>
-            <ClassesButton>Turma U</ClassesButton>
-            <ClassesButton>Turma V</ClassesButton>
-            <ClassesButton>Turma W</ClassesButton>
-            <ClassesButton>Turma X</ClassesButton>
-            <ClassesButton>Turma Y</ClassesButton>
-            <ClassesButton>Turma Z</ClassesButton>
-            <ClassesButton>Turma A</ClassesButton>
-            <ClassesButton>Turma B</ClassesButton>
-            <ClassesButton>Turma C</ClassesButton>
-            <ClassesButton>Turma D</ClassesButton>
-            <ClassesButton>Turma E</ClassesButton>
-            <ClassesButton>Turma F</ClassesButton>
-            <ClassesButton>Turma G</ClassesButton>
-            <ClassesButton>Turma H</ClassesButton>
-            <ClassesButton>Turma I</ClassesButton>
-            <ClassesButton>Turma J</ClassesButton>
-            <ClassesButton>Turma K</ClassesButton>
-            <ClassesButton>Turma L</ClassesButton>
-            <ClassesButton>Turma M</ClassesButton>
-            <ClassesButton>Turma N</ClassesButton>
-            <ClassesButton>Turma O</ClassesButton>
-            <ClassesButton>Turma P</ClassesButton>
-            <ClassesButton>Turma Q</ClassesButton>
-            <ClassesButton>Turma R</ClassesButton>
-            <ClassesButton>Turma S</ClassesButton>
-            <ClassesButton>Turma T</ClassesButton>
-            <ClassesButton>Turma U</ClassesButton>
-            <ClassesButton>Turma V</ClassesButton>
-            <ClassesButton>Turma W</ClassesButton>
-            <ClassesButton>Turma X</ClassesButton>
-            <ClassesButton>Turma Y</ClassesButton>
-            <ClassesButton>Turma Z</ClassesButton>
+            {/* {classrooms.reduce(
+              (accumulator, currentValue) => (
+                <>
+                {accumulator}
+                <>
+                </>
+              ),
+              <></>
+            )} */}
+            {classrooms.map(item => (
+              <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
+            ) )}
           </DivClasslist>
         </div>
     </header>
   </main>
 )
-
+}
 export default MainPage
