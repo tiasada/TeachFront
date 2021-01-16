@@ -2,7 +2,7 @@ import React from 'react'
 import { ScheduleTitle } from '../../Components/Texts/Titles/styles'
 import { DivSchedule } from '../../Components/DivBox/Overflows/index'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
-import { MonthName } from '~/Components/Texts/styles'
+import { MonthName } from '../../Components/Texts/styles'
 
 
 // import { Search } from '../Components/Bars/index'

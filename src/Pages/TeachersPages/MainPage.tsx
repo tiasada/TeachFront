@@ -38,37 +38,36 @@ export const MainPage = () => {
   }
   return(
   <main>
-    <header role="banner">
-      <div ><Navbarmenu/></div>
-        {/* <Divbox>
-            <MainTitle>Teach</MainTitle>
-            <Dropdnw>
-             <IconMenu></IconMenu>
-             <DropCont><MnBtn>Menu</MnBtn></DropCont>
-            </Dropdnw>
-        </Divbox> */}
-        <div>
-          <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
-        </div>
-        <div>
-          <ClassTitle>Suas Turmas</ClassTitle>
-          <Search/>
-          <DivClasslist>
-            {/* {classrooms.reduce(
-              (accumulator, currentValue) => (
-                <>
-                {accumulator}
-                <>
-                </>
-              ),
-              <></>
-            )} */}
-            {classrooms.map(item => (
-              <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
-            ) )}
-          </DivClasslist>
-        </div>
-    </header>
+    <div ><Navbarmenu/></div>
+      {/* <Divbox>
+          <MainTitle>Teach</MainTitle>
+          <Dropdnw>
+            <IconMenu></IconMenu>
+            <DropCont><MnBtn>Menu</MnBtn></DropCont>
+          </Dropdnw>
+      </Divbox> */}
+      
+      <div>
+        <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
+      </div>
+      <div>
+        <ClassTitle>Suas Turmas</ClassTitle>
+        <Search/>
+        <DivClasslist>
+          {/* {classrooms.reduce(
+            (accumulator, currentValue) => (
+              <>
+              {accumulator}
+              <>
+              </>
+            ),
+            <></>
+          )} */}
+          {classrooms.map(item => (
+            <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
+          ) )}
+        </DivClasslist>
+      </div>
   </main>
 )
 }
