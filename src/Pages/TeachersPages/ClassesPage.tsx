@@ -30,7 +30,7 @@ const classrooms = [
 ]
 
 
-export const MainPage = () => {
+export const ClassesPage = () => {
   let history = useHistory()
 
   function handleClick(id:string) {
@@ -38,15 +38,9 @@ export const MainPage = () => {
   }
   return(
   <main>
-    <div ><Navbarmenu/></div>
-      {/* <Divbox>
-          <MainTitle>Teach</MainTitle>
-          <Dropdnw>
-            <IconMenu></IconMenu>
-            <DropCont><MnBtn>Menu</MnBtn></DropCont>
-          </Dropdnw>
-      </Divbox> */}
-      
+      <div >
+        <Navbarmenu/>
+      </div>
       <div>
         <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
       </div>
@@ -54,15 +48,6 @@ export const MainPage = () => {
         <ClassTitle>Suas Turmas</ClassTitle>
         <Search/>
         <DivClasslist>
-          {/* {classrooms.reduce(
-            (accumulator, currentValue) => (
-              <>
-              {accumulator}
-              <>
-              </>
-            ),
-            <></>
-          )} */}
           {classrooms.map(item => (
             <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
           ) )}
@@ -71,4 +56,4 @@ export const MainPage = () => {
   </main>
 )
 }
-export default MainPage
+export default ClassesPage

@@ -4,14 +4,14 @@ import { Label as InputLabel } from '../../../Ui/Label'
 import axios from 'axios'
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     axios.post(
       'https://localhost:5001/auth/login',
-      { email, password }
+      { username, password }
     )
     .then(resp => alert(resp.data))
     .catch(() => alert('Login inválido'))
@@ -21,13 +21,13 @@ const LoginForm = () => {
     <form onSubmit={onSubmit}>
       <Title>Login</Title>
       <div>
-        <InputLabel>Email</InputLabel>
+        <InputLabel>Username</InputLabel>
         <input
-          type='email'
-          name='email'
-          placeholder='jhon.test@gmail.com'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          type='username'
+          name='username'
+          placeholder='username123'
+          value={username}
+          onChange={e => setUsername(e.target.value)}
         />
       </div>
       <div>
