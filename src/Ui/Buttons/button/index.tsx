@@ -9,7 +9,7 @@ type Props = {
 
 const Button = ({ children, onClick, type='submit', ...rest }: Props) => {
   return (
-    <LoginButton type={type} onClick={onClick} {...rest}>{children}</StyledButton>
+    <LoginButton type={type} onClick={onClick} {...rest}>{children}</LoginButton>
   )
 }
 

@@ -6,7 +6,7 @@ type Props = {
   display?: Display
 }
 
-const Label = ({ children, display = 'block' }: Props) => (
+export const Label = ({ children, display = 'block' }: Props) => (
   <StyledLabel display={display}>{children}</StyledLabel>
 )
 

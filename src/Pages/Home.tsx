@@ -1,7 +1,21 @@
 import React from 'react';
-
+import Form from '../Components/Form/CreateUserForm'
 import { Layout } from '../Ui/Layouts'
 
-export const Home = () => (
-    <Layout>Home page</Layout>
-)
+const emailProps = {
+    type: 'email',
+    placeholder: 'joão.silva@gmail.com'
+  }
+  
+export const Home = () => {
+    return (
+        <main>
+            <Layout>Home page</Layout>
+            <Form
+                title='Criação de conta'
+                buttonText='Cadastrar'
+                emailProps={emailProps}
+            />
+        </main>
+    )
+}
