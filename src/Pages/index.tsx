@@ -1,5 +1,5 @@
 import Login from './Login'
-import TeacherStudent from './TeachersPages/Student'
+import ClassPage from './TeachersPages/ClassCallPage'
 import TeacherClass from './TeachersPages/ClassPage'
 import CoordStudent from './CoordenationPG/studentPage'
 import Schedule from './StudentPages/Schedule'
@@ -8,7 +8,7 @@ import Classes from './TeachersPages/ClassesPage'
 
 export {
     Login,
-    TeacherStudent,
+    ClassPage,
     TeacherClass ,
     CoordStudent,
     Schedule,

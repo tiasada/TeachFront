@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import{
     Login,
-    TeacherStudent,
+    ClassPage,
 	TeacherClass ,
 	Classes,
     CoordStudent,
@@ -22,7 +22,7 @@ export default function App() {
 				<Switch>
 					<Route path="/login" component={Login}/>
 					<Route path="/schedule" component={Schedule}/>
-					<Route path="/class/:id" component={TeacherClass}/>
+					<Route path="/class/:id" component={ClassPage}/>
 					<Route path="/teacher" component={Classes}>
 					</Route>
 					<Route path="/coordenation" component={CoordStudent}/>

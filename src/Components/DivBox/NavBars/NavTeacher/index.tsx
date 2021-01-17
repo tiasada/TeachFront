@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
-import { Navmenu} from './styles'
+import { Navmenu, NavClass} from './styles'
 import Logo from '../../../../assets/Images/TeachLogoB.png'
 
 export const NavbarTeacher = () => (
@@ -29,5 +29,20 @@ export const NavbarTeacher = () => (
         </Nav>
         </Navmenu.Collapse>
     </Navmenu>
+)
+
+export const NavbarClass = () => (
+    <NavClass expand="lg">
+        <NavClass.Brand >
+            Turma *
+        </NavClass.Brand>
+        <NavClass.Toggle aria-controls="basic-navbar-nav" />
+        <NavClass.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link href="/class/:id">Chamada</Nav.Link>
+            <Nav.Link href="/class/:id/grades">Notas</Nav.Link>
+        </Nav>
+        </NavClass.Collapse>
+    </NavClass>
 )
 export default NavbarTeacher
