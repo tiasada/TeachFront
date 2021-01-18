@@ -3,6 +3,9 @@ import { ScheduleTitle } from '../../Components/Texts/Titles/styles'
 import { DivSchedule } from '../../Components/DivBox/Overflows/index'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
 import { MonthName } from '../../Components/Texts/styles'
+import Col from 'react-bootstrap/esm/Col'
+import Row from 'react-bootstrap/esm/Row'
+import { Container } from 'react-bootstrap'
 
 
 // import { Search } from '../Components/Bars/index'
@@ -22,9 +25,19 @@ export const Schedule = () => (
           <ScheduleTitle>Calendário</ScheduleTitle>
         </div>
         <div>
-          <DivSchedule>
-            <MonthName>asakhfjkashjfjsakjfksaj</MonthName>
-          </DivSchedule>
+          <DivSchedule center={false}>
+            <Container>
+            <MonthName style={{marginTop: '50px'}}>Abril</MonthName>
+            <Row>
+              <Col xs={3}>1 of 2</Col>
+              <Col>2 of 2</Col>
+            </Row>
+              <Row>
+                <Col>1 of 2</Col>
+                <Col>2 of 2</Col>
+              </Row>
+            </Container>
+          </DivSchedule >
         </div>
     </header>
   </main>

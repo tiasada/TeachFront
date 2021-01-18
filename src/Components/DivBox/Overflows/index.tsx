@@ -10,11 +10,15 @@ export const DivClasslist: React.FC = ({ children }) => (
     </ClassOvFlow>
     
 )
-export const DivSchedule: React.FC = ({ children }) => (
+
+interface IDivScheduleProps extends React.HTMLAttributes<HTMLElement> {
+    center?: boolean
+  }
+  
+export const DivSchedule: React.FC<IDivScheduleProps> = ({ children, center = true }) => (
     <OvFlowSchedule> 
         <Container>
-            <Row className="justify-content-center">{ children }</Row>
+            <Row className={center ? 'justify-content-center' : ''}>{ children }</Row>
         </Container>
     </OvFlowSchedule>
 )
-
