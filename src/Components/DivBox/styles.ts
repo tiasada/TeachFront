@@ -17,12 +17,14 @@ export const DivBx = styled.div`
 export const DivTabBox = styled.div`
   position: static;
   width: 80%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
   margin-left: auto;
   margin-right: auto;
 
 
   height: 400px;
-  display: flex;
+  display: block;
   overflow: auto;
 
  

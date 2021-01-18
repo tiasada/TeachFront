@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import{
     Login,
-    TeacherMain,
-    TeacherStudent,
-    TeacherClass ,
+    ClassPage,
+	TeacherClass ,
+	Classes,
     CoordStudent,
 	Schedule
 } from './Pages'
@@ -22,8 +22,8 @@ export default function App() {
 				<Switch>
 					<Route path="/login" component={Login}/>
 					<Route path="/schedule" component={Schedule}/>
-					<Route path="/class/:id" component={TeacherClass}/>
-					<Route path="/teacher" component={TeacherMain}>
+					<Route path="/class/:id" component={ClassPage}/>
+					<Route path="/teacher" component={Classes}>
 					</Route>
 					<Route path="/coordenation" component={CoordStudent}/>
 					<Route path="/home" component={Home}/>

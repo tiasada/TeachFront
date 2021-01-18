@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React from 'react'
+import { LoginButton } from '../../Ui/Buttons/button/styles'
 import { LoginForm } from './styles'
 
 const Form = () => (
@@ -13,7 +15,7 @@ const Form = () => (
         placeholder='Password'
       />
     </div>
-    <button>{'Login'}</button>
+    <LoginButton>{'Login'}</LoginButton>
   </LoginForm>
 )
 

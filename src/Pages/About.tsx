@@ -1,7 +1,11 @@
 import React from 'react';
+import LoginForm from '../Components/Form/LoginUserForm';
 
 import { Layout } from '../Ui/Layouts'
 
 export const About = () => (
-    <Layout> About page</Layout>
+    <main>
+        <Layout> About page</Layout>
+        <LoginForm />
+    </main>
 )
