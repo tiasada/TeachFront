@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import { Navmenu} from './styles'
-import Logo from '../../Images/TeachLogoB.png'
+import Logo from '../../../assets/Images/TeachLogoB'
 
 export const Navbarmenu = () => (
     <Navmenu expand="lg">
