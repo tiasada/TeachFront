@@ -13,7 +13,7 @@ import { Container } from 'react-bootstrap'
 export const Schedule = () => (
   <main>
     <header role="banner">
-      <div ><Navbarmenu/></div>
+      <div ><Navbarmenu /></div>
         {/* <Divbox>
             <MainTitle>Teach</MainTitle>
             <Dropdnw>
@@ -28,11 +28,11 @@ export const Schedule = () => (
           <DivSchedule center={false}>
             <Container>
             <MonthName style={{marginTop: '50px'}}>Abril</MonthName>
-            <Row style={{border: '1px solid #000000'}}>
+            <Row >
               <Col xs={3} style={{border: '1px solid #000000'}}>1 of 2</Col>
               <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
             </Row>
-              <Row style={{border: '1px solid #000000'}}>
+              <Row>
                 <Col style={{border: '1px solid #000000'}}>1 of 2</Col>
                 <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
               </Row>
