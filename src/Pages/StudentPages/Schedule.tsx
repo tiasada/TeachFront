@@ -28,13 +28,13 @@ export const Schedule = () => (
           <DivSchedule center={false}>
             <Container>
             <MonthName style={{marginTop: '50px'}}>Abril</MonthName>
-            <Row>
-              <Col xs={3}>1 of 2</Col>
-              <Col>2 of 2</Col>
+            <Row style={{border: '1px solid #000000'}}>
+              <Col xs={3} style={{border: '1px solid #000000'}}>1 of 2</Col>
+              <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
             </Row>
-              <Row>
-                <Col>1 of 2</Col>
-                <Col>2 of 2</Col>
+              <Row style={{border: '1px solid #000000'}}>
+                <Col style={{border: '1px solid #000000'}}>1 of 2</Col>
+                <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
               </Row>
             </Container>
           </DivSchedule >
