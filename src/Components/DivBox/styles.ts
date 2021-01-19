@@ -23,7 +23,7 @@ export const DivTabBox = styled.div`
   margin-right: auto;
 
 
-  height: 400px;
+  height: auto;
   display: block;
   overflow: auto;
 
