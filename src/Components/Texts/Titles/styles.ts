@@ -5,7 +5,7 @@ export const LoginTitle = styled.h1`
   font-size: 42px;
   font-family: "Comic Sans", "Courier New", monospace;
   text-align: center;
-  padding: 4px;
+  padding: 1px 4px 1px 4px;
   margin-bottom: 0px;
 `
 export const MainTitle = styled.h3`

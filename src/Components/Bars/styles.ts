@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const SearchBar = styled.input`
-  padding: 12px 25px;
+  padding: 12px 30px;
   width: 200px;
   border: none;
   border-radius: 40px;
   background-color: #E5E5E5;
-  margin-bottom: 8px;
-  margin-top: 4px;
+  margin-bottom: 100px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
   display: block;

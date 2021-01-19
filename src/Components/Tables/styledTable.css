@@ -1,11 +1,16 @@
 .coluna-nota{
-    padding: 10px;
+    padding: 10px 15px 10px 1px;
 }
 
 .coluna-falta{
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
 }
 
 .coluna-nome{
     padding: 10px 200px;
+    margin-right: 150px;
+}
+
+.coluna-matricula{
+    padding: 5px 100px 10px 50px;
 }
