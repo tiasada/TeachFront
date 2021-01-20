@@ -37,23 +37,23 @@ export const ClassesPage = () => {
     history.push(`/class/${id}`)
   }
   return(
-  <main>
-      <div >
-        <Navbarmenu/>
-      </div>
-      <div>
-        <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
-      </div>
-      <div>
-        <ClassTitle>Suas Turmas</ClassTitle>
-        <Search/>
-        <DivClasslist>
-          {classrooms.map(item => (
-            <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
-          ) )}
-        </DivClasslist>
-      </div>
-  </main>
-)
+    <main>
+        <div >
+          <Navbarmenu/>
+        </div>
+        <div>
+          <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
+        </div>
+        <div>
+          <ClassTitle>Suas Turmas</ClassTitle>
+          <Search/>
+          <DivClasslist>
+            {classrooms.map(item => (
+              <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
+            ) )}
+          </DivClasslist>
+        </div>
+    </main>
+  )
 }
 export default ClassesPage
