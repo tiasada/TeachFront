@@ -7,7 +7,7 @@ export const MonthName = styled.h6`
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 32px;
 	line-height: 19px;
 	text-align: left;
 

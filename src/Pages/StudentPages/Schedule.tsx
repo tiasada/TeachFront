@@ -13,7 +13,7 @@ import { Container } from 'react-bootstrap'
 export const Schedule = () => (
   <main>
     <header role="banner">
-      <div ><Navbarmenu /></div>
+      <div style={{marginBottom: '30px'}}><Navbarmenu /></div>
         {/* <Divbox>
             <MainTitle>Teach</MainTitle>
             <Dropdnw>
@@ -21,19 +21,28 @@ export const Schedule = () => (
              <DropCont><MnBtn>Menu</MnBtn></DropCont>
             </Dropdnw>
         </Divbox> */}
-        <div>
+        <div style={{marginBottom:'30px'}}>
           <ScheduleTitle>Calendário</ScheduleTitle>
         </div>
         <div>
-          <DivSchedule center={false}>
+          <DivSchedule style={{}} center={false}>
             <Container>
-            <MonthName style={{marginTop: '50px'}}>Abril</MonthName>
+              <MonthName style={{marginTop: '50px',
+              marginBottom:'30px'}}>Abril</MonthName>
             <Row >
-              <Col xs={3} style={{border: '1px solid #000000'}}>1 of 2</Col>
-              <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
+              <Col xs={2}
+                style={{border: '1px solid #000000',
+                backgroundColor: '#ffffff',
+                borderRadius: '3px',
+                height: '135px',}}>1 of 2</Col>
+              <Col style={{border: '1px solid #000000',
+              borderRadius: '3px',}}>2 of 2</Col>
             </Row>
-              <Row>
-                <Col style={{border: '1px solid #000000'}}>1 of 2</Col>
+              <Row style={{marginTop: '50px'}}>
+                <Col xs={2}
+                style={{border: '1px solid #000000',
+                backgroundColor: '#ffffff',
+                height: '135px',}}>1 of 2</Col>
                 <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
               </Row>
             </Container>

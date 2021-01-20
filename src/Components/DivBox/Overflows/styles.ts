@@ -17,7 +17,8 @@ export const ClassOvFlow = styled.div`
   scrollbar-width: none;  /* Firefox */
 `
 export const OvFlowSchedule = styled(ClassOvFlow)`
-	background: #C4C4C4;
+	height: 800px;
+  background: #C4C4C4;
   border: 1px solid #000000;
   border-radius: 8px;
   box-sizing: border-box;
