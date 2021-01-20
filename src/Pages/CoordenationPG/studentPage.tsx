@@ -1,13 +1,10 @@
 import React from 'react'
 import { IconMenu } from '../../assets/Images'
-import Divbox from '../../Components/DivBox'
+import Divbox, { DivTableBox, DivTableRight } from '../../Components/DivBox'
 import { LoginTitle, MainTitle } from '../../Components/Texts/Titles/styles'
-import { DropCont, Dropdnw } from '../../Components/DivBox/Dropdowns'
-import { MnBtn } from '../../Ui/Buttons'
 import Search from '../../Components/Bars'
 import { Navbarmenu } from '../../Components/DivBox/NavBars'
 import ClassTable from '../../Components/Tables'
-import '../../Components/Tables/styledTable.css'
 export const MainPage = () => (
   <main>
     <header role="banner">
@@ -20,18 +17,18 @@ export const MainPage = () => (
         <div>
           <Search/>
         </div>
-        <div>
+        <DivTableRight>
           <ClassTable>
             <tr>
-              <th className = "coluna-matricula" >Matrícula</th>
-              <th className = "coluna-nome">Nome</th>
-              <th className = "coluna-nota" >Notas/Boletim</th>
-              <th className = "coluna-falta">Faltas</th>
+              <th className= "w-25">Matrícula</th>
+              <th className= "w-100"> Nome</th>
+              <th className= "w-25">Notas/Boletim</th>
+              <th className= "w-25">Faltas</th>
             </tr>
             <tbody>
               <tr>
                 <td>4544356651</td>
-                <td><a href="/teacher/class/id:/student/id:">Gabrielle Yasmin de Oliveira</a></td>
+                <td><a href="/studentprofile">Raielle Samira Cardoso Santana de Jesus</a></td>
                 <td>9,0</td>
                 <td>0</td>
               </tr>
@@ -68,7 +65,7 @@ export const MainPage = () => (
               </tr>
             </tbody>
           </ClassTable>
-        </div>
+        </DivTableRight>
     </header>
   </main>
 )
