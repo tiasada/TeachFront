@@ -1,6 +1,6 @@
 import React from 'react'
 import { Section } from './styles'
-import { LoginTitle, MainTitle, ScheduleTitle } from './Titles/styles'
+import { LoginTitle, MainTitle, Name, ScheduleTitle } from './Titles/styles'
 
 
 
@@ -19,4 +19,9 @@ export const TitleSchedule = () => (
   <Section>
     <ScheduleTitle>Agenda ano</ScheduleTitle>
   </Section>
+)
+
+export const NameStudent = () => (
+    <Name>Agenda ano</Name>
+
 )

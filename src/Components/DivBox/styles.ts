@@ -31,11 +31,19 @@ export const DivTabBox = styled.div`
   box-sizing: border-box;
 ` 
 export const DivTabR = styled.div`
-  position: relative;
-  width: 50%;
-  height: auto;
-  display: inline;
+ position: static;
+  width: 45%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
 
+
+  height: 400px;
+  display: block;
+  overflow: auto;
+
+ 
   box-sizing: border-box;
 `
 export const DivTabL = styled.div`

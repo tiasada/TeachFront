@@ -2,17 +2,15 @@ import { Table } from "react-bootstrap";
 import styled from "styled-components";
 
 const ClassTable = styled(Table)`
-  padding: 10px 900px 10px 1px ;
-  width: 200px;
+  /* width: max-content; */
+  border-collapse: collapse;
   border-radius: 10px;
   background-color: #E5E5E5;
-  margin-bottom: 100px;
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
  
 th, td{
-    width: 100%;
+
     border-left: 1px sold white; 
   }
 th{
