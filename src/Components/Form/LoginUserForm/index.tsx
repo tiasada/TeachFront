@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { Title, CreateButton } from './styles'
 import { Label as InputLabel } from '../../../Ui/Label'
 import axios from 'axios'
+import { login } from '../../../api'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('')
@@ -9,10 +10,7 @@ const LoginForm = () => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    axios.post(
-      'https://localhost:5001/auth/login',
-      { username, password }
-    )
+    login({ username, password})
     .then(resp => alert(resp.data))
     .catch(() => alert('Login inválido'))
   }

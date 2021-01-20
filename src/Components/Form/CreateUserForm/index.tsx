@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { CheckboxAndSelect, Title, CreateButton } from './styles'
 import { Label as InputLabel } from '../../../Ui/Label'
-import axios from 'axios'
+import { post } from '../../../api'
 
 // type EmailProps = {
 //   type: string
@@ -30,8 +30,8 @@ const CreateUserForm = ({ title, buttonText }: Props) => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    axios.post(
-      'https://localhost:5001/users',
+    post(
+      'users',
       { name, email, password, profile }
     )
   }
