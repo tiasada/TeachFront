@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import Button from '../../ui/Buttons/button'
 
-export const LoginForm = styled.form`
-  input {
+export const LoginInput = styled.input`
   padding: 12px 20px;
   width: 200px;
   border: none;
@@ -13,11 +12,8 @@ export const LoginForm = styled.form`
   margin-right: auto;
   display: block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
-}
-  
-input:focus {
+  &:focus {
   background-color: #D1F6FF;
   outline: none;
-}
+  }
 `
