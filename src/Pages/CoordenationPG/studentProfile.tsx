@@ -1,11 +1,11 @@
 import React from 'react'
 import { IconMenu } from '../../assets/Images'
-import Divbox, { DivProfile } from '../../Components/DivBox'
-import { MainTitle, Name } from '../../Components/Texts/Titles/styles'
-import Search from '../../Components/Bars'
-import { Navbarmenu } from '../../Components/DivBox/NavBars'
-import ClassTable from '../../Components/Tables'
-import { DivTabBox } from '~/Components/DivBox/styles'
+import Divbox, { DivProfile } from '../../components/DivBox'
+import { MainTitle, Name } from '../../components/Texts/Titles/styles'
+import Search from '../../components/Bars'
+import { Navbarmenu } from '../../components/DivBox/NavBars'
+import ClassTable from '../../components/Tables'
+import { DivTabBox } from '~/components/DivBox/styles'
 export const StudentInfo = () => (
   <main>
     <header role="banner">

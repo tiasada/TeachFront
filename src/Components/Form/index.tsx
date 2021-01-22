@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { LoginButton } from '../../Ui/Buttons/button/styles'
+import { LoginButton } from '../../ui/Buttons/button/styles'
 import { LoginForm } from './styles'
 
 const Form = () => (

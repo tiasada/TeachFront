@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import { Nav, Button, Form, FormControl} from 'react-bootstrap'
 import { Navmenu, NavClass} from './styles'
 import Logo from '../../../../assets/Images/TeachLogoB.png'
 
@@ -43,6 +43,13 @@ export const NavbarClass = () => (
             <Nav.Link href="/class/:id/grades">Notas</Nav.Link>
         </Nav>
         </NavClass.Collapse>
+    </NavClass>
+)
+export const NavbarClassBottom = () => (
+    <NavClass expand="lg">
+        <Form >
+            <Button type="submit">Submit</Button>
+        </Form>
     </NavClass>
 )
 export default NavbarTeacher

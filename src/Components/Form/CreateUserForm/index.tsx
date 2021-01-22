@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react'
-import { CheckboxAndSelect, Title, CreateButton } from './styles'
-import { Label as InputLabel } from '../../../Ui/Label'
+import { CheckboxAndSelect, CreateButton, Title } from './styles'
+import { Label as InputLabel } from '../../../ui/Label'
 import { post } from '../../../api'
 
 // type EmailProps = {
@@ -79,7 +79,7 @@ const CreateUserForm = ({ title, buttonText }: Props) => {
             <option value={1}>Torcedor</option>
         </select>
       </div>
-      <CreateButton>{buttonText}</CreateButton>
+      <CreateButton type="submit">{buttonText}</CreateButton>
     </form>
   )
 }

@@ -1,31 +1,31 @@
 import React from 'react'
-import { ClassTitle} from '../../Components/Texts/Titles/styles'
-import Search from '../../Components/Bars'
-import { TeacherClassCall } from '../../Components/Tables/TableBootsrap'
-import { Navbarmenu } from '../../Components/DivBox/NavBars'
+import { ClassTitle} from '../../components/Texts/Titles/styles'
+import Search from '../../components/Bars'
+import { TeacherClassGrades } from '../../components/Tables/TableBootsrap'
+import { Navbarmenu } from '../../components/DivBox/NavBars'
 import { useParams } from 'react-router-dom'
 
 type RouterParams = {
   id: string
 }
 
-export const ClassPage = () => {
+export const ClassGradesPage = () => {
   let { id } = useParams<RouterParams>();
   
   return(
     <main>
-      <header role="banner">
+      <header>
         <div ><Navbarmenu /></div>
           <div>
             <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
           </div>
           <div>
             <Search/>
-            <TeacherClassCall></TeacherClassCall>
+            <TeacherClassGrades></TeacherClassGrades>
           </div>
       </header>
     </main>
   )
 }
 
-export default ClassPage
+export default ClassGradesPage

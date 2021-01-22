@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuBtn, ClsBtn } from './button/styles'
+import { ClsBtn, MenuBtn } from './button/styles'
 
 type Props = {
   children: string,
@@ -9,7 +9,7 @@ type Props = {
 export const MnBtn = ({ children, onClick, ...rest }: Props) => {
   console.log(rest)
   return (
-    <MenuBtn onClick={onClick} {...rest}>{children}</MenuBtn>
+    <MenuBtn color="ligthGray" onClick={onClick} {...rest}>{children}</MenuBtn>
   )
 }
 

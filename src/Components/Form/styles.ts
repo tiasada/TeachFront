@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../../Ui/Buttons/button'
+import Button from '../../ui/Buttons/button'
 
 export const LoginForm = styled.form`
   input {

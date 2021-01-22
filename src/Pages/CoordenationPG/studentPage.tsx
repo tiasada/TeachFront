@@ -1,10 +1,10 @@
 import React from 'react'
 import { IconMenu } from '../../assets/Images'
-import Divbox, { DivTableBox, DivTableRight } from '../../Components/DivBox'
-import { LoginTitle, MainTitle } from '../../Components/Texts/Titles/styles'
-import Search from '../../Components/Bars'
-import { Navbarmenu } from '../../Components/DivBox/NavBars'
-import ClassTable from '../../Components/Tables'
+import Divbox, { DivTableBox, DivTableRight } from '../../components/DivBox'
+import { LoginTitle, MainTitle } from '../../components/Texts/Titles/styles'
+import Search from '../../components/Bars'
+import { Navbarmenu } from '../../components/DivBox/NavBars'
+import ClassTable from '../../components/Tables'
 export const MainPage = () => (
   <main>
     <header role="banner">

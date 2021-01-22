@@ -1,7 +1,7 @@
 import React from 'react'
-import { TextLogin } from '.././Components/Texts'
-import Logo from '.././Components/Logo'
-import Form from '.././Components/Form'
+import { TextLogin } from '../components/Texts'
+import Logo from '../components/Logo'
+import Form from '../components/Form'
 
 export const Login = () => (
   <main>

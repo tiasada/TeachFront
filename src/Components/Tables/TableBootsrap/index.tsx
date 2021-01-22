@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Table } from 'react-bootstrap'
-import { NavbarClass } from '../../DivBox/NavBars/NavTeacher'
+import { Button, Table } from 'react-bootstrap'
+import { NavbarClass, NavbarClassBottom } from '../../DivBox/NavBars/NavTeacher'
 import { DivTableBox } from '../../DivBox'
-import CheckPresence from '../../../Ui/Inputs'
+import CheckPresence from '../../../ui/Inputs'
 import { useToggle } from 'react-use'
 
 type Student = {
@@ -36,40 +36,7 @@ const Row = ({student }: RowProps ) => {
     </tr>
   )
 }
-export const TeacherClassTable : React.FC = ({ children }) => (
-    <DivTableBox>
-        <Table striped bordered hover size="sm">
-            <thead>
-                <tr>
-                    <th className="w-25" >Matricula</th>
-                    <th className="w-100">Nome</th>
-                    <th className="w-25">Nota1</th>
-                    <th className="w-25">Nota2</th>
-                    <th className="w-25">Nota3</th>
-                    <th className="w-25">Nota4</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>112313123</td>
-                    <td>Marcos</td>
-                    <td>8/10</td>
-                    <td>9/10</td>
-                    <td>7/10</td>
-                    <td>10/10</td>
-                </tr>
-                <tr>
-                    <td>2123123123</td>
-                    <td>Guilherme</td>
-                    <td>8/10</td>
-                    <td>7/10</td>
-                    <td>10/10</td>
-                    <td>9/10</td>
-                </tr>
-            </tbody>
-        </Table>
-    </DivTableBox>
-)
+
 const studentslist: Student[] = [
     {
       matricula:"12312323121",
@@ -116,6 +83,46 @@ export const TeacherClassCall : React.FC = ({ children }) => (
                  ) )}
             </tbody>
         </Table>
+        <NavbarClassBottom/>
     </DivTableBox>
 )
+
+
+const RowGrades = ({student }: RowProps ) => {
+  
+  const [present, setPrecense] = useToggle(false)
+  const [reason, setImput] = useState("")
+
+  return(
+    <tr >
+      <td>{student.matricula}</td>
+      <td>{student.name}</td>
+      <td><input style={{marginTop:"8px" ,}}/></td>
+      <td><input style={{marginTop:"8px" ,}}/></td>
+    </tr>
+  )
+}
+export const TeacherClassGrades : React.FC = ({ children }) => (
+  <DivTableBox>
+      <NavbarClass />
+      <Table striped bordered hover size="sm">
+          <thead>
+              <tr>
+                  <th className="w-25" >Matricula</th>
+                  <th className="w-100">Nome</th>
+                  <th className="w-25">1º Nota</th>
+                  <th className="w-25">2º Nota</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              {studentslist.map(item => (
+                  <RowGrades student={item} />
+               ) )}
+          </tbody>
+      </Table>
+      <NavbarClassBottom/>
+  </DivTableBox>
+)
+
 

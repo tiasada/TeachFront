@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react'
 import { Title, CreateButton } from './styles'
-import { Label as InputLabel } from '../../../Ui/Label'
+import { Label as InputLabel } from '../../../ui/Label'
 import axios from 'axios'
 import { login } from '../../../api'
 
@@ -11,7 +11,7 @@ const LoginForm = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     login({ username, password})
-    .then(resp => alert(resp.data))
+    .then(resp => alert("resp.data"))
     .catch(() => alert('Login inválido'))
   }
 
@@ -37,7 +37,7 @@ const LoginForm = () => {
           onChange={e => setPassword(e.target.value)}
         />
       </div>
-      <CreateButton>Logar</CreateButton>
+      <CreateButton type="submit">Logar</CreateButton>
     </form>
   )
 }
