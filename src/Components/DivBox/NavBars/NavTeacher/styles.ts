@@ -4,7 +4,7 @@ import { Navbar} from 'react-bootstrap'
 export const Navmenu = styled(Navbar)`
     position: sticky;
     width: 100% ; 
-    background-color: rgba(0,152,219,100);
+    background-color: #0098DB;
 `
 export const NavClass = styled(Navmenu)`
     background-image: none;

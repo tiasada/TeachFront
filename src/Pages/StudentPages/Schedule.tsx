@@ -31,19 +31,23 @@ export const Schedule = () => (
               marginBottom:'30px'}}>Abril</MonthName>
             <Row >
               <Col xs={2}
-                style={{border: '1px solid #000000',
+                style={{border: '1px   solid #000000',
+                borderRight: '0px',
                 backgroundColor: '#ffffff',
-                borderRadius: '3px',
+                borderRadius: '8px 0px 0px 8px',
                 height: '135px',}}>1 of 2</Col>
               <Col style={{border: '1px solid #000000',
-              borderRadius: '3px',}}>2 of 2</Col>
+              borderRadius: '0px 8px 8px 0px',}}>2 of 2</Col>
             </Row>
               <Row style={{marginTop: '50px'}}>
                 <Col xs={2}
                 style={{border: '1px solid #000000',
                 backgroundColor: '#ffffff',
+                borderRight: '0px',
+                borderRadius: '8px 0px 0px 8px',
                 height: '135px',}}>1 of 2</Col>
-                <Col style={{border: '1px solid #000000'}}>2 of 2</Col>
+                <Col style={{border: '1px solid #000000',
+              borderRadius: '0px 8px 8px 0px',}}>2 of 2</Col>
               </Row>
             </Container>
           </DivSchedule >
