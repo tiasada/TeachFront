@@ -1,8 +1,13 @@
 import React from 'react'
 import Checkbox from './styles'
 
-const CheckPresence : React.FC = ({ children }) => (
-    <Checkbox type="checkbox">{ children}</Checkbox>
+type Props = {
+    value : boolean
+    onChange : () => void
+
+}
+const CheckPresence = ({ value, onChange } : Props) => (
+    <Checkbox type="checkbox" value={value.toString()} onChange={onChange} />
 )
 
 export default CheckPresence

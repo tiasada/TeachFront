@@ -30,6 +30,7 @@
     "react-is": "^16.8.6",
     "react-router-dom": "^5.2.0",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-use": "^15.3.8",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

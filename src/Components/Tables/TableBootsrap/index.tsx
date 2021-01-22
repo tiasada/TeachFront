@@ -1,9 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { NavbarClass } from '../../DivBox/NavBars/NavTeacher'
 import { DivTableBox } from '../../DivBox'
 import CheckPresence from '../../../Ui/Inputs'
+import { useToggle } from 'react-use'
 
+type Student = {
+  matricula: string
+  name: string
+}
+type RowProps = {
+  student: Student ,
+  
+}
+
+// const Row = ({student, color }: {student: Student , color : string} ) => {
+
+const Row = ({student }: RowProps ) => {
+  
+  const [present, setPrecense] = useToggle(false)
+  const [reason, setImput] = useState("")
+
+  return(
+    <tr >
+      <td>{student.matricula}</td>
+      <td>{student.name}</td>
+      <td style={{ display: "flex" , margin: "4px"}}>
+          <CheckPresence value={present} onChange={() => {
+            setImput("")
+            setPrecense()
+          }}/>
+          <label style={{margin: "4px"}}>Presença</label>
+      </td>
+      <td><input disabled={present} style={{marginTop:"8px" ,}}/></td>
+    </tr>
+  )
+}
 export const TeacherClassTable : React.FC = ({ children }) => (
     <DivTableBox>
         <Table striped bordered hover size="sm">
@@ -38,7 +70,7 @@ export const TeacherClassTable : React.FC = ({ children }) => (
         </Table>
     </DivTableBox>
 )
-const studentslist = [
+const studentslist: Student[] = [
     {
       matricula:"12312323121",
       name: "marcos"
@@ -63,58 +95,6 @@ const studentslist = [
     {
       matricula:"kid",
       name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
-    },
-    {
-      matricula:"kid",
-      name: "léo"
     }
   ]
 export const TeacherClassCall : React.FC = ({ children }) => (
@@ -132,16 +112,10 @@ export const TeacherClassCall : React.FC = ({ children }) => (
             </thead>
             <tbody>
                 {studentslist.map(item => (
-                    <tr>
-                        <td>{item.matricula}</td>
-                        <td>{item.name}</td>
-                        <td style={{ display: "flex" , margin: "4px"}}>
-                            <CheckPresence/><label style={{margin: "4px"}}>Presença</label>
-                        </td>
-                        <td><input style={{marginTop:"5px"}}/></td>
-                    </tr>
+                    <Row student={item} />
                  ) )}
             </tbody>
         </Table>
     </DivTableBox>
 )
+
