@@ -28,38 +28,38 @@ export const MainPage = () => (
             <tbody>
               <tr>
                 <td>4544356651</td>
-                <td><a href="/studentprofile">Raielle Samira Cardoso Santana de Jesus</a></td>
+                <td><a href="/studentprofile">Neymar da Silva Santos Júnior</a></td>
                 <td>9,0</td>
                 <td>0</td>
               </tr>
               
               <tr>
                 <td>5444151142</td>
-                <td>Tiago Sá da Costa</td>
+                <td><a href="/studentprofile">Tiago Sá da Costa</a></td>
                 <td>9,0</td>
                 <td>0</td>
               </tr>
               <tr>
                 <td>5411542515</td>
-                <td>Iago Grah</td>
+                <td><a href="/studentprofile">Iago Bernardo Grah</a></td>
                 <td>9,0</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td>1544541151</td>
-                <td>Ana </td>
+                <td>1544541151</td> 
+                <td><a href="/studentprofile">Ana </a></td>
                 <td>9,0</td>
                 <td>1</td>
               </tr>
               <tr>
                 <td>5544544484</td>
-                <td>Maria </td>
+                <td><a href="/studentprofile">Maria </a></td>
                 <td>9,0</td>
                 <td>1</td>
               </tr>
               <tr>
                 <td>5211245514</td>
-                <td>João </td>
+                <td><a href="/studentprofile">João </a></td>
                 <td>9,0</td>
                 <td>1</td>
               </tr>

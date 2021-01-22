@@ -46,6 +46,21 @@ export const DivTabR = styled.div`
  
   box-sizing: border-box;
 `
+export const ProfileBox = styled.div`
+position: fixed;
+width: 45%;
+border-radius: 8px;
+margin-left: auto;
+margin-right: auto;
+
+
+height: 400px;
+display: inline-block;  
+overflow: auto;
+
+
+box-sizing: border-box;
+`
 export const DivTabL = styled.div`
   position: relative;
   width: 15%;
