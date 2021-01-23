@@ -5,11 +5,14 @@ import { LoginTitle, MainTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
 import { Navbarmenu } from '../../components/DivBox/NavBars'
 import ClassTable from '../../components/Tables'
+import { NavTeacherList } from '../../components/DivBox/NavBars/NavTeacher'
+
 export const MainPage = () => (
   <main>
     <header role="banner">
         <div style={{padding: "0px 1px 50px 0px"}}>
           <Navbarmenu/>
+          <th style = {{color: "#727272"}}>professores</th>
         </div>        
         <div>
           <LoginTitle>Infem 204</LoginTitle>
@@ -18,6 +21,7 @@ export const MainPage = () => (
           <Search/>
         </div>
         <DivTableRight>
+          <NavTeacherList />
           <ClassTable>
             <tr>
               <th className= "w-25">Matrícula</th>
@@ -28,7 +32,7 @@ export const MainPage = () => (
             <tbody>
               <tr>
                 <td>4544356651</td>
-                <td><a href="/studentprofile">Neymar da Silva Santos Júnior</a></td>
+                <td><a href="/studentprofile">Enzo Gabriel JR</a></td>
                 <td>9,0</td>
                 <td>0</td>
               </tr>

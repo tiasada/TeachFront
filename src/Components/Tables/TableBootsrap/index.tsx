@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Button, Table } from 'react-bootstrap'
 import { NavbarClass, NavbarClassBottom } from '../../DivBox/NavBars/NavTeacher'
 import { DivTableBox } from '../../DivBox'
-import CheckPresence from '../../../ui/Inputs'
 import { useToggle } from 'react-use'
+import CheckPresence from '../../../Ui/Inputs'
 
 type Student = {
   matricula: string

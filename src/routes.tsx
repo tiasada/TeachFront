@@ -8,7 +8,9 @@ import{
     CoordStudent,
 	Schedule,
 	ClassGradesPage,
-	StudentInfo
+	StudentInfo,
+	CoordTeacher,
+	TeacherInfo
 } from './Pages'
 
 
@@ -24,7 +26,9 @@ export default function App() {
 					<Route path="/class/:id" component={ClassPage}/>
 					<Route path="/teacher" component={Classes}/>
 					<Route path="/studentprofile" component={StudentInfo} />
-					<Route path="/coordenation" component={CoordStudent}/>
+					<Route path="/classpage" component={CoordStudent}/>
+					<Route path="/teacherpage" component={CoordTeacher}/>
+					<Route path="/teacherprofile" component={TeacherInfo}/>
 				</Switch>
         </Router>
     )
