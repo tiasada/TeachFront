@@ -5,6 +5,8 @@ import Schedule from './StudentPages/Schedule'
 import Classes from './TeachersPages/ClassesPage'
 import ClassGradesPage from './TeachersPages/ClassGradesPage'
 import StudentInfo from './CoordenationPG/studentProfile'
+import CoordTeacher from './CoordenationPG/TeacherPage'
+import TeacherInfo from './CoordenationPG/TeacherProfile'
 
 
 export {
@@ -14,5 +16,7 @@ export {
     CoordStudent,
     Schedule,
     Classes,
-    StudentInfo
+    StudentInfo,
+    CoordTeacher,
+    TeacherInfo
 };

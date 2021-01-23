@@ -21,7 +21,7 @@ export const ClassPage = () => {
           </div>
           <div>
             <Search/>
-            <TeacherClassCall></TeacherClassCall>
+            <TeacherClassCall />
           </div>
       </header>
     </main>

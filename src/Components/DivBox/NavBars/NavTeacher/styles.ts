@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Navbar} from 'react-bootstrap'
+import { Colors, colors } from '~/theme/colors'
 
 export const Navmenu = styled(Navbar)`
     position: sticky;

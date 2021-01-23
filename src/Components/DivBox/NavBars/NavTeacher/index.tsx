@@ -2,6 +2,12 @@ import React from 'react'
 import { Nav, Button, Form, FormControl} from 'react-bootstrap'
 import { Navmenu, NavClass} from './styles'
 import Logo from '../../../../assets/Images/TeachLogoB.png'
+import { Colors, colors } from '~/theme/colors'
+
+type Props = {
+    type?: 'submit' | 'button' | 'reset'
+    color: Colors
+  }
 
 export const NavbarTeacher = () => (
     <Navmenu expand="lg">
@@ -45,6 +51,7 @@ export const NavbarClass = () => (
         </NavClass.Collapse>
     </NavClass>
 )
+
 export const NavbarClassBottom = () => (
     <NavClass expand="lg">
         <Form >
@@ -53,3 +60,27 @@ export const NavbarClassBottom = () => (
     </NavClass>
 )
 export default NavbarTeacher
+
+export const NavTeacherList = () => (
+    <NavClass expand="lg">
+        <NavClass.Brand >
+            Turma *
+        </NavClass.Brand>
+        <NavClass.Toggle aria-controls="basic-navbar-nav" />
+        <NavClass.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+            <Nav.Link href="/teacherpage">Professores</Nav.Link>
+            <Nav.Link href="/class/:id/grades">Agenda</Nav.Link>
+            <Nav.Link href="/classpage">Turmas</Nav.Link>
+        </Nav>
+        </NavClass.Collapse>
+    </NavClass>
+)
+
+export const NavTeacherListBottom = () => (
+    <NavClass expand="lg">
+        <Nav className="mr-auto">
+            <Nav.Link href="/teacherpage">Cadastrar</Nav.Link>
+        </Nav>
+    </NavClass>
+)
