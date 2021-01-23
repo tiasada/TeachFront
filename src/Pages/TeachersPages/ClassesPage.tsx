@@ -1,8 +1,8 @@
 import React from 'react'
 import { ClassTitle } from '../../components/Texts/Titles/styles'
-import { ClassesButton } from '../../ui/Buttons'
+import { ClassesButton } from '../../Ui/Buttons'
 import Search from '../../components/Bars'
-import { DivClasslist } from '../../components/DivBox/Overflows'
+import { DivClasslist } from '../../Components/DivBox/Overflows'
 import { Navbarmenu } from '../../components/DivBox/NavBars'
 import { useHistory } from 'react-router-dom'
 
