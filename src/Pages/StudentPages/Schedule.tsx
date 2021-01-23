@@ -1,11 +1,12 @@
 import React from 'react'
 import { ScheduleTitle } from '../../components/Texts/Titles/styles'
-import { DivSchedule } from '../../components/DivBox/Overflows/index'
+import { DivSchedule } from '../../Components/DivBox/Overflows/index'
 import { Navbarmenu } from '../../components/DivBox/NavBars'
 import { MonthName } from '../../components/Texts/styles'
 import Col from 'react-bootstrap/esm/Col'
 import Row from 'react-bootstrap/esm/Row'
 import { Container } from 'react-bootstrap'
+import { Colors, colors } from '../../theme/colors'
 
 
 // import { Search } from '../Components/Bars/index'

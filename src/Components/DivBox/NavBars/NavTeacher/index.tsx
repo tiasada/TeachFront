@@ -2,6 +2,12 @@ import React from 'react'
 import { Nav, Button, Form, FormControl} from 'react-bootstrap'
 import { Navmenu, NavClass} from './styles'
 import Logo from '../../../../assets/Images/TeachLogoB.png'
+import { Colors, colors } from '~/theme/colors'
+
+type Props = {
+    type?: 'submit' | 'button' | 'reset'
+    color: Colors
+  }
 
 export const NavbarTeacher = () => (
     <Navmenu expand="lg">

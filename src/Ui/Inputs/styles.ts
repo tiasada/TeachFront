@@ -5,4 +5,4 @@ const Checkbox = styled.input`
     height: 20px;
     margin-top: 5px;
 `
-export default Checkbox;
+export default Checkbox

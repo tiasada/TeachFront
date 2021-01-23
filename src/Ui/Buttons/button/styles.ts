@@ -1,8 +1,8 @@
-import { type } from 'os'
 import styled from 'styled-components'
+import { Colors, colors } from '~/theme/colors'
 
 type Props ={
-  color:string
+  color: Colors
 }
 
 export const MenuBtn = styled.button<Props>`
