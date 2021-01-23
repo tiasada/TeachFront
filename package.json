@@ -4,7 +4,7 @@
   "description": "Front Dev TeachProject",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel src/index.html"
   },
   "repository": {
     "type": "git",

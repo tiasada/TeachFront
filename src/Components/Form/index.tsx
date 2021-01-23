@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { FormEvent, useState } from 'react'
-import { LoginButton } from '../../ui/Buttons/button/styles'
+import { LoginButton } from '/ui/Buttons/button/styles'
 import { LoginInput } from './styles'
-import { login } from '../../api'
+import { login } from '/api'
 
 
 const Form = () => {

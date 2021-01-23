@@ -17,7 +17,7 @@ export const ClassGradesPage = () => {
       <header>
         <div ><Navbarmenu /></div>
           <div>
-            <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
+            <ClassTitle>Escola E.E.F.Hogwarts</ClassTitle>
           </div>
           <div>
             <Search/>
