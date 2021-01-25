@@ -8,7 +8,7 @@ export const Divbox: React.FC = ({ children }) => (
 export const DivTableBox: React.FC = ({ children }) => (
     <DivTabBox>{ children }</DivTabBox>
 )
-
+//used by zyasmim
 export const DivTableRight: React.FC = ({ children }) => (
     <DivTabR>{ children }</DivTabR>
 )

@@ -1,11 +1,10 @@
 import React from 'react'
-import { IconMenu } from '../../assets/Images'
-import Divbox, { DivTableBox, DivTableRight } from '../../components/DivBox'
-import { LoginTitle, MainTitle } from '../../components/Texts/Titles/styles'
+import {  DivTableRight } from '../../components/DivBox'
+import { LoginTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
-import { Navbarmenu } from '../../components/DivBox/NavBars'
+import { Navbarmenu } from '../../components/NavBars'
 import ClassTable from '../../components/Tables'
-import { NavTeacherList, NavTeacherListBottom } from '../../components/DivBox/NavBars/NavTeacher'
+import { NavCoordTeachList, NavCoordTeacherBottom } from '../../components/NavBars'
 export const CoordTeacher = () => (
   <main>
     <header role="banner">
@@ -19,7 +18,7 @@ export const CoordTeacher = () => (
           <Search/>
         </div>
         <DivTableRight>
-            <NavTeacherList/>
+            <NavCoordTeachList/>
           <ClassTable>
             <tr>
               <th className= "w-25">CPF</th>
@@ -67,7 +66,7 @@ export const CoordTeacher = () => (
               </tr>
             </tbody>
           </ClassTable>
-          <NavTeacherListBottom />
+          <NavCoordTeacherBottom />
         </DivTableRight>
     </header>
   </main>

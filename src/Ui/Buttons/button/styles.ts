@@ -1,26 +1,31 @@
 import styled from 'styled-components'
-import { Colors, colors } from '~/theme/colors'
+import { Colors, colors } from '/theme/colors'
 
 type Props ={
-  color: Colors
+  color: string
 }
 
 export const MenuBtn = styled.button<Props>`
   padding: 12px 20px;
   min-width: 100%;
-  border: 2px;
+  border: 10px;
+  border-radius: 8px;
+  background-color: transparent;
   border-color: black;
-  display: block;
-  color: ${({color}) => color };
+  display: inline-block;
+  color:  ${({color}) => color };
   &:focus {
-    background-color: #D1F6FF;
+    background-color: #ddd;
+    color: black;
+    border-color: black;
     outline: none;
   }
   &:hover {
-    background-color: lightblue;
+    background-color: ${({color}) => color };
     opacity: 0.5;
-    outline: black;
-    color: inherit;
+    outline-color: black;
+    outline-width: 4px;
+    color: white;
   }
 `
 
@@ -45,7 +50,7 @@ export const ClsBtn = styled.button`
     color: inherit;
   }
 `
-export const LoginButton = styled.button`
+export const LoginButton = styled.button<Props>`
   padding: 12px 20px;
   border-radius: 40px;
   width: 150px;
@@ -53,7 +58,7 @@ export const LoginButton = styled.button`
   margin-left: auto;
   margin-right: auto;
   display: block;
-  color: #858585;
+  color: ${({color}) => color };
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 &:focus {

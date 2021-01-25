@@ -1,12 +1,16 @@
 import React from 'react'
-import { MenuIconSt } from './styles'
-import Img from './MenuIcon.png'
-import logo from './TeachLogo.png'
+import { NavIconSt, NotStyle } from './styles'
+import Img from './TeachNavIcon.png'
+import logo from './TeachIcon.png'
+import NotImage from './NotFoundPageIcon.png'
 
 
-export const IconMenu = () => (
-    <MenuIconSt src= {Img}/>
+export const NavIcon = () => (
+    <NavIconSt src= {Img}/>
 )
 export const Logo = () => (
     <Img src= {logo}/>
+)
+export const NotFoundImage = () => (
+    <NotStyle src={NotImage} />
 )

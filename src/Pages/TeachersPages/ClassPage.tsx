@@ -2,7 +2,7 @@ import React from 'react'
 import { ClassTitle} from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
 import { TeacherClassCall } from '../../components/Tables/TableBootsrap'
-import { Navbarmenu } from '../../components/DivBox/NavBars'
+import { Navbarmenu } from '../../components/NavBars'
 import { useParams } from 'react-router-dom'
 
 type RouterParams = {

@@ -5,7 +5,6 @@ import Form from '../components/Form'
 
 export const Login = () => (
   <main>
-    <TextLogin />
     <Logo />
     <Form />
   </main>

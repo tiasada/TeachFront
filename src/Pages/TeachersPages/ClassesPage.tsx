@@ -1,9 +1,9 @@
 import React from 'react'
 import { ClassTitle } from '../../components/Texts/Titles/styles'
-import { ClassesButton } from '../../Ui/Buttons'
+import { ClassesButton } from '../../ui/Buttons'
 import Search from '../../components/Bars'
-import { DivClasslist } from '../../Components/DivBox/Overflows'
-import { Navbarmenu } from '../../components/DivBox/NavBars'
+import { DivClasslist } from '../../components/DivBox/Overflows'
+import { Navbarmenu } from '../../components/NavBars'
 import { useHistory } from 'react-router-dom'
 
 const classrooms = [

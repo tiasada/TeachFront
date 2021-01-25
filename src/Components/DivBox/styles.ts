@@ -29,7 +29,8 @@ export const DivTabBox = styled.div`
 
  
   box-sizing: border-box;
-` 
+`
+// used by zyasmim
 export const DivTabR = styled.div`
  position: static;
   width: 45%;

@@ -1,12 +1,7 @@
 import React from 'react'
-import { IconMenu } from '../../assets/Images'
-import Divbox, { DivProfile } from '../../components/DivBox'
-import { MainTitle, Name } from '../../components/Texts/Titles/styles'
-import Search from '../../components/Bars'
-import { Navbarmenu } from '../../components/DivBox/NavBars'
-import ClassTable from '../../components/Tables'
-import { DivTabBox } from '~/components/DivBox/styles'
-import CreateUserForm from '../../components/Form/CreateUserForm'
+import Divbox, { DivProfile } from '/components/DivBox'
+import { Navbarmenu } from '/components/NavBars'
+
 export const TeacherInfo = () => (
   <main>
     <header role="banner">
