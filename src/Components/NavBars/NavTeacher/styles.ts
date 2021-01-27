@@ -10,4 +10,6 @@ export const Navmenu = styled(Navbar)`
 export const NavClass = styled(Navmenu)`
     background-image: none;
     background-color: #E5E5E5;
+    display: flex;
+    justify-content: space-between;
 `

@@ -21,7 +21,7 @@ export const ClassGradesPage = () => {
           </div>
           <div>
             <Search/>
-            <TeacherClassGrades></TeacherClassGrades>
+            <TeacherClassGrades />
           </div>
       </header>
     </main>

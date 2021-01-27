@@ -8,5 +8,4 @@ justify-content: center;
 align-items: center;
 display: flex;
 background-color: white;
-
 `

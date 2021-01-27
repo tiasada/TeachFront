@@ -26,3 +26,6 @@ export const login = (loginRequest: LoginRequest) => {
 export const post = <T>(url : string, data: any) => (
     axiosInstance.post<T>(`/${url}`,data)
 )
+export const get = <T>(url : string ) => (
+    axiosInstance.get<T>(`/${url}`)
+)

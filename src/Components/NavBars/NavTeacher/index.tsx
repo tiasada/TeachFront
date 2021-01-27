@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Button, Form, FormControl} from 'react-bootstrap'
+import { Nav, Button, Form, FormControl } from 'react-bootstrap'
 import { Navmenu, NavClass } from './styles'
 import { NavIcon } from '../../../assets/Images'
 
@@ -11,8 +11,8 @@ export const NavbarTeacher = () => (
         </Navmenu.Brand>
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        </Nav>
+            <Nav className="mr-auto">
+            </Nav>
         </Navmenu.Collapse>
     </Navmenu>
 )
@@ -24,20 +24,23 @@ export const NavbarClass = () => (
         </NavClass.Brand>
         <NavClass.Toggle aria-controls="basic-navbar-nav" />
         <NavClass.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-            <Nav.Link href="/class/:id">Chamada</Nav.Link>
-            <Nav.Link href="/class/:id/grades">Notas</Nav.Link>
-        </Nav>
+            <Nav className="mr-auto">
+                <Nav.Link href="/class/:id">Chamada</Nav.Link>
+                <Nav.Link href="/class/:id/grades">Notas</Nav.Link>
+            </Nav>
         </NavClass.Collapse>
     </NavClass>
 )
+type NavBottomProps = {
+    children: React.ReactNode
+}
 
-export const NavbarClassBottom = () => (
-    <NavClass expand="lg">
-        <Form >
-            <Button type="submit">Submit</Button>
-        </Form>
-        <Button type="button"> Adicionar Nota</Button>
-    </NavClass>
-)
+export const NavbarClassBottom = ({children }: NavBottomProps) => {
+    return (
+        <NavClass expand="lg">
+            {children}
+        </NavClass>
+    )
+
+}
 export default NavbarTeacher
