@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Navmenu } from '/components/NavBars/NavTeacher/styles'
+import { Navmenu } from '../../NavBars/NavTeacher/styles'
 
 export const NavClass = styled(Navmenu)`
     background-image: none;

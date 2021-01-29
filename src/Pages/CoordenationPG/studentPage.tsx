@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Divbox, { DivTableBox, DivTableRight } from '/components/DivBox'
-import { LoginTitle } from '/components/Texts/Titles/styles'
-import Search from '/components/Bars'
-import { Navbarmenu } from '/components/NavBars'
-import ClassTable from '/components/Tables'
-import { NavTeacherList } from '/components/NavBars/NavCoord'
+import Divbox, { DivTableBox, DivTableRight } from '../../components/DivBox'
+import { LoginTitle } from '../../components/Texts/Titles/styles'
+import Search from '../../components/Bars'
+import { Navbarmenu } from '../../components/NavBars'
+import ClassTable from '../../components/Tables'
+import { NavTeacherList } from '../../components/NavBars/NavCoord'
 
 export const MainPage = () => (
   <main>

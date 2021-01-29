@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+type Props = {
+  color: string
+}
+
 export const SearchBar = styled.input`
   padding: 12px 30px;
   width: 200px;
   border: none;
   border-radius: 40px;
-  background-color: #E5E5E5;
+  background-color: 'secundary';
   margin-bottom: 100px;
   margin-top: 80px;
   margin-left: auto;

@@ -1,6 +1,6 @@
 import React from 'react'
-import Divbox, { DivProfile } from '/components/DivBox'
-import { Navbarmenu } from '/components/NavBars'
+import Divbox, { DivProfile } from '../../components/DivBox'
+import { Navbarmenu } from '../../components/NavBars'
 
 export const TeacherInfo = () => (
   <main>
