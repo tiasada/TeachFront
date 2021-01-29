@@ -15,7 +15,7 @@ export const CoordTeacher = () => (
           <LoginTitle>Professores</LoginTitle>
         </div>
         <div>
-          <Search/>
+          <Search color='secondary' placeholder='Search...'/>
         </div>
         <DivTableRight>
             <NavCoordTeachList/>

@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 import { Navmenu } from '../../NavBars/NavTeacher/styles'
 
-export const NavClass = styled(Navmenu)`
+type Props = {
+    color: string
+}
+
+export const NavClass = styled(Navmenu)<Props>`
     background-image: none;
     border-radius: none;
-    background-color: #E5E5E5;
+    background-color: ${({color}) => color };
 `

@@ -46,7 +46,7 @@ export const ClassesPage = () => {
         </div>
         <div>
           <ClassTitle>Suas Turmas</ClassTitle>
-          <Search color='primary'/>
+          <Search color='secondary' placeholder='sua mae aquela...'/>
           <DivClasslist>
             {classrooms.map(item => (
               <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>

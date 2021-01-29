@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Colors, colors } from '/theme/colors'
 
 type Props ={
   color: string
@@ -13,7 +12,7 @@ export const MenuBtn = styled.button<Props>`
   background-color: transparent;
   border-color: black;
   display: inline-block;
-  color:  ${({color}) => color };
+  color: ${({color}) => color };
   &:focus {
     background-color: #ddd;
     color: black;

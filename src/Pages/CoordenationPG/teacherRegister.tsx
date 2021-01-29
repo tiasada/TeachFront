@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react'
 import { post } from '/api'
-import { CreateButton, Title } from '/components/Form/CreateUserForm/styles'
+import { CreateButton, Title } from '../../components/Form/CreateUserForm/styles'
 import { Label as InputLabel } from '../../ui/Label'
 
 type Props = {

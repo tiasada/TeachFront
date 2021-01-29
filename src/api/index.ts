@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 type LoginRequest ={
-     username: string
-     password: string
+    username: string
+    password: string
 }
 
 const USER_TOKEN = 'User token'
@@ -27,5 +27,5 @@ export const post = <T>(url : string, data: any) => (
     axiosInstance.post<T>(`/${url}`,data)
 )
 export const get = <T>(url : string ) => (
-    axiosInstance.get<T>(`/${url}`)
+	axiosInstance.get<T>(`/${url}`)
 )
