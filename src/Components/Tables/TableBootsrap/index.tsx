@@ -5,7 +5,7 @@ import { DivTableBox } from '../../DivBox'
 import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
 import { get } from '/api'
-import Button from '/ui/Buttons/button'
+import Button from '../../../ui/Buttons/button'
 
 
 type Student = {

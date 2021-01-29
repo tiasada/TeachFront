@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavbarStudents } from '/components/NavBars'
-import Calendary from '/components/Calendary'
+import { NavbarStudents } from '../../components/NavBars'
+import Calendary from '../../components/Calendary'
 
 export const Schedule = () => (
   <main>

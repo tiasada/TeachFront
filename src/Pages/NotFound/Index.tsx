@@ -1,7 +1,7 @@
 import React from 'react'
 import { NotFoundImage } from '/assets/Images'
 import { TextPattern } from '../../components/Texts'
-import { ButtonSecundary } from '/ui/Buttons/button'
+import { ButtonSecundary } from '../../ui/Buttons/button'
 
 export const NotFound = () => (
   <main>

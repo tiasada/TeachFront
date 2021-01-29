@@ -8,6 +8,7 @@ import StudentInfo from './CoordenationPG/studentProfile'
 import CoordTeacher from './CoordenationPG/TeacherPage'
 import TeacherInfo from './CoordenationPG/TeacherProfile'
 import NotFound from './NotFound/Index'
+import TeacherRegister from './CoordenationPG/teacherRegister'
 
 
 export {
@@ -20,5 +21,7 @@ export {
     StudentInfo,
     CoordTeacher,
     TeacherInfo,
-    NotFound
+    NotFound,
+	TeacherRegister
+
 };
