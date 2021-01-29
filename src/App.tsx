@@ -11,8 +11,4 @@ function App() {
   );
 }
 
-// export const App = () => (
-//   <PagesApp />
-// )
-
 export default App

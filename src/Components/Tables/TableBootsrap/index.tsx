@@ -4,7 +4,6 @@ import { NavbarClass, NavbarClassBottom } from '../../NavBars/NavTeacher'
 import { DivTableBox } from '../../DivBox'
 import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
-import { get } from '/api'
 import Button from '../../../ui/Buttons/button'
 
 
@@ -202,6 +201,10 @@ export const TeacherClassGrades: React.FC = ({ children }) => {
     setStudents(updatedStudents)
   }
 
+  const addGradeColumn = () => {
+    
+  }
+
   useEffectOnce(() => {
     // get().then(resp => setStudents(resp.data))
     Promise.resolve(studentsGrades).then(resp => setStudents(resp))
@@ -232,7 +235,7 @@ export const TeacherClassGrades: React.FC = ({ children }) => {
       </Table>
       <NavbarClassBottom>
         <Button type="button" color="primary">Enviar</Button>
-        <Button type="button" color="primary">adicionar nota</Button>
+        <Button type="button" color="primary" >adicionar avaliação</Button>
       </NavbarClassBottom>
     </DivTableBox>
   )
