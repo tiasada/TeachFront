@@ -1,5 +1,4 @@
 import React from 'react'
-import { TextLogin } from '../components/Texts'
 import Logo from '../components/Logo'
 import Form from '../components/Form'
 
