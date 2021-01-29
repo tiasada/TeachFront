@@ -4,11 +4,12 @@ import { Colors, colors } from '/theme/colors'
 
 type Props = {
     color: Colors
+    placeholder: string
   }
 
-const Search = ({color}: Props) => {
+const Search = ({color, placeholder}: Props) => {
     return( 
-    <SearchBarMatters placeholder="Search..." color={colors[color]} type="text" />
+    <SearchBarMatters placeholder={placeholder} color={colors[color]} type="text" />
     )
 }
 

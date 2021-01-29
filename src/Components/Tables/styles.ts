@@ -10,12 +10,11 @@ const ClassTable = styled(Table)`
   margin-right: auto;
  
 th, td{
-
     border-left: 1px sold white; 
   }
 th{
     vertical-align: left;
-    color : #0098DB;
+    color: ${({ color }) => color};
     }
 td{
     padding: 5px 40px;
