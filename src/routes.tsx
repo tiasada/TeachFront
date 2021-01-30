@@ -12,7 +12,8 @@ import{
 	CoordTeacher,
 	TeacherInfo,
 	NotFound,
-	TeacherRegister
+	TeacherRegister,
+	StudentRegister
 } from './Pages'
 
 
@@ -32,6 +33,7 @@ export default function App() {
 					<Route path="/teacherpage" component={CoordTeacher}/>
 					<Route path="/teacherprofile" component={TeacherInfo}/>
 					<Route path="/teacherregister" component={TeacherRegister}/>
+					<Route path="/studentregister" component={StudentRegister}/>
 					<Route path="*" component={NotFound}/>
 				</Switch>
         </Router>

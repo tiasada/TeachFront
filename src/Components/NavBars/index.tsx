@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavTeacherList, NavTeacherListBottom } from './NavCoord'
+import { NavStudentListBottom, NavTeacherList, NavTeacherListBottom } from './NavCoord'
 import { NavbarStudent } from './NavStudent'
 import { NavbarTeacher } from './NavTeacher'
 
@@ -19,4 +19,7 @@ export const NavCoordTeachList = () => (
 )
 export const NavCoordTeacherBottom = () => (
     <NavTeacherListBottom />   
+)
+export const NavCoordStudentBottom = () => (
+    <NavStudentListBottom />   
 )
