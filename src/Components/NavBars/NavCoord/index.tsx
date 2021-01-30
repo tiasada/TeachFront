@@ -30,3 +30,11 @@ export const NavTeacherListBottom = () => (
         </Nav>
     </NavClass>
 )
+
+export const NavStudentListBottom = () => (
+    <NavClass expand="lg">
+        <Nav className="mr-auto">
+            <Nav.Link href="/studentregister">Cadastrar</Nav.Link>
+        </Nav>
+    </NavClass>
+)

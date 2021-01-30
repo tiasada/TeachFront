@@ -3,7 +3,7 @@ import React from 'react'
 import Divbox, { DivTableBox, DivTableRight } from '../../components/DivBox'
 import { LoginTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
-import { Navbarmenu } from '../../components/NavBars'
+import { Navbarmenu, NavCoordStudentBottom, NavCoordTeacherBottom } from '../../components/NavBars'
 import ClassTable from '../../components/Tables'
 import { NavTeacherList } from '../../components/NavBars/NavCoord'
 
@@ -12,7 +12,6 @@ export const MainPage = () => (
     <header role="banner">
         <div style={{padding: "0px 1px 50px 0px"}}>
           <Navbarmenu/>
-          <th style = {{color: "#727272"}}>professores</th>
         </div>        
         <div>
           <LoginTitle>Infem 204</LoginTitle>
@@ -69,6 +68,7 @@ export const MainPage = () => (
               </tr>
             </tbody>
           </ClassTable>
+          <NavCoordStudentBottom />
         </DivTableRight>
     </header>
   </main>
