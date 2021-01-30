@@ -3,7 +3,11 @@ import { Nav, Tab, Tabs } from 'react-bootstrap'
 import { Navmenu } from './styles'
 import { NavIcon } from '/assets/Images'
 
-export const NavbarStudent = () => (
+type Props = {
+    color: string
+}
+
+export const NavbarStudent = ({ color }: Props) => (
     <Navmenu expand="lg">
         <Navmenu.Brand href="/student">
             <NavIcon />{' '}

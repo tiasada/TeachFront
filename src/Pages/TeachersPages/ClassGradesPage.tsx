@@ -20,7 +20,7 @@ export const ClassGradesPage = () => {
             <ClassTitle>Escola E.E.F.Hogwarts</ClassTitle>
           </div>
           <div>
-            <Search/>
+            <Search color='secondary' placeholder='Search...'/>
             <TeacherClassGrades />
           </div>
       </header>

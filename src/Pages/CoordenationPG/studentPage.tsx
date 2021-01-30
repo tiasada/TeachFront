@@ -18,10 +18,10 @@ export const MainPage = () => (
           <LoginTitle>Infem 204</LoginTitle>
         </div>
         <div>
-          <Search/>
+          <Search color='secondary' placeholder='Search...'/>
         </div>
         <DivTableRight>
-          <NavTeacherList />
+          <NavTeacherList color='secondary'/>
           <ClassTable>
             <tr>
               <th className= "w-25">Matrícula</th>

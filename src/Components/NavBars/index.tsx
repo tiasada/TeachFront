@@ -5,17 +5,17 @@ import { NavbarTeacher } from './NavTeacher'
 
 // teachers pages
 export const Navbarmenu = () => (
-    <NavbarTeacher />   
+    <NavbarTeacher color='primary'/>   
 )
 
 // students pages
 export const NavbarStudents = () => (
-    <NavbarStudent />   
+    <NavbarStudent color='primary'/>   
 )
 
 // Coordenation pages
 export const NavCoordTeachList = () => (
-    <NavTeacherList />
+    <NavTeacherList color='secondary' />
 )
 export const NavCoordTeacherBottom = () => (
     <NavTeacherListBottom />   

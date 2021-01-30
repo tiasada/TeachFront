@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
+type Props = {
+  color: string
+}
 
-export const DivBx = styled.div`
+export const DivBx = styled.div<Props>`
   position: absolute;
   width: 1083px;
   height: 500px;
@@ -9,7 +12,7 @@ export const DivBx = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  background: #C4C4C4;
+  background: ${({color})=> color};
   border: 1px solid #000000;
   border-radius: 8px;
   box-sizing: border-box;
@@ -32,7 +35,7 @@ export const DivTabBox = styled.div`
 `
 // used by zyasmim
 export const DivTabR = styled.div`
- position: static;
+  position: static;
   width: 45%;
   border-radius: 8px;
   border: 1px solid #ddd;

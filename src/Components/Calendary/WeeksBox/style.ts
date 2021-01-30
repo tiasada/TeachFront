@@ -11,7 +11,7 @@ align-items: center;
 display: block;
 
 `
-export const WeekDayDiv = styled<Props>.div`
+export const WeekDayDiv = styled.div<Props>`
 width: 13%;
 height: 50px;  
 align-items: center;

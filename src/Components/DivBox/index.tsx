@@ -1,8 +1,14 @@
 import React from 'react'
 import { DivBx, DivTabBox, DivTabL, DivTabR, ProfileBox } from './styles'
+import { Colors, colors } from '/theme/colors'
 
-export const Divbox: React.FC = ({ children }) => (
-    <DivBx>{ children }</DivBx>
+type Props = {
+    color: Colors
+    children: string
+}
+
+export const Divbox = ({ color, children }: Props) => (
+    <DivBx color={colors[color]}>{ children }</DivBx>
 )
 
 export const DivTableBox: React.FC = ({ children }) => (

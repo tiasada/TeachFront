@@ -20,7 +20,7 @@ export const ClassPage = () => {
             <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
           </div>
           <div>
-            <Search/>
+            <Search color='secondary' placeholder='Search...' />
             <TeacherClassCall />
           </div>
       </header>

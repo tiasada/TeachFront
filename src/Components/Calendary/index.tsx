@@ -6,9 +6,9 @@ import Weekbox from './WeeksBox'
 
 const Calendary = () => (
     <DivOfCalendary>
-        <CalendarNav />
+        <CalendarNav color='terciary' />
         <Weekbox />
-        <Daybox />
+        <Daybox color='terciary'/>
     </DivOfCalendary>
 )
 export default Calendary

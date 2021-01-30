@@ -1,8 +1,13 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap'
-import { NavClass} from './styles'
+import { NavClass } from './styles'
+import { Colors } from '/theme/colors'
 
-export const NavTeacherList = () => (
+type Props = {
+    color: Colors
+}
+
+export const NavTeacherList = ({color}: Props) => (
     <NavClass expand="lg">
         <NavClass.Brand >
             Escola 'mySchool'
