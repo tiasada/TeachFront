@@ -1,83 +1,94 @@
 import React, { FormEvent, useState } from 'react'
-import { CheckboxAndSelect, CreateButton, Title } from './styles'
+import { CreateButton, Title } from './styles'
 import { Label as InputLabel } from '../../../ui/Label'
-import { post } from '../../../api'
-
-// type EmailProps = {
-//   type: string
-//   placeholder: string
-// }
+import { register } from '/api'
+import Input from '/Input'
+import { useEffectOnce } from 'react-use'
 
 type Props = {
   title: string
   buttonText: string
-  emailProps: {
-    type: string
-    placeholder: string
-  }
+  role: string
+}
+type Inputs = {
+  type: string
+  title: string
+  value: string
+  holder?: string
+  set: React.Dispatch<React.SetStateAction<string>>
 }
 
-// const Form = (props) => (
-//   props.title
-//   props.buttonText
-  
-// EcmaScript - Destructuring
-const CreateUserForm = ({ title, buttonText }: Props) => {
+const CreateUserForm = ({ title, buttonText, role }: Props) => {
   const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [profile, setProfile] = useState<number>()
+  const [cpf, setCpf] = useState('')
+  const [phonenumber, setPhonenumber] = useState('')
+  const [birthdate, setBirth] = useState('')
+
+  const [registration, setRegistration] = useState('')
+
+  const inputs: Inputs[] = [
+    {
+      type: 'text',
+      title: 'name',
+      value: name,
+      holder: 'nome',
+      set: setName
+    },
+    {
+      type: 'text',
+      title: 'cpf',
+      value: cpf,
+      holder: '00011100011',
+      set: setCpf
+    },
+    {
+      type: 'number',
+      title: 'phonenumber',
+      value: phonenumber,
+      set: setPhonenumber
+    },
+    {
+      type: 'date',
+      title: 'birthdate',
+      value: birthdate,
+      set: setBirth
+    },
+    {
+      type: 'text',
+      title: 'registration',
+      value: registration,
+      holder: 'Matricula',
+      set: setRegistration
+    }
+  ]
+
+  const user = { name, cpf, phonenumber, birthdate, registration, role }
+
+
+
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    post(
-      'users',
-      { name, email, password, profile }
-    )
+    register(user)
+      .then(() => alert('good'))
   }
 
   return (
-    // Prevenindo que a página sofra um reload
     <form onSubmit={onSubmit}>
       <Title>{title}</Title>
       <div>
-        <InputLabel>Nome</InputLabel>
-        <input
-          name='name'
-          placeholder='João da Silva'
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-      </div>
-      <div>
-        <InputLabel>Email</InputLabel>
-        <input
-          type='email'
-          name='email'
-          placeholder='jhon.test@gmail.com'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <InputLabel>Senha</InputLabel>
-        <input
-          type='password'
-          name='password'
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <InputLabel>Perfil</InputLabel>
-        <select
-          value={profile}
-          onChange={e => setProfile(parseInt(e.target.value))}
-        >
-            <option></option>
-            <option value={0}>CBF</option>
-            <option value={1}>Torcedor</option>
-        </select>
+        | {inputs.map((item, index) => (
+        <section key={index}>
+          <InputLabel>{item.title}</InputLabel>
+          <Input
+            type={item.type}
+            name={item.title}
+            placeholder={item.holder}
+            value={item.value}
+            onChange={e => item.set(e.target.value)}
+          />
+        </section>
+      ))}
       </div>
       <CreateButton type="submit">{buttonText}</CreateButton>
     </form>

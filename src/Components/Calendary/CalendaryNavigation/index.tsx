@@ -7,11 +7,9 @@ type Props = {
 	color: Colors
 }
 
-export const CalendarNav = ({color}:Props) => (
+export const CalendarNav = ({ color }: Props) => (
 	<NavClass expand="lg" color={colors[color]}>
-		<NavClass.Brand >
-			'Ano: ####'
-        </NavClass.Brand>
+		<NavClass.Brand >Ano: ####</NavClass.Brand>
 		<NavClass.Toggle aria-controls="basic-navbar-nav" />
 		<NavClass.Collapse id="basic-navbar-nav">
 			<Nav className="mr-auto">

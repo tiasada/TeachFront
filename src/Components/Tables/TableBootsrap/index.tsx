@@ -6,7 +6,6 @@ import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
 import Button from '../../../ui/Buttons/button'
 
-
 type Student = {
   matricula: string
   name: string
@@ -20,10 +19,6 @@ type RowProps = {
 type Grade = {
   name: string
 }
-type ColumnProps = {
-  grade: Grade
-
-}
 type ContextValues = {
   students: Student[]
   setStudent: (student: Student) => void
@@ -32,26 +27,24 @@ type ContextValues = {
 // const Row = ({student, color }: {student: Student , color : string} ) => {
 
 const Row = ({ student }: RowProps) => {
-
-
   const [present, setPrecense] = useToggle(false)
-  const [reason, setReason] = useState("")
+  const [reason, setReason] = useState('')
 
   return (
     <tr >
       <td>{student.matricula}</td>
       <td>{student.name}</td>
-      <td style={{ display: "flex", margin: "4px" }}>
+      <td style={{ display: 'flex', margin: '4px' }}>
         <CheckPresence value={present} onChange={() => {
-          setReason("")
+          setReason('')
           setPrecense()
         }} />
-        <label style={{ margin: "4px" }}>Presença</label>
+        <label style={{ margin: '4px' }}>Presença</label>
       </td>
       <td>
         <input
           disabled={present}
-          style={{ marginTop: "8px", }}
+          style={{ marginTop: '8px' }}
           name='reason'
           placeholder='Motivo da falta'
           value={reason}
@@ -64,33 +57,32 @@ const Row = ({ student }: RowProps) => {
 
 const studentslist: Student[] = [
   {
-    matricula: "12312323121",
-    name: "marcos"
+    matricula: '12312323121',
+    name: 'marcos'
   },
   {
-    matricula: "234214242342",
-    name: "iago"
+    matricula: '234214242342',
+    name: 'iago'
   },
   {
-    matricula: "354234353345",
-    name: "guilherme"
+    matricula: '354234353345',
+    name: 'guilherme'
   },
   {
-    matricula: "4353534523",
-    name: "tiago"
+    matricula: '4353534523',
+    name: 'tiago'
   },
   {
-    matricula: "53453252323",
-    name: "gabrielle"
-  }
-  ,
+    matricula: '53453252323',
+    name: 'gabrielle'
+  },
   {
-    matricula: "kid",
-    name: "léo"
+    matricula: 'kid',
+    name: 'léo'
   }
 ]
-export const TeacherClassCall: React.FC = ({ children }) => (
-  <DivTableBox>
+export const TeacherClassCall = () => (
+  <DivTableBox color='primary'>
     <NavbarClass />
     <Table striped bordered hover size="sm">
       <thead>
@@ -104,11 +96,11 @@ export const TeacherClassCall: React.FC = ({ children }) => (
       </thead>
       <tbody>
         {studentslist.map(item => (
-          <Row student={item} />
+          <Row student={item} key={item.matricula} />
         ))}
       </tbody>
     </Table>
-    <NavbarClassBottom>
+    <NavbarClassBottom color="primary">
       <Button type="button" color="primary">Enviar</Button>
     </NavbarClassBottom>
   </DivTableBox>
@@ -116,13 +108,13 @@ export const TeacherClassCall: React.FC = ({ children }) => (
 
 const gradeslist: Grade[] = [
   {
-    name: "prova 1"
+    name: 'prova 1'
   },
   {
-    name: "avaliaçao 1"
+    name: 'avaliaçao 1'
   },
   {
-    name: "avaliaçao do pae"
+    name: 'avaliaçao do pae'
   }
 ]
 // const ColumnGrades = ({ grade }: ColumnProps) => {
@@ -140,51 +132,49 @@ const gradeslist: Grade[] = [
 // }
 const studentsGrades: Student[] = [
   {
-    matricula: "12312323121",
-    name: "marcos",
+    matricula: '12312323121',
+    name: 'marcos',
     presence: false,
-    reason: ""
+    reason: ''
   },
   {
-    matricula: "234214242342",
-    name: "iago",
+    matricula: '234214242342',
+    name: 'iago',
     presence: false,
-    reason: ""
+    reason: ''
   },
   {
-    matricula: "354234353345",
-    name: "guilherme",
+    matricula: '354234353345',
+    name: 'guilherme',
     presence: false,
-    reason: ""
+    reason: ''
   },
   {
-    matricula: "4353534523",
-    name: "tiago",
+    matricula: '4353534523',
+    name: 'tiago',
     presence: false,
-    reason: ""
+    reason: ''
   },
   {
-    matricula: "53453252323",
-    name: "gabrielle",
+    matricula: '53453252323',
+    name: 'gabrielle',
     presence: false,
-    reason: ""
-  }
-  ,
+    reason: ''
+  },
   {
-    matricula: "kid",
-    name: "léo",
+    matricula: 'kid',
+    name: 'léo',
     presence: false,
-    reason: ""
+    reason: ''
   }
 ]
 const RowGrades = ({ student }: RowProps) => {
-
   return (
     <tr >
       <td>{student.matricula}</td>
       <td>{student.name}</td>
       {gradeslist.map(item => (
-        <td><input type="number" style={{ marginTop: "8px", }} /></td>))}
+        <td key={item.name}><input type="number" style={{ marginTop: '8px' }} /></td>))}
     </tr>
   )
 }
@@ -194,15 +184,11 @@ const GradesContext = createContext<ContextValues>({
 
   }
 })
-export const TeacherClassGrades: React.FC = ({ children }) => {
+export const TeacherClassGrades = () => {
   const [students, setStudents] = useState<Student[]>([])
   const setStudent = (student: Student) => {
     const updatedStudents = students.map(current => current.matricula === student.matricula ? student : current)
     setStudents(updatedStudents)
-  }
-
-  const addGradeColumn = () => {
-    
   }
 
   useEffectOnce(() => {
@@ -211,7 +197,7 @@ export const TeacherClassGrades: React.FC = ({ children }) => {
   })
 
   return (
-    <DivTableBox>
+    <DivTableBox color='primary'>
       <NavbarClass />
       <GradesContext.Provider value={{
         students,
@@ -222,22 +208,21 @@ export const TeacherClassGrades: React.FC = ({ children }) => {
           <tr>
             <th className="w-25" >Matricula</th>
             <th className="w-100">Nome</th>
-            {gradeslist.map(item => (
-              <th className="w-25">{item.name}</th>
+            {gradeslist.map((item, index) => (
+              <th className="w-25" key={index}>{item.name}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {students.map(item => (
-            <RowGrades student={item} />
+            <RowGrades student={item} key={item.matricula} />
           ))}
         </tbody>
       </Table>
-      <NavbarClassBottom>
+      <NavbarClassBottom color="primary">
         <Button type="button" color="primary">Enviar</Button>
         <Button type="button" color="primary" >adicionar avaliação</Button>
       </NavbarClassBottom>
     </DivTableBox>
   )
 }
-

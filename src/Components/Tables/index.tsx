@@ -1,8 +1,11 @@
 import React from 'react'
-import { Table } from 'react-bootstrap'
 import Tab from './styles'
 
-const ClassTable : React.FC = ({ children }) => (
+type Props = {
+    children: React.ReactNode
+}
+
+const ClassTable = ({ children }: Props) => (
     <Tab striped bordered hover size="sm">{ children}</Tab>
 )
 

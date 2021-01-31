@@ -5,12 +5,12 @@ import { NavbarTeacher } from './NavTeacher'
 
 // teachers pages
 export const Navbarmenu = () => (
-    <NavbarTeacher color='primary'/>   
+    <NavbarTeacher color='primary'>Teach</NavbarTeacher>
 )
 
 // students pages
 export const NavbarStudents = () => (
-    <NavbarStudent color='primary'/>   
+    <NavbarStudent color='primary'/>
 )
 
 // Coordenation pages
@@ -18,8 +18,8 @@ export const NavCoordTeachList = () => (
     <NavTeacherList color='secondary' />
 )
 export const NavCoordTeacherBottom = () => (
-    <NavTeacherListBottom />   
+    <NavTeacherListBottom />
 )
 export const NavCoordStudentBottom = () => (
-    <NavStudentListBottom />   
+    <NavStudentListBottom />
 )

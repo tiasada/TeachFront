@@ -7,11 +7,9 @@ type Props = {
     color: Colors
 }
 
-export const NavTeacherList = ({color}: Props) => (
+export const NavTeacherList = ({ color }: Props) => (
     <NavClass expand="lg">
-        <NavClass.Brand >
-            Escola 'mySchool'
-        </NavClass.Brand>
+        <NavClass.Brand >Escola mySchool</NavClass.Brand>
         <NavClass.Toggle aria-controls="basic-navbar-nav" />
         <NavClass.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

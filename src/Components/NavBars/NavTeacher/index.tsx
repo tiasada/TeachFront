@@ -1,17 +1,18 @@
 import React from 'react'
-import { Nav, Button, Form, FormControl } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { Navmenu, NavClass } from './styles'
 import { NavIcon } from '../../../assets/Images'
 
 type Props = {
+    children: React.ReactNode
     color: string
 }
 
-export const NavbarTeacher = ({ color }) => (
-    <Navmenu expand="lg">
+export const NavbarTeacher = ({ color, children }: Props) => (
+    <Navmenu color={color} expand="lg">
         <Navmenu.Brand href="/teacher">
             <NavIcon />{' '}
-            Teach
+            {children}
         </Navmenu.Brand>
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">
@@ -35,16 +36,12 @@ export const NavbarClass = () => (
         </NavClass.Collapse>
     </NavClass>
 )
-type NavBottomProps = {
-    children: React.ReactNode
-}
 
-export const NavbarClassBottom = ({children }: NavBottomProps) => {
-    return (
+export const NavbarClassBottom = ({ children }: Props) => {
+  return (
         <NavClass expand="lg">
             {children}
         </NavClass>
-    )
-
+  )
 }
 export default NavbarTeacher

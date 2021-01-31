@@ -1,14 +1,14 @@
 import React from 'react'
-import TeacherRegister from '/components/Form/TeacherRegister'
+import CreateUserForm from '/components/Form/CreateUserForm'
 import { Navbarmenu } from '/components/NavBars'
 
 export const TeacherRegistration = () => (
     <main>
-        <div style={{ padding: "0px 1px 50px 0px" }}>
+        <div style={{ padding: '0px 1px 50px 0px' }}>
             <Navbarmenu />
         </div>
-        <div style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' , height:'500px'}}>
-            <TeacherRegister title='Cadastro do Professor' buttonText='cadastrar'/>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '500px' }}>
+            <CreateUserForm title='Cadastro do Professir' buttonText='Cadastrar' role='teacher' />
         </div>
     </main>
 )

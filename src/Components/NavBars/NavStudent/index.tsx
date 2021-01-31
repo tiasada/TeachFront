@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Tab, Tabs } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { Navmenu } from './styles'
 import { NavIcon } from '/assets/Images'
 

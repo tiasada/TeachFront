@@ -12,7 +12,7 @@ export const MenuBtn = styled.button<Props>`
   background-color: transparent;
   border-color: black;
   display: inline-block;
-  color: ${({color}) => color };
+  color: ${({ color }) => color};
   &:focus {
     background-color: #ddd;
     color: black;
@@ -20,7 +20,7 @@ export const MenuBtn = styled.button<Props>`
     outline: none;
   }
   &:hover {
-    background-color: ${({color}) => color };
+    background-color: ${({ color }) => color};
     opacity: 0.5;
     outline-color: black;
     outline-width: 4px;
@@ -57,7 +57,7 @@ export const LoginButton = styled.button<Props>`
   margin-left: auto;
   margin-right: auto;
   display: block;
-  color: ${({color}) => color };
+  color: ${({ color }) => color};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 &:focus {

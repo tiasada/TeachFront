@@ -1,18 +1,11 @@
 import React from 'react'
-import { ClassTitle} from '../../components/Texts/Titles/styles'
+import { ClassTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
 import { TeacherClassGrades } from '../../components/Tables/TableBootsrap'
 import { Navbarmenu } from '../../components/NavBars'
-import { useParams } from 'react-router-dom'
-
-type RouterParams = {
-  id: string
-}
 
 export const ClassGradesPage = () => {
-  let { id } = useParams<RouterParams>();
-  
-  return(
+  return (
     <main>
       <header>
         <div ><Navbarmenu /></div>

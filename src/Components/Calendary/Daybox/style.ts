@@ -11,5 +11,5 @@ margin-left: 25px;
 justify-content: center;
 align-items: center;
 display: flex;
-background-color: ${({color}) => color };
+background-color: ${({ color }) => color};
 `

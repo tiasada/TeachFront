@@ -9,5 +9,5 @@ type Props = {
 const Daybox = ({ color }: Props) => (
     <DayDiv color={colors[color]}><h1>1</h1></DayDiv>
 )
- 
+
 export default Daybox

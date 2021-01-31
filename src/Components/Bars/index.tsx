@@ -7,10 +7,10 @@ type Props = {
     placeholder: string
   }
 
-const Search = ({color, placeholder}: Props) => {
-    return( 
+const Search = ({ color, placeholder }: Props) => {
+  return (
     <SearchBarMatters placeholder={placeholder} color={colors[color]} type="text" />
-    )
+  )
 }
 
 export default Search

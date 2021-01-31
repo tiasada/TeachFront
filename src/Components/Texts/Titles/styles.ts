@@ -14,7 +14,7 @@ export const Name = styled.h2`
   text-align: center;
   padding: 1px 4px 1px 4px;
   margin-bottom: 0px;
-` 
+`
 export const MainTitle = styled.h3`
   font-size: 18px;
   font-family: "Comic Sans", "Courier New", monospace;

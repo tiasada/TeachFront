@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Button from '../../ui/Buttons/button'
 
 export const LoginInput = styled.input`
   padding: 12px 20px;

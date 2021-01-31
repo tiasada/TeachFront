@@ -7,5 +7,5 @@ type Props = {
 
 export const NavClass = styled(Navmenu)<Props>`
     background-image: none;
-    background-color: ${({color})=> color};
+    background-color: ${({ color }) => color};
 `

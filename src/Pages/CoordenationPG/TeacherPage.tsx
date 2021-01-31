@@ -1,23 +1,23 @@
 import React from 'react'
-import {  DivTableRight } from '../../components/DivBox'
+import { DivTableRight } from '../../components/DivBox'
 import { LoginTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
-import { Navbarmenu } from '../../components/NavBars'
+import { Navbarmenu, NavCoordTeachList, NavCoordTeacherBottom } from '../../components/NavBars'
 import ClassTable from '../../components/Tables'
-import { NavCoordTeachList, NavCoordTeacherBottom } from '../../components/NavBars'
+
 export const CoordTeacher = () => (
   <main>
     <header role="banner">
-        <div style={{padding: "0px 1px 50px 0px"}}>
+        <div style={{ padding: '0px 1px 50px 0px' }}>
           <Navbarmenu/>
-        </div>        
+        </div>
         <div>
           <LoginTitle>Professores</LoginTitle>
         </div>
         <div>
           <Search color='secondary' placeholder='Search...'/>
         </div>
-        <DivTableRight>
+        <DivTableRight color='primary'>
             <NavCoordTeachList/>
           <ClassTable>
             <tr>
@@ -33,7 +33,7 @@ export const CoordTeacher = () => (
                 <td>Matemática</td>
                 <td>5</td>
               </tr>
-              
+
               <tr>
                 <td>45824114447</td>
                 <td>Lucas Costa</td>
@@ -47,7 +47,7 @@ export const CoordTeacher = () => (
                 <td>10</td>
               </tr>
               <tr>
-                <td>25554511454</td> 
+                <td>25554511454</td>
                 <td>Ana Maria</td>
                 <td>Português</td>
                 <td>3</td>

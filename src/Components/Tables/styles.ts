@@ -1,5 +1,5 @@
-import { Table } from "react-bootstrap";
-import styled from "styled-components";
+import { Table } from 'react-bootstrap'
+import styled from 'styled-components'
 
 const ClassTable = styled(Table)`
   /* width: max-content; */
@@ -20,4 +20,4 @@ td{
     padding: 5px 40px;
 }
 `
-export default ClassTable;
+export default ClassTable

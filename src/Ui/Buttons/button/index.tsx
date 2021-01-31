@@ -9,7 +9,7 @@ type Props = {
   color: Colors
 }
 
-const Button = ({ color, children, type='submit', ...rest }: Props) => {
+const Button = ({ color, children, type = 'submit', ...rest }: Props) => {
   return (
     <LoginButton type={type} color ={colors[color]} {...rest}>{children}</LoginButton>
   )
@@ -17,7 +17,7 @@ const Button = ({ color, children, type='submit', ...rest }: Props) => {
 
 export default Button
 
-export const ButtonSecundary = ({ color, children, type='submit', ...rest }: Props) => {
+export const ButtonSecundary = ({ color, children, type = 'submit', ...rest }: Props) => {
   return (
     <MenuBtn type={type} color ={colors[color]} {...rest}>{children}</MenuBtn>
   )

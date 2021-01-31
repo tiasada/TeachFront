@@ -8,35 +8,34 @@ import { useHistory } from 'react-router-dom'
 
 const classrooms = [
   {
-    id:"1",
-    name: "class1"
+    id: '1',
+    name: 'class1'
   },
   {
-    id:"2",
-    name: "class2"
+    id: '2',
+    name: 'class2'
   },
   {
-    id:"3",
-    name: "class3"
+    id: '3',
+    name: 'class3'
   },
   {
-    id:"4",
-    name: "class4"
+    id: '4',
+    name: 'class4'
   },
   {
-    id:"5",
-    name: "class5"
+    id: '5',
+    name: 'class5'
   }
 ]
 
-
 export const ClassesPage = () => {
-  let history = useHistory()
+  const history = useHistory()
 
-  function handleClick(id:string) {
+  function handleClick (id:string) {
     history.push(`/class/${id}`)
   }
-  return(
+  return (
     <main>
         <div >
           <Navbarmenu/>
@@ -47,10 +46,10 @@ export const ClassesPage = () => {
         <div>
           <ClassTitle>Suas Turmas</ClassTitle>
           <Search color='secondary' placeholder='sua mae aquela...'/>
-          <DivClasslist>
+          <DivClasslist center>
             {classrooms.map(item => (
               <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
-            ) )}
+            ))}
           </DivClasslist>
         </div>
     </main>

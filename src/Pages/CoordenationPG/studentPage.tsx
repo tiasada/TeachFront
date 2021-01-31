@@ -1,25 +1,25 @@
 import React from 'react'
 
-import Divbox, { DivTableBox, DivTableRight } from '../../components/DivBox'
+import { DivTableRight } from '../../components/DivBox'
 import { LoginTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
-import { Navbarmenu, NavCoordStudentBottom, NavCoordTeacherBottom } from '../../components/NavBars'
+import { Navbarmenu, NavCoordStudentBottom } from '../../components/NavBars'
 import ClassTable from '../../components/Tables'
 import { NavTeacherList } from '../../components/NavBars/NavCoord'
 
 export const MainPage = () => (
   <main>
     <header role="banner">
-        <div style={{padding: "0px 1px 50px 0px"}}>
+        <div style={{ padding: '0px 1px 50px 0px' }}>
           <Navbarmenu/>
-        </div>        
+        </div>
         <div>
           <LoginTitle>Infem 204</LoginTitle>
         </div>
         <div>
           <Search color='secondary' placeholder='Search...'/>
         </div>
-        <DivTableRight>
+        <DivTableRight color='primary'>
           <NavTeacherList color='secondary'/>
           <ClassTable>
             <tr>
@@ -35,7 +35,7 @@ export const MainPage = () => (
                 <td>9,0</td>
                 <td>0</td>
               </tr>
-              
+
               <tr>
                 <td>5444151142</td>
                 <td><a href="/studentprofile">Tiago Sá da Costa</a></td>
@@ -49,7 +49,7 @@ export const MainPage = () => (
                 <td>0</td>
               </tr>
               <tr>
-                <td>1544541151</td> 
+                <td>1544541151</td>
                 <td><a href="/studentprofile">Ana </a></td>
                 <td>9,0</td>
                 <td>1</td>

@@ -4,7 +4,6 @@ import Img from './TeachNavIcon.png'
 import logo from './TeachIcon.png'
 import NotImage from './NotFoundPageIcon.png'
 
-
 export const NavIcon = () => (
     <NavIconSt src= {Img}/>
 )

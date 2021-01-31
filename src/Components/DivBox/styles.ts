@@ -12,7 +12,7 @@ export const DivBx = styled.div<Props>`
   margin-left: auto;
   margin-right: auto;
 
-  background: ${({color})=> color};
+  background: ${({ color }) => color};
   border: 1px solid #000000;
   border-radius: 8px;
   box-sizing: border-box;

@@ -10,19 +10,20 @@ import TeacherInfo from './CoordenationPG/TeacherProfile'
 import NotFound from './NotFound/Index'
 import TeacherRegister from './CoordenationPG/teacherRegister'
 import StudentRegister from './CoordenationPG/studentRegister'
-
+import ParentRegistration from './CoordenationPG/ParentRegister'
 
 export {
-    Login,
-    ClassPage,
-    ClassGradesPage,
-    CoordStudent,
-    Schedule,
-    Classes,
-    StudentInfo,
-    CoordTeacher,
-    TeacherInfo,
-    NotFound,
-    TeacherRegister,
-    StudentRegister
-};
+  Login,
+  ClassPage,
+  ClassGradesPage,
+  CoordStudent,
+  Schedule,
+  Classes,
+  StudentInfo,
+  CoordTeacher,
+  TeacherInfo,
+  NotFound,
+  TeacherRegister,
+  StudentRegister,
+  ParentRegistration
+}

@@ -23,5 +23,5 @@ const Weekbox = () => (
     </WeekDiv>
 
 )
- 
+
 export default Weekbox

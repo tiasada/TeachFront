@@ -4,27 +4,26 @@ import { Colors, colors } from '/theme/colors'
 
 type Props = {
     color: Colors
-    children: string
+    children: React.ReactNode
 }
 
 export const Divbox = ({ color, children }: Props) => (
     <DivBx color={colors[color]}>{ children }</DivBx>
 )
 
-export const DivTableBox: React.FC = ({ children }) => (
+export const DivTableBox = ({ children }: Props) => (
     <DivTabBox>{ children }</DivTabBox>
 )
-//used by zyasmim
-export const DivTableRight: React.FC = ({ children }) => (
+// used by zyasmim
+export const DivTableRight = ({ children }: Props) => (
     <DivTabR>{ children }</DivTabR>
 )
-export const DivProfile: React.FC = ({ children }) => (
+export const DivProfile = ({ children }: Props) => (
     <ProfileBox>{ children }</ProfileBox>
 )
 
-export const ImgStudent: React.FC = ({ children }) => (
+export const ImgStudent = ({ children }: Props) => (
     <DivTabL>{ children }</DivTabL>
 )
-
 
 export default Divbox

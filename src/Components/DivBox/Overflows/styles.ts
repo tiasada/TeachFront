@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const ClassOvFlow = styled.div`
   overflow: auto;
   max-width: 75%;
@@ -17,7 +16,7 @@ export const ClassOvFlow = styled.div`
   scrollbar-width: none;  /* Firefox */
 `
 export const OvFlowSchedule = styled(ClassOvFlow)`
-	height: 800px;
+  height: 800px;
   background: #C4C4C4;
   border: 1px solid #000000;
   border-radius: 8px;

@@ -16,7 +16,7 @@ width: 13%;
 height: 50px;  
 align-items: center;
 justify-content: center;
-background-color: ${({color}) => color };
+background-color: ${({ color }) => color};
 display: inline-block;
 border-right: 2px solid;
 border-left: 2px solid;

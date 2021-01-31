@@ -1,24 +1,26 @@
 import React from 'react'
 import { ClassOvFlow, OvFlowSchedule } from './styles'
-import { Container, Row} from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
-export const DivClasslist: React.FC = ({ children }) => (
-    <ClassOvFlow>
-        <Container>
-            <Row className="justify-content-center">{ children }</Row>
-        </Container>
-    </ClassOvFlow>
-    
-)
+type Props = {
+    children: React.ReactNode
+    center: boolean
+}
 
-interface IDivScheduleProps extends React.HTMLAttributes<HTMLElement> {
-    center?: boolean
-  }
-  
-export const DivSchedule: React.FC<IDivScheduleProps> = ({ children, center = true }) => (
-    <OvFlowSchedule> 
+export const DivClasslist = ({ children }: Props) => {
+  return (
+        <ClassOvFlow>
+            <Container>
+                <Row className="justify-content-center">{children}</Row>
+            </Container>
+        </ClassOvFlow >
+  )
+}
+
+export const DivSchedule = ({ children, center = true }: Props) => (
+    <OvFlowSchedule>
         <Container>
-            <Row className={center ? 'justify-content-center' : ''}>{ children }</Row>
+            <Row className={center ? 'justify-content-center' : ''}>{children}</Row>
         </Container>
     </OvFlowSchedule>
 )
