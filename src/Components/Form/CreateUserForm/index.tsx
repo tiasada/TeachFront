@@ -3,7 +3,6 @@ import { CreateButton, Title } from './styles'
 import { Label as InputLabel } from '../../../ui/Label'
 import { register } from '/api'
 import Input from '/Input'
-import { useEffectOnce } from 'react-use'
 
 type Props = {
   title: string
@@ -64,8 +63,9 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
 
   const user = { name, cpf, phonenumber, birthdate, registration, role }
 
-
-
+  if (role === 'teacher') {
+    inputs.splice(4, 1)
+  }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -77,18 +77,20 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
     <form onSubmit={onSubmit}>
       <Title>{title}</Title>
       <div>
-        | {inputs.map((item, index) => (
-        <section key={index}>
-          <InputLabel>{item.title}</InputLabel>
-          <Input
-            type={item.type}
-            name={item.title}
-            placeholder={item.holder}
-            value={item.value}
-            onChange={e => item.set(e.target.value)}
-          />
-        </section>
-      ))}
+        | {inputs.map((item, index) =>
+        (
+              <section key={index}>
+                <InputLabel>{item.title}</InputLabel>
+                <Input
+                  type={item.type}
+                  name={item.title}
+                  placeholder={item.holder}
+                  value={item.value}
+                  onChange={e => item.set(e.target.value)}
+                />
+              </section>
+        )
+      )}
       </div>
       <CreateButton type="submit">{buttonText}</CreateButton>
     </form>

@@ -4,13 +4,12 @@ type Props = {
   type: string
   name: string
   placeholder?: string
-  value: string | number 
+  value: string | number
   onChange:((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
 }
 
 const Input = ({ type, name, placeholder, value, onChange }: Props) => {
-
-  return(
+  return (
   <input
     type={type}
     name={name}

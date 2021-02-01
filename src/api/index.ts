@@ -6,7 +6,6 @@ type LoginRequest ={
 }
 type RegisterRequest ={
 
-
   name: string
   cpf: string
   phonenumber: string
@@ -20,7 +19,6 @@ type LoginResponse ={
   profile: string
 }
 
-
 const USER_TOKEN = 'UserToken'
 
 const axiosInstance = axios.create({
@@ -29,7 +27,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use(config => {
-  config.headers.Authorization =`Bearer ${localStorage.getItem(USER_TOKEN)}`
+  config.headers.Authorization = `Bearer ${localStorage.getItem(USER_TOKEN)}`
   return config
 }
 )
@@ -37,7 +35,8 @@ axiosInstance.interceptors.request.use(config => {
 export const login = (loginRequest: LoginRequest) => {
   return axiosInstance
     .post<LoginResponse>('/auth/login', loginRequest)
-    .then(resp => {localStorage.setItem('UserToken', resp.data.token), localStorage.setItem('UserProfile', resp.data.profile)}  )   
+    .then(resp => (localStorage.setItem('UserToken', resp.data.token),
+    localStorage.setItem('UserProfile', resp.data.profile)))
 }
 export const register = (registerRequest: RegisterRequest) => {
   return axiosInstance
