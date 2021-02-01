@@ -5,6 +5,7 @@ import { DivTableBox } from '../../DivBox'
 import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
 import Button from '../../../ui/Buttons/button'
+import Sider from '/ui/Sider'
 
 type Student = {
   matricula: string
@@ -112,9 +113,6 @@ const gradeslist: Grade[] = [
   },
   {
     name: 'avaliaçao 1'
-  },
-  {
-    name: 'avaliaçao do pae'
   }
 ]
 // const ColumnGrades = ({ grade }: ColumnProps) => {
@@ -190,10 +188,21 @@ export const TeacherClassGrades = () => {
     const updatedStudents = students.map(current => current.matricula === student.matricula ? student : current)
     setStudents(updatedStudents)
   }
+  const [showSider, setShowSider] = useState(false)
+  const [newGrade, setNewgrade] = useState('')
+  const [grades, setGrades] = useState<Grade[]>([])
+  const setNewgrades = () => {
+    const updatedGrades = grades.concat([{name: newGrade}])
+    setGrades(updatedGrades)
+  }
+
 
   useEffectOnce(() => {
+    
     // get().then(resp => setStudents(resp.data))
-    Promise.resolve(studentsGrades).then(resp => setStudents(resp))
+    Promise.resolve(studentsGrades).then(resp => setStudents(resp)),
+    Promise.resolve(gradeslist).then(resp => setGrades(resp))
+
   })
 
   return (
@@ -203,25 +212,37 @@ export const TeacherClassGrades = () => {
         students,
         setStudent
       }} />
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th className="w-25" >Matricula</th>
-            <th className="w-100">Nome</th>
-            {gradeslist.map((item, index) => (
-              <th className="w-25" key={index}>{item.name}</th>
+      <div style={{ display: 'flex' }}>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th className="w-25" >Matricula</th>
+              <th className="w-100">Nome</th>
+              {gradeslist.map((item, index) => (
+                <th className="w-25" key={index}>{item.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {students.map(item => (
+              <RowGrades student={item} key={item.matricula} />
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {students.map(item => (
-            <RowGrades student={item} key={item.matricula} />
-          ))}
-        </tbody>
-      </Table>
+          </tbody>
+        </Table>
+        <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+          <input
+            type='text'
+            name='gradeName'
+            placeholder='Nova Avaliação'
+            value= {newGrade}
+            onChange={e =>  setNewgrade(e.target.value)}
+          />
+          <Button type="button" color="primary" onClick={setNewgrades}>Cadastrar Avaliação</Button>
+        </Sider>
+      </div>
       <NavbarClassBottom color="primary">
         <Button type="button" color="primary">Enviar</Button>
-        <Button type="button" color="primary" >adicionar avaliação</Button>
+        <Button type="button" color="primary" onClick={() => setShowSider(true)}>Adicionar Avaliação</Button>
       </NavbarClassBottom>
     </DivTableBox>
   )

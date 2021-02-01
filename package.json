@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/tiagosada/TeachFront#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
