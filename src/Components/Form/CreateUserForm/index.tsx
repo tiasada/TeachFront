@@ -77,8 +77,8 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
     <form onSubmit={onSubmit}>
       <Title>{title}</Title>
       <div>
-        | {inputs.map((item, index) =>
-          (
+        {inputs.map((item, index) =>
+        (
               <section key={index}>
                 <InputLabel>{item.title}</InputLabel>
                 <Input

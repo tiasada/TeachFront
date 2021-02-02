@@ -12,12 +12,12 @@ type Prop ={
 
 const Modal = ({open, onClose,children}: Prop) => (
   <StyledModal open={open}>
+    <StyledContent>
     <FontAwesomeIcon
         icon={faTimes}
         color='black'
         onClick={onClose}
       />
-    <StyledContent>
       {children}
     </StyledContent>
   </StyledModal>
