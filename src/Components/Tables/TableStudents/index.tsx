@@ -2,8 +2,7 @@ import React, { createContext, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { NavbarClass, NavbarClassBottom } from '../../NavBars/NavTeacher'
 import { DivTableBox } from '../../DivBox'
-import { useEffectOnce, useToggle } from 'react-use'
-import CheckPresence from '../../../ui/Inputs'
+import { useEffectOnce } from 'react-use'
 import Button from '../../../ui/Buttons/button'
 import Sider from '/ui/Sider'
 import { NavCoordTeachList } from '/components/NavBars'
@@ -30,9 +29,6 @@ type ContextValues = {
 // const Row = ({student, color }: {student: Student , color : string} ) => {
 
 const Row = ({ student }: RowProps) => {
-  const [present, setPrecense] = useToggle(false)
-  const [reason, setReason] = useState('')
-
   return (
     <tr >
       <td>{student.matricula}</td>
@@ -74,7 +70,7 @@ const studentslist: Student[] = [
   }
 ]
 export const StudentTable = () => (
-  <div style={{margin:'auto', width: '60%'}}>
+  <div style={{ margin: 'auto', width: '60%' }}>
       <DivTableBox color='primary'>
     <NavCoordTeachList />
     <Table striped bordered hover size="sm">
@@ -183,17 +179,14 @@ export const TeacherClassGrades = () => {
   const [newGrade, setNewgrade] = useState('')
   const [grades, setGrades] = useState<Grade[]>([])
   const setNewgrades = () => {
-    const updatedGrades = grades.concat([{name: newGrade}])
+    const updatedGrades = grades.concat([{ name: newGrade }])
     setGrades(updatedGrades)
   }
 
-
   useEffectOnce(() => {
-    
     // get().then(resp => setStudents(resp.data))
     Promise.resolve(studentsGrades).then(resp => setStudents(resp)),
     Promise.resolve(gradeslist).then(resp => setGrades(resp))
-
   })
 
   return (
@@ -226,7 +219,7 @@ export const TeacherClassGrades = () => {
             name='gradeName'
             placeholder='Nova Avaliação'
             value= {newGrade}
-            onChange={e =>  setNewgrade(e.target.value)}
+            onChange={e => setNewgrade(e.target.value)}
           />
           <Button type="button" color="primary" onClick={setNewgrades}>Cadastrar Avaliação</Button>
         </Sider>

@@ -1,29 +1,14 @@
-import Login from './Login'
-import ClassPage from './TeachersPages/ClassPage'
-import CoordStudent from './CoordenationPG/studentPage'
-import Schedule from './StudentPages/Schedule2'
-import Classes from './TeachersPages/ClassesPage'
-import ClassGradesPage from './TeachersPages/ClassGradesPage'
-import StudentInfo from './CoordenationPG/studentProfile'
-import CoordTeacher from './CoordenationPG/TeacherPage'
-import TeacherInfo from './CoordenationPG/TeacherProfile'
-import NotFound from './NotFound/Index'
-import TeacherRegister from './CoordenationPG/teacherRegister'
-import StudentRegister from './CoordenationPG/studentRegister'
-import ParentRegistration from './CoordenationPG/ParentRegister'
-
-export {
-  Login,
-  ClassPage,
-  ClassGradesPage,
-  CoordStudent,
-  Schedule,
-  Classes,
-  StudentInfo,
-  CoordTeacher,
-  TeacherInfo,
-  NotFound,
-  TeacherRegister,
-  StudentRegister,
-  ParentRegistration
-}
+export { default as Login } from './Login'
+export { default as ClassPage } from './TeachersPages/ClassPage'
+export { default as CoordStudent } from './CoordenationPG/studentPage'
+export { default as Schedule } from './StudentPages/Schedule2'
+export { default as Classes } from './TeachersPages/ClassesPage'
+export { default as ClassGradesPage } from './TeachersPages/ClassGradesPage'
+export { default as StudentInfo } from './CoordenationPG/studentProfile'
+export { default as CoordTeacher } from './CoordenationPG/TeacherPage'
+export { default as TeacherInfo } from './CoordenationPG/TeacherProfile'
+export { default as NotFound } from './NotFound/Index'
+export { default as TeacherRegister } from './CoordenationPG/teacherRegister'
+export { default as StudentRegister } from './CoordenationPG/studentRegister'
+export { default as ParentRegistration } from './CoordenationPG/ParentRegister'
+export { default as ClassroomRegister } from './CoordenationPG/ClassroomRegister'
