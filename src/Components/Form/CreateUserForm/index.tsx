@@ -79,18 +79,18 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
       <div>
         {inputs.map((item, index) =>
         (
-          <section key={index}>
-            <InputLabel>{item.title}</InputLabel>
-            <Input
-              type={item.type}
-              name={item.title}
-              placeholder={item.holder}
-              value={item.value}
-              onChange={e => item.set(e.target.value)}
-            />
-          </section>
-        )
-        )}
+              <section key={index}>
+                <InputLabel>{item.title}</InputLabel>
+                <Input
+                  type={item.type}
+                  name={item.title}
+                  placeholder={item.holder}
+                  value={item.value}
+                  onChange={e => item.set(e.target.value)}
+                />
+              </section>
+          )
+      )}
       </div>
       <CreateButton type="submit">{buttonText}</CreateButton>
     </form>

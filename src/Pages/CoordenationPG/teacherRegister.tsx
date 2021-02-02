@@ -1,6 +1,6 @@
 import React from 'react'
-import CreateUserForm from '/components/Form/CreateUserForm'
-import { Navbarmenu } from '/components/NavBars'
+import CreateUserForm from '../../components/Form/CreateUserForm'
+import { Navbarmenu } from '../../components/NavBars'
 
 export const TeacherRegistration = () => (
     <main>
@@ -8,7 +8,7 @@ export const TeacherRegistration = () => (
             <Navbarmenu />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '500px' }}>
-            <CreateUserForm title='Cadastro do Professir' buttonText='Cadastrar' role='teacher' />
+            <CreateUserForm title='Cadastro do Professor' buttonText='Cadastrar' role='teacher' />
         </div>
     </main>
 )

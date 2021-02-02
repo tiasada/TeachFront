@@ -5,13 +5,15 @@ import { DivTableBox } from '../../DivBox'
 import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
 import Button from '../../../ui/Buttons/button'
-import Sider from '../../../ui/Sider'
+import Sider from '/ui/Sider'
+import { NavCoordTeachList } from '/components/NavBars'
+import { NavStudentListBottom } from '/components/NavBars/NavCoord'
 
 type Student = {
   matricula: string
   name: string
-  presence?: boolean
-  reason?: string
+  notas?: number
+  absece?: string
 }
 type RowProps = {
   student: Student,
@@ -35,22 +37,11 @@ const Row = ({ student }: RowProps) => {
     <tr >
       <td>{student.matricula}</td>
       <td>{student.name}</td>
-      <td style={{ display: 'flex', margin: '4px' }}>
-        <CheckPresence value={present} onChange={() => {
-          setReason('')
-          setPrecense()
-        }} />
-        <label style={{ margin: '4px' }}>Presença</label>
+      <td>
+        <label>10</label>
       </td>
       <td>
-        <input
-          disabled={present}
-          style={{ marginTop: '8px' }}
-          name='reason'
-          placeholder='Motivo da falta'
-          value={reason}
-          onChange={e => setReason(e.target.value)}
-        />
+        <label>2</label>
       </td>
     </tr>
   )
@@ -82,16 +73,17 @@ const studentslist: Student[] = [
     name: 'léo'
   }
 ]
-export const TeacherClassCall = () => (
-  <DivTableBox color='primary'>
-    <NavbarClass />
+export const StudentTable = () => (
+  <div style={{margin:'auto', width: '60%'}}>
+      <DivTableBox color='primary'>
+    <NavCoordTeachList />
     <Table striped bordered hover size="sm">
       <thead>
         <tr>
-          <th className="w-25" >Matricula</th>
-          <th className="w-100">Nome</th>
-          <th className="w-25">Chamada</th>
-          <th className="w-25">Falta Justificada</th>
+          <th className="w-25" >N°</th>
+          <th className="w-100">Turma</th>
+          <th className="w-25">Qnt Alunos</th>
+          <th className="w-25">Período</th>
 
         </tr>
       </thead>
@@ -101,10 +93,9 @@ export const TeacherClassCall = () => (
         ))}
       </tbody>
     </Table>
-    <NavbarClassBottom color="primary">
-      <Button type="button" color="primary">Enviar</Button>
-    </NavbarClassBottom>
+    <NavStudentListBottom />
   </DivTableBox>
+  </div>
 )
 
 const gradeslist: Grade[] = [
@@ -130,40 +121,40 @@ const gradeslist: Grade[] = [
 // }
 const studentsGrades: Student[] = [
   {
-    matricula: '12312323121',
-    name: 'marcos',
-    presence: false,
-    reason: ''
+    matricula: '203',
+    name: 'Do pagode',
+    notas: 2,
+    absece: '2'
   },
   {
     matricula: '234214242342',
     name: 'iago',
-    presence: false,
-    reason: ''
+    notas: 2,
+    absece: '2'
   },
   {
-    matricula: '354234353345',
-    name: 'guilherme',
-    presence: false,
-    reason: ''
+    matricula: '234214242342',
+    name: 'iago',
+    notas: 2,
+    absece: '2'
   },
   {
-    matricula: '4353534523',
-    name: 'tiago',
-    presence: false,
-    reason: ''
+    matricula: '234214242342',
+    name: 'iago',
+    notas: 2,
+    absece: '2'
   },
   {
-    matricula: '53453252323',
-    name: 'gabrielle',
-    presence: false,
-    reason: ''
+    matricula: '234214242342',
+    name: 'iago',
+    notas: 2,
+    absece: '2'
   },
   {
-    matricula: 'kid',
-    name: 'léo',
-    presence: false,
-    reason: ''
+    matricula: '234214242342',
+    name: 'iago',
+    notas: 2,
+    absece: '2'
   }
 ]
 const RowGrades = ({ student }: RowProps) => {
