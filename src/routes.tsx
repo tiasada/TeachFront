@@ -14,8 +14,9 @@ import {
   NotFound,
   TeacherRegister,
   StudentRegister,
-  ParentRegistration
-} from '/pages'
+  ParentRegistration,
+  ClassroomRegister
+} from './Pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -34,6 +35,7 @@ export default function App () {
         <Route path="/teacherprofile" component={TeacherInfo} />
         <Route path="/teacherregister" component={TeacherRegister} />
         <Route path="/studentregister" component={StudentRegister} />
+        <Route path="/classroomregister" component={ClassroomRegister} />
         <Route path="/parentregister" component={ParentRegistration} />
         <Route path="*" component={NotFound} />
       </Switch>

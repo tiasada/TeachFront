@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyledModal, StyledContent} from './style'
-import { FontAwesomeIcon } from '/ui/Sider/node_modules/@fortawesome/react-fontawesome'
-import { faTimes } from '/ui/Sider/node_modules/@fortawesome/free-solid-svg-icons'
+import { StyledModal, StyledContent } from './style'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 type Prop ={
   open: boolean
@@ -10,7 +10,7 @@ type Prop ={
 
 }
 
-const Modal = ({open, onClose,children}: Prop) => (
+const Modal = ({ open, onClose, children }: Prop) => (
   <StyledModal open={open}>
     <StyledContent>
     <FontAwesomeIcon

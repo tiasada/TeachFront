@@ -1,7 +1,7 @@
 import React from 'react'
 import { Wrapper, Header, Content } from './styles'
-import { FontAwesomeIcon } from '/components/Modal/node_modules/@fortawesome/react-fontawesome'
-import { faAngleDoubleRight } from '/components/Modal/node_modules/@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 import { colors, Colors } from '/theme/colors'
 
 type Props = {

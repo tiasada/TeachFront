@@ -23,4 +23,4 @@ export const Wrapper = styled.div<Props>`
 
 export const Content = styled.div`
   padding: 20px;
-` 
+`

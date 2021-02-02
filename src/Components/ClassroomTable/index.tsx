@@ -1,11 +1,11 @@
 import React, { createContext, useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { NavbarClass, NavbarClassBottom } from '../../NavBars/NavTeacher'
-import { DivTableBox } from '../../DivBox'
-import { useEffectOnce, useToggle } from 'react-use'
+import { useToggle } from 'react-use'
 import CheckPresence from '/ui/Inputs'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
+import { DivTableBox } from '../DivBox'
+import { NavbarClass, NavbarClassBottom } from './ClassroomsNavs'
 
 type Student = {
   matricula: string
@@ -24,8 +24,21 @@ type ContextValues = {
   setStudent: (student: Student) => void
 }
 
-// const Row = ({student, color }: {student: Student , color : string} ) => {
+// Main Classroom component
+const ClassroomTable = () => (
+  <>
+  <NavbarClass/>
+  <TeacherClassCall/>
+  </>
+  // or
+  // <>
+  // <NavbarClass/>
+  // <TeacherClassGrades/>
+  // </>
+)
 
+export default ClassroomTable
+// CallTable
 const Row = ({ student }: RowProps) => {
   const [present, setPrecense] = useToggle(false)
   const [reason, setReason] = useState('')
@@ -55,32 +68,6 @@ const Row = ({ student }: RowProps) => {
   )
 }
 
-const studentslist: Student[] = [
-  {
-    matricula: '12312323121',
-    name: 'marcos'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago'
-  },
-  {
-    matricula: '354234353345',
-    name: 'guilherme'
-  },
-  {
-    matricula: '4353534523',
-    name: 'tiago'
-  },
-  {
-    matricula: '53453252323',
-    name: 'gabrielle'
-  },
-  {
-    matricula: 'kid',
-    name: 'léo'
-  }
-]
 export const TeacherClassCall = () => (
   <DivTableBox color='primary'>
     <NavbarClass />
@@ -105,54 +92,8 @@ export const TeacherClassCall = () => (
     </NavbarClassBottom>
   </DivTableBox>
 )
-
-const gradeslist: Grade[] = [
-  {
-    name: 'prova 1'
-  },
-  {
-    name: 'avaliaçao 1'
-  }
-]
-
-const studentsGrades: Student[] = [
-  {
-    matricula: '12312323121',
-    name: 'marcos',
-    presence: false,
-    reason: ''
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    presence: false,
-    reason: ''
-  },
-  {
-    matricula: '354234353345',
-    name: 'guilherme',
-    presence: false,
-    reason: ''
-  },
-  {
-    matricula: '4353534523',
-    name: 'tiago',
-    presence: false,
-    reason: ''
-  },
-  {
-    matricula: '53453252323',
-    name: 'gabrielle',
-    presence: false,
-    reason: ''
-  },
-  {
-    matricula: 'kid',
-    name: 'léo',
-    presence: false,
-    reason: ''
-  }
-]
+// Grades Table
+// row
 const RowGrades = ({ student }: RowProps) => {
   return (
     <tr >
@@ -163,12 +104,14 @@ const RowGrades = ({ student }: RowProps) => {
     </tr>
   )
 }
+// context
 const GradesContext = createContext<ContextValues>({
   students: [],
   setStudent: (student: Student) => {
 
   }
 })
+
 export const TeacherClassGrades = () => {
   const [students, setStudents] = useState<Student[]>([])
   const setStudent = (student: Student) => {
@@ -182,11 +125,6 @@ export const TeacherClassGrades = () => {
     const updatedGrades = grades.concat([{ name: newGrade }])
     setGrades(updatedGrades)
   }
-  useEffectOnce(() => {
-  // get().then(resp => setStudents(resp.data))
-    Promise.resolve(studentsGrades).then(resp => setStudents(resp)),
-    Promise.resolve(gradeslist).then(resp => setGrades(resp))
-  })
 
   return (
     <DivTableBox color='primary'>
