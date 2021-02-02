@@ -32,7 +32,7 @@ export const NavTeacherListBottom = () => (
 export const NavStudentListBottom = () => (
     <NavClass expand="lg">
         <Nav className="mr-auto">
-            <Nav.Link href="/studentregister">Cadastrar</Nav.Link>
+            <Nav.Link href="/studentregister">+Cadastrar turma</Nav.Link>
         </Nav>
     </NavClass>
 )
