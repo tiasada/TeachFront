@@ -5,7 +5,7 @@ import { DivTableBox } from '../../DivBox'
 import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '../../../ui/Inputs'
 import Button from '../../../ui/Buttons/button'
-import Sider from '/ui/Sider'
+import Sider from '../../../ui/Sider'
 
 type Student = {
   matricula: string

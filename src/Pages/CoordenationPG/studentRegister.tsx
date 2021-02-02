@@ -1,6 +1,6 @@
 import React from 'react'
-import CreateUserForm from '/components/Form/CreateUserForm'
-import { Navbarmenu } from '/components/NavBars'
+import CreateUserForm from '../../components/Form/CreateUserForm'
+import { Navbarmenu } from '../../components/NavBars'
 
 export const StudentRegistration = () => (
     <main>

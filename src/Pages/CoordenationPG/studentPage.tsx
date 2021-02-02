@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-
 import { DivTableRight } from '../../components/DivBox'
 import { LoginTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
 import { Navbarmenu, NavCoordStudentBottom } from '../../components/NavBars'
 import ClassTable from '../../components/Tables'
 import { NavTeacherList } from '../../components/NavBars/NavCoord'
-import Modal from '/components/Modal'
-import ProfileInfo from '/components/ProfileInfo'
+import Modal from '../../components/Modal'
+import ProfileInfo from '../../components/ProfileInfo'
 
 export const MainPage = () => {
 

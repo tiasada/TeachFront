@@ -78,7 +78,7 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
       <Title>{title}</Title>
       <div>
         | {inputs.map((item, index) =>
-        (
+          (
               <section key={index}>
                 <InputLabel>{item.title}</InputLabel>
                 <Input
@@ -89,7 +89,7 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
                   onChange={e => item.set(e.target.value)}
                 />
               </section>
-        )
+          )
       )}
       </div>
       <CreateButton type="submit">{buttonText}</CreateButton>

@@ -12,7 +12,7 @@ export const LoginInput = styled.input`
   display: block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:focus {
-  background-color: #D1F6FF;
-  outline: none;
+    background-color: #D1F6FF;
+    outline: none;
   }
 `
