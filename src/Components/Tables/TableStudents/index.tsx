@@ -1,12 +1,8 @@
-import React, { createContext, useState } from 'react'
-import { Table } from 'react-bootstrap'
-import { NavbarClass, NavbarClassBottom } from '../../NavBars/NavTeacher'
-import { DivTableBox } from '../../DivBox'
-import { useEffectOnce } from 'react-use'
-import Button from '../../../ui/Buttons/button'
-import Sider from '/ui/Sider'
+import React from 'react'
 import { NavCoordTeachList } from '/components/NavBars'
 import { NavStudentListBottom } from '/components/NavBars/NavCoord'
+import { StudentTables } from '/components/Tables'
+import { DivTableRight } from '/components/DivBox'
 
 type Student = {
   matricula: string
@@ -34,10 +30,10 @@ const Row = ({ student }: RowProps) => {
       <td>{student.matricula}</td>
       <td>{student.name}</td>
       <td>
-        <label>10</label>
+        10
       </td>
       <td>
-        <label>2</label>
+        2
       </td>
     </tr>
   )
@@ -46,7 +42,7 @@ const Row = ({ student }: RowProps) => {
 const studentslist: Student[] = [
   {
     matricula: '12312323121',
-    name: 'marcos'
+    name: 'Do pagode'
   },
   {
     matricula: '234214242342',
@@ -54,7 +50,7 @@ const studentslist: Student[] = [
   },
   {
     matricula: '354234353345',
-    name: 'guilherme'
+    name: 'gui'
   },
   {
     matricula: '4353534523',
@@ -70,164 +66,22 @@ const studentslist: Student[] = [
   }
 ]
 export const StudentTable = () => (
-  <div style={{ margin: 'auto', width: '60%' }}>
-      <DivTableBox color='primary'>
-    <NavCoordTeachList />
-    <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-          <th className="w-25" >N°</th>
-          <th className="w-100">Turma</th>
-          <th className="w-25">Qnt Alunos</th>
-          <th className="w-25">Período</th>
 
-        </tr>
-      </thead>
+  <DivTableRight color='primary'>
+    <NavCoordTeachList />
+    <StudentTables >
+      <tr>
+        <th className="w-25" >N°</th>
+        <th className="w-100">Turma</th>
+        <th className="w-25">Qnt Alunos</th>
+        <th className="w-25">Período</th>
+      </tr>
       <tbody>
         {studentslist.map(item => (
           <Row student={item} key={item.matricula} />
         ))}
       </tbody>
-    </Table>
+    </StudentTables>
     <NavStudentListBottom />
-  </DivTableBox>
-  </div>
+  </DivTableRight>
 )
-
-const gradeslist: Grade[] = [
-  {
-    name: 'prova 1'
-  },
-  {
-    name: 'avaliaçao 1'
-  }
-]
-// const ColumnGrades = ({ grade }: ColumnProps) => {
-
-//   const [present, setPrecense] = useToggle(false)
-//   const [reason, setImput] = useState("")
-
-//   return (
-//         <th className="w-25" >Matricula</th>
-//         <th className="w-100">Nome</th>
-//         <th className="w-25">1º Nota</th>
-//         <th className="w-25">2º Nota</th>
-//         <th className="w-25"><button>nova avaliação</button></th>
-//   )
-// }
-const studentsGrades: Student[] = [
-  {
-    matricula: '203',
-    name: 'Do pagode',
-    notas: 2,
-    absece: '2'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    notas: 2,
-    absece: '2'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    notas: 2,
-    absece: '2'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    notas: 2,
-    absece: '2'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    notas: 2,
-    absece: '2'
-  },
-  {
-    matricula: '234214242342',
-    name: 'iago',
-    notas: 2,
-    absece: '2'
-  }
-]
-const RowGrades = ({ student }: RowProps) => {
-  return (
-    <tr >
-      <td>{student.matricula}</td>
-      <td>{student.name}</td>
-      {gradeslist.map(item => (
-        <td key={item.name}><input type="number" style={{ marginTop: '8px' }} /></td>))}
-    </tr>
-  )
-}
-const GradesContext = createContext<ContextValues>({
-  students: [],
-  setStudent: (student: Student) => {
-
-  }
-})
-export const TeacherClassGrades = () => {
-  const [students, setStudents] = useState<Student[]>([])
-  const setStudent = (student: Student) => {
-    const updatedStudents = students.map(current => current.matricula === student.matricula ? student : current)
-    setStudents(updatedStudents)
-  }
-  const [showSider, setShowSider] = useState(false)
-  const [newGrade, setNewgrade] = useState('')
-  const [grades, setGrades] = useState<Grade[]>([])
-  const setNewgrades = () => {
-    const updatedGrades = grades.concat([{ name: newGrade }])
-    setGrades(updatedGrades)
-  }
-
-  useEffectOnce(() => {
-    // get().then(resp => setStudents(resp.data))
-    Promise.resolve(studentsGrades).then(resp => setStudents(resp)),
-    Promise.resolve(gradeslist).then(resp => setGrades(resp))
-  })
-
-  return (
-    <DivTableBox color='primary'>
-      <NavbarClass />
-      <GradesContext.Provider value={{
-        students,
-        setStudent
-      }} />
-      <div style={{ display: 'flex' }}>
-        <Table striped bordered hover size="sm">
-          <thead>
-            <tr>
-              <th className="w-25" >Matricula</th>
-              <th className="w-100">Nome</th>
-              {gradeslist.map((item, index) => (
-                <th className="w-25" key={index}>{item.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {students.map(item => (
-              <RowGrades student={item} key={item.matricula} />
-            ))}
-          </tbody>
-        </Table>
-        <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-          <input
-            type='text'
-            name='gradeName'
-            placeholder='Nova Avaliação'
-            value= {newGrade}
-            onChange={e => setNewgrade(e.target.value)}
-          />
-          <Button type="button" color="primary" onClick={setNewgrades}>Cadastrar Avaliação</Button>
-        </Sider>
-      </div>
-      <NavbarClassBottom color="primary">
-        <Button type="button" color="primary">Enviar</Button>
-        <Button type="button" color="primary" onClick={() => setShowSider(true)}>Adicionar Avaliação</Button>
-      </NavbarClassBottom>
-    </DivTableBox>
-  )
-}

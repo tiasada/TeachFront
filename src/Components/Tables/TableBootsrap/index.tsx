@@ -57,7 +57,7 @@ const Row = ({ student }: RowProps) => {
 
 const studentslist: Student[] = [
   {
-    matricula: '12312323121',
+    matricula: '1231232321',
     name: 'marcos'
   },
   {

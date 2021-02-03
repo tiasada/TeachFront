@@ -67,7 +67,7 @@ export const CoordTeacher = () => (
             </tbody>
           </ClassTable>
           <NavCoordTeacherBottom />
-        </DivTableRight>
+        </DivTableRight>x 
     </header>
   </main>
 )
