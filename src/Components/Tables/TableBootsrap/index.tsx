@@ -184,8 +184,6 @@ export const TeacherClassGrades = () => {
   }
   useEffectOnce(() => {
   // get().then(resp => setStudents(resp.data))
-    Promise.resolve(studentsGrades).then(resp => setStudents(resp)),
-    Promise.resolve(gradeslist).then(resp => setGrades(resp))
   })
 
   return (

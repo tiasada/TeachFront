@@ -5,7 +5,9 @@ import CheckPresence from '/ui/Inputs'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import { DivTableBox } from '../DivBox'
-import { NavbarClass, NavbarClassBottom } from './ClassroomsNavs'
+import { NavbarClass, NavbarClassBottom } from './ClassroomNavs'
+import Tabs from '/ui/Tabs'
+
 
 type Student = {
   matricula: string
@@ -26,15 +28,12 @@ type ContextValues = {
 
 // Main Classroom component
 const ClassroomTable = () => (
-  <>
-  <NavbarClass/>
-  <TeacherClassCall/>
-  </>
-  // or
-  // <>
-  // <NavbarClass/>
-  // <TeacherClassGrades/>
-  // </>
+  //<DivTableBox color='primary'>
+    <Tabs tabs={['Chamada', 'Notas']} title='Turma'>
+      <p>olá</p>
+      <p>Chiao</p>
+    </Tabs>
+  //</DivTableBox>
 )
 
 export default ClassroomTable
@@ -67,10 +66,10 @@ const Row = ({ student }: RowProps) => {
     </tr>
   )
 }
-
+const studentslist = [' ', ' ']
+const gradeslist = [' ', ' ']
 export const TeacherClassCall = () => (
-  <DivTableBox color='primary'>
-    <NavbarClass />
+  <>
     <Table striped bordered hover size="sm">
       <thead>
         <tr>
@@ -90,7 +89,7 @@ export const TeacherClassCall = () => (
     <NavbarClassBottom color="primary">
       <Button type="button" color="primary">Enviar</Button>
     </NavbarClassBottom>
-  </DivTableBox>
+  </>
 )
 // Grades Table
 // row

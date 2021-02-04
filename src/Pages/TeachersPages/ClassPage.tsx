@@ -1,8 +1,8 @@
 import React from 'react'
 import { ClassTitle } from '../../components/Texts/Titles/styles'
 import Search from '../../components/Bars'
-import { TeacherClassCall } from '../../components/Tables/TableBootsrap'
 import { Navbarmenu } from '../../components/NavBars'
+import ClassroomTable from '/components/ClassroomTable'
 
 export const ClassPage = () => {
   return (
@@ -14,7 +14,7 @@ export const ClassPage = () => {
           </div>
           <div>
             <Search color='secondary' placeholder='Search...' />
-            <TeacherClassCall />
+            <ClassroomTable />
           </div>
       </header>
     </main>
