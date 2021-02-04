@@ -18,6 +18,7 @@ type LoginResponse = {
   token: string
   profile: string
 }
+
 type CreateClassroomRequest = {
   name: string
 }
@@ -38,20 +39,24 @@ export const login = (loginRequest: LoginRequest) => {
   return axiosInstance
     .post<LoginResponse>('/auth/login', loginRequest)
     .then(resp => (localStorage.setItem('UserToken', resp.data.token),
-    (localStorage.setItem('UserProfile', resp.data.profile))
+      (localStorage.setItem('UserProfile', resp.data.profile))
     ))
 }
 export const register = (registerRequest: RegisterRequest) => {
   return axiosInstance
     .post<string>(`/${registerRequest.role}s`, registerRequest)
 }
-export const createclassrom = (createClassroom : CreateClassroomRequest) => {
+export const createclassrom = (createClassroom: CreateClassroomRequest) => {
   return axiosInstance
     .post<string>('/classrooms', createClassroom)
 }
 export const getclassrooms = () => {
   return axiosInstance
     .get<string>('/classrooms')
+}
+export const getStudents = () => {
+  return axiosInstance
+    .get<string[]>('/students')
 }
 export const getclassroom = (id: string) => {
   return axiosInstance

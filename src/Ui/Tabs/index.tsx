@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Nav } from 'react-bootstrap'
+import Button from '../Buttons/button'
 import { NavClass } from './styles'
+import { DivTableBox } from '/components/DivBox'
 
 type Props = {
   children: JSX.Element[]
@@ -12,7 +14,7 @@ const Tabs = ({ children, tabs, title }: Props) => {
   const [currentTab, setCurrentTab] = useState(0)
 
   return (
-    <>
+    <DivTableBox color='primary'>
       <NavClass expand="lg">
         <NavClass.Brand >
           {title}
@@ -30,7 +32,10 @@ const Tabs = ({ children, tabs, title }: Props) => {
         </NavClass.Collapse>
       </NavClass>
       {children[currentTab]}
-    </>
+      <NavClass color="primary">
+      <Button type="button" color="primary">Enviar</Button>
+    </NavClass>
+    </DivTableBox>
   )
 }
 
