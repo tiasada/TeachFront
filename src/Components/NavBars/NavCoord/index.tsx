@@ -21,6 +21,17 @@ export const NavTeacherList = ({ color }: Props) => (
     </NavClass>
 )
 
+export const NavClassList = ({ color }: Props) => (
+    <NavClass expand="lg">
+        <NavClass.Brand >Escola mySchool</NavClass.Brand>
+        <NavClass.Toggle aria-controls="basic-navbar-nav" />
+        <NavClass.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+        </Nav>
+        </NavClass.Collapse>
+    </NavClass>
+)
+
 export const NavTeacherListBottom = () => (
     <NavClass expand="lg">
         <Nav className="mr-auto">
@@ -32,7 +43,7 @@ export const NavTeacherListBottom = () => (
 export const NavStudentListBottom = () => (
     <NavClass expand="lg">
         <Nav className="mr-auto">
-            <Nav.Link href="/studentregister">+Cadastrar turma</Nav.Link>
+            <Nav.Link href="/studentregister">Cadastrar</Nav.Link>
         </Nav>
     </NavClass>
 )

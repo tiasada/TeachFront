@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavStudentListBottom, NavTeacherList, NavTeacherListBottom } from './NavCoord'
+import { NavClassList, NavTeacherListBottom } from './NavCoord'
 import { NavbarStudent } from './NavStudent'
 import { NavbarTeacher } from './NavTeacher'
 
@@ -15,11 +15,8 @@ export const NavbarStudents = () => (
 
 // Coordenation pages
 export const NavCoordTeachList = () => (
-    <NavTeacherList color='secondary' />
+    <NavClassList color='secondary' />
 )
 export const NavCoordTeacherBottom = () => (
     <NavTeacherListBottom />
-)
-export const NavCoordStudentBottom = () => (
-    <NavStudentListBottom />
 )
