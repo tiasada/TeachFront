@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavCoordTeachList } from '/components/NavBars'
-import { NavTeacherListBottom } from '/components/NavBars/NavCoord'
+import { NavStudentListBottom} from '/components/NavBars/NavCoord'
 import { StudentTables } from '/components/Tables'
 import { DivTableRight } from '/components/DivBox'
+import { Modal } from 'react-bootstrap'
 
 type Student = {
   numero: string
@@ -42,7 +43,7 @@ const Row = ({ student }: RowProps) => {
 const studentslist: Student[] = [
   {
     numero: '12312323121',
-    name: 'Do pagode'
+    name: 'Gabrielle'
   },
   {
     numero: '234214242342',
@@ -65,16 +66,16 @@ const studentslist: Student[] = [
     name: 'léo'
   }
 ]
-export const StudentTable = () => (
-
+export const TableClass = () => (
+<>
   <DivTableRight color='primary'>
     <NavCoordTeachList />
     <StudentTables >
       <tr>
-        <th className="w-25" >N°</th>
-        <th className="w-100">Turma</th>
-        <th className="w-25">Qnt Alunos</th>
-        <th className="w-25">Período</th>
+        <th className="w-25" >Matrícula</th>
+        <th className="w-100">Aluno(a)</th>
+        <th className="w-25">Boletim</th>
+        <th className="w-25">Faltas</th>
       </tr>
       <tbody>
         {studentslist.map(item => (
@@ -82,6 +83,10 @@ export const StudentTable = () => (
         ))}
       </tbody>
     </StudentTables>
-    <NavTeacherListBottom />
+    <NavStudentListBottom />
   </DivTableRight>
+  <Modal>
+      
+  </Modal>
+</>
 )
