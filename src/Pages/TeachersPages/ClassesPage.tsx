@@ -5,28 +5,27 @@ import Search from '../../components/Bars'
 import { DivClasslist } from '../../components/DivBox/Overflows'
 import { Navbarmenu } from '../../components/NavBars'
 import { useHistory } from 'react-router-dom'
-import { getclassrooms } from '/api'
-
-type Classroom = {
-  name: string
-  subjects: string[]
-  subjectsString: string
-  students: string[]
-  teachers: string[]
-  grades: string[]
-  classDays: string[]
-  id: string
-}
+import { Classroom, getclassrooms } from '/api'
+import { useEffectOnce } from 'react-use'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export const ClassesPage = () => {
   const history = useHistory()
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
-  getclassrooms()
-    .then(resp => setClassrooms(resp.data))
+  const [search, setSearch] = useState('')
 
-  function handleClick (id: string) {
+  function handleClick(id: string) {
     history.push(`/class/${id}`)
   }
+  const getClassrooms = () => {
+    getclassrooms<Classroom[]>(
+      'classrooms',
+      search ? { name: search } : undefined
+    )
+      .then(resp => setClassrooms(resp.data))
+  }
+  useEffectOnce(getClassrooms)
   return (
     <main>
       <div >
@@ -37,7 +36,17 @@ export const ClassesPage = () => {
       </div>
       <div>
         <ClassTitle>Suas Turmas</ClassTitle>
-        <Search color='secondary' placeholder='sua mae aquela...' />
+        <Search
+          color='secondary'
+          placeholder='...'
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+        <FontAwesomeIcon
+          onClick={getTeams}
+          icon={faSearch}
+          color={colors.primary}
+        />
         <DivClasslist center>
           {classrooms.map(item => (
             <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>

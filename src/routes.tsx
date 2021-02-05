@@ -7,7 +7,6 @@ import {
   Classes,
   CoordStudent,
   Schedule,
-  ClassGradesPage,
   StudentInfo,
   CoordTeacher,
   TeacherInfo,
@@ -16,7 +15,7 @@ import {
   StudentRegister,
   ParentRegistration,
   ClassroomRegister
-} from './Pages'
+} from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -26,7 +25,6 @@ export default function App () {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/schedule" component={Schedule} />
-        <Route path="/class/:id/grades" component={ClassGradesPage} />
         <Route path="/class/:id" component={ClassPage} />
         <Route path="/teacher" component={Classes} />
         <Route path="/studentprofile" component={StudentInfo} />

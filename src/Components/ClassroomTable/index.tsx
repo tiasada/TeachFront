@@ -5,7 +5,7 @@ import CheckPresence from '/ui/Inputs'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'
-import { getStudents } from '/api'
+import { getStudents, Student } from '/api'
 
 // type Student = {
 //   matricula: string
@@ -13,14 +13,7 @@ import { getStudents } from '/api'
 //   presence?: boolean
 //   reason?: string
 // }
-type Student = {
-  name: string
-  cpf: string
-  phonenumber: string
-  registration: string
-  userid: string
-  parentid?: string
-}
+
 type RowProps = {
   student: Student
 }
@@ -142,8 +135,6 @@ export const TeacherClassGrades = () => {
     const updatedGrades = grades.concat([{ name: newGrade }])
     setGrades(updatedGrades)
   }
-
-
   return (
     <>
       <GradesContext.Provider value={{
