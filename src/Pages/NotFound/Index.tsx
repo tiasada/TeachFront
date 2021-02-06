@@ -4,7 +4,7 @@ import { TextPattern } from '../../components/Texts'
 import Button from '../../ui/Buttons/button'
 
 export const NotFound = () => {
-  const redirect = (() => history.pushState('home', '/home'))
+  const redirect = () => history.pushState('home', '/home')
   return (
     <main>
       <NotFoundImage />

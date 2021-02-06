@@ -3,7 +3,7 @@ import { Colors, colors } from '../../../theme/colors'
 import { LoginButton, MenuBtn } from './styles'
 
 type Props = {
-  children: string
+  children?: string
   onClick?: () => void
   type?: 'submit' | 'button' | 'reset'
   color: Colors

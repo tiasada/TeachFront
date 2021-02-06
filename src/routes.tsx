@@ -35,7 +35,7 @@ export default function App () {
         <Route path="/studentregister" component={StudentRegister} />
         <Route path="/classroomregister" component={ClassroomRegister} />
         <Route path="/parentregister" component={ParentRegistration} />
-        <Route path="/classtable" component={ClassTable} />
+        {/* <Route path="/classtable" component={ClassTable} /> */}
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavCoordTeachList } from '/components/NavBars'
-import { NavStudentListBottom} from '/components/NavBars/NavCoord'
+import { NavStudentListBottom } from '/components/NavBars/NavCoord'
 import { StudentTables } from '/components/Tables'
 import { DivTableRight } from '/components/DivBox'
 import { Modal } from 'react-bootstrap'
@@ -86,7 +86,7 @@ export const TableClass = () => (
     <NavStudentListBottom />
   </DivTableRight>
   <Modal>
-      
+
   </Modal>
 </>
 )

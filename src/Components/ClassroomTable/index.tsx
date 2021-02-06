@@ -1,18 +1,12 @@
-import React, { createContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { useToggle } from 'react-use'
+import { useEffectOnce, useToggle } from 'react-use'
 import CheckPresence from '/ui/Inputs'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'
-import { getStudents, Student } from '/api'
-
-// type Student = {
-//   matricula: string
-//   name: string
-//   presence?: boolean
-//   reason?: string
-// }
+import Search from '/components/Bars'
+import { get, Student } from '/api'
 
 type RowProps = {
   student: Student
@@ -20,18 +14,40 @@ type RowProps = {
 type Grade = {
   name: string
 }
-type ContextValues = {
+type TableProps = {
   students: Student[]
-  setStudent: (student: Student) => void
 }
 
 // Main Classroom component
-const ClassroomTable = () => (
-  <Tabs tabs={['Chamada', 'Notas']} title='Turma'>
-    <TeacherClassCall />
-    <TeacherClassGrades />
-  </Tabs>
-)
+const ClassroomTable = () => {
+  const [search, setSearch] = useState('')
+  const [students, setStudents] = useState<Student[]>([])
+
+  const getStudents = () => {
+    get<Student[]>(
+      'students',
+      search ? { name: search } : undefined
+    )
+      .then(resp => setStudents(resp.data))
+  }
+  useEffectOnce(getStudents)
+
+  return (
+    <>
+      <Search
+          color='secondary'
+          placeholder='...'
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          onClick={getStudents}
+        />
+      <Tabs tabs={['Chamada', 'Notas']} title='Turma'>
+        <TeacherClassCall students={students} />
+        <TeacherClassGrades students={students} />
+      </Tabs>
+    </>
+  )
+}
 
 export default ClassroomTable
 // CallTable
@@ -73,11 +89,7 @@ const gradeslist: Grade[] = [
   }
 ]
 
-export const TeacherClassCall = () => {
-  const [students, setStudents] = useState<Student[]>([])
-  getStudents()
-    .then(resp => setStudents(resp.data))
-
+export const TeacherClassCall = ({ students }:TableProps) => {
   return (
     <>
       <Table striped bordered hover size="sm">
@@ -113,34 +125,22 @@ const RowGrades = ({ student }: RowProps) => {
   )
 }
 // context
-const GradesContext = createContext<ContextValues>({
-  students: [],
-  setStudent: (student: Student) => {
-
-  }
-})
-export const TeacherClassGrades = () => {
-  const [students, setStudents] = useState<Student[]>([])
-  getStudents()
-    .then(resp => setStudents(resp.data))
-
-  const setStudent = (student: Student) => {
-    const updatedStudents = students.map(current => current.registration === student.registration ? student : current)
-    setStudents(updatedStudents)
-  }
+export const TeacherClassGrades = ({ students }: TableProps) => {
+  // const setStudent = (student: Student) => {
+  //   const updatedStudents = students.map(
+  //     current => current.registration === student.registration ? student : current)
+  //   setStudents(updatedStudents)
+  // }
   const [showSider, setShowSider] = useState(false)
   const [newGrade, setNewgrade] = useState('')
+  //
   const [grades, setGrades] = useState<Grade[]>([])
-  const setNewgrades = () => {
+  const setUpdatedGrades = () => {
     const updatedGrades = grades.concat([{ name: newGrade }])
     setGrades(updatedGrades)
   }
   return (
     <>
-      <GradesContext.Provider value={{
-        students,
-        setStudent
-      }} />
       <div style={{ display: 'flex' }}>
         <Table striped bordered hover size="sm">
           <thead>
@@ -156,7 +156,7 @@ export const TeacherClassGrades = () => {
             {students.map(item => (
               <RowGrades student={item} key={item.registration} />
             ))}
-            <Button type="button" color="primary" onClick={setNewgrades}>+</Button>
+            <Button type="button" color="primary" onClick={setUpdatedGrades}>+</Button>
           </tbody>
         </Table>
         <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>

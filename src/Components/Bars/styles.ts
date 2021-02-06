@@ -9,13 +9,11 @@ export const SearchBar = styled.input`
   margin-bottom: 100px;
   margin-top: 80px;
   margin-left: auto;
-  margin-right: auto;
-  display: block;
-  align-items: center;
-  background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png');
-  background-size: 20px;
-  background-position: 2% 40%;
-  background-repeat: no-repeat;
+  margin-right: 15px;
+  display: inline-block;
+  
+
+ 
   &:placeholder-shown{
     text-align: left;
   }
@@ -27,3 +25,10 @@ export const SearchBar = styled.input`
 `
 
 export default SearchBar
+
+export const DivSearch = styled.div`
+margin-bottom: 10px;
+margin-top: 10px;
+flex-direction: row;
+
+`

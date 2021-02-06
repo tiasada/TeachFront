@@ -5,21 +5,19 @@ import Search from '../../components/Bars'
 import { DivClasslist } from '../../components/DivBox/Overflows'
 import { Navbarmenu } from '../../components/NavBars'
 import { useHistory } from 'react-router-dom'
-import { Classroom, getclassrooms } from '/api'
+import { Classroom, get } from '/api'
 import { useEffectOnce } from 'react-use'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export const ClassesPage = () => {
   const history = useHistory()
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [search, setSearch] = useState('')
 
-  function handleClick(id: string) {
+  function handleClick (id: string) {
     history.push(`/class/${id}`)
   }
   const getClassrooms = () => {
-    getclassrooms<Classroom[]>(
+    get<Classroom[]>(
       'classrooms',
       search ? { name: search } : undefined
     )
@@ -41,11 +39,7 @@ export const ClassesPage = () => {
           placeholder='...'
           value={search}
           onChange={e => setSearch(e.target.value)}
-        />
-        <FontAwesomeIcon
-          onClick={getTeams}
-          icon={faSearch}
-          color={colors.primary}
+          onClick={getClassrooms}
         />
         <DivClasslist center>
           {classrooms.map(item => (
