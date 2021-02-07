@@ -10,8 +10,8 @@ export const NavIconSt = styled.img`
     
 `
 export const NotStyle = styled.img`
-    width: 500px;
-    height: 300px;
+    width: 750px;
+    height: 500px;
     display: inline-block;
     margin: 150px;
     

@@ -1,13 +1,11 @@
 import React from 'react'
 import { LoginTitle } from '../../components/Texts/Titles/styles'
-import Search from '../../components/Bars'
 import { Navbarmenu } from '../../components/NavBars'
-import { StudentTable } from '/components/Tables/TableStudents'
+import ClassroomListTable from '/components/ClassroomListTable'
 
-export const MainPage = () => {
+export const ClassRoomsPage = () => {
   return (
-    <main>
-      <header role="banner">
+    <>
         <div>
           <Navbarmenu />
         </div>
@@ -15,11 +13,9 @@ export const MainPage = () => {
           <LoginTitle>Escola E.E.F.Rubrivira</LoginTitle>
         </div>
         <div>
-          <Search color='secondary' placeholder='Search...' />
-          <StudentTable />
+          <ClassroomListTable />
         </div>
-      </header>
-    </main>
+    </>
   )
 }
-export default MainPage
+export default ClassRoomsPage

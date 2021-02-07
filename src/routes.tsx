@@ -5,7 +5,7 @@ import {
   Login,
   ClassPage,
   Classes,
-  CoordStudent,
+  ClassroomsPage,
   Schedule,
   StudentInfo,
   CoordTeacher,
@@ -28,7 +28,7 @@ export default function App () {
         <Route path="/class/:id" component={ClassPage} />
         <Route path="/teacher" component={Classes} />
         <Route path="/studentprofile" component={StudentInfo} />
-        <Route path="/classpage" component={CoordStudent} />
+        <Route path="/classroomspage" component={ClassroomsPage} />
         <Route path="/teacherpage" component={CoordTeacher} />
         <Route path="/teacherprofile" component={TeacherInfo} />
         <Route path="/teacherregister" component={TeacherRegister} />

@@ -8,6 +8,15 @@ export type Student = {
   userid: string
   parentid?: string
 }
+export type Teacher = {
+  name: string
+  cpf: string
+  phonenumber: string
+  birthDate: string
+  ermail?: string
+  userid: string
+  classrooms?: Classroom []
+}
 export type Classroom = {
   name: string
   subjects: string[]

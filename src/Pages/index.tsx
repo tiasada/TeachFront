@@ -1,6 +1,6 @@
 export { default as Login } from './Login'
 export { default as ClassPage } from './TeachersPages/ClassPage'
-export { default as CoordStudent } from './CoordenationPG/studentPage'
+export { default as ClassroomsPage } from './CoordenationPG/ClassroomsPage'
 export { default as Schedule } from './StudentPages/Schedule2'
 export { default as Classes } from './TeachersPages/ClassesPage'
 export { default as StudentInfo } from './CoordenationPG/studentProfile'
