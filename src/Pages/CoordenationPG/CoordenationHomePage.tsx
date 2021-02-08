@@ -3,7 +3,7 @@ import { LoginTitle } from '../../components/Texts/Titles/styles'
 import { Navbarmenu } from '../../components/NavBars'
 import ClassroomListTable from '/components/ClassroomListTable'
 
-export const ClassRoomsPage = () => {
+export const CoordenationHomePage = () => {
   return (
     <>
         <div>
@@ -18,4 +18,4 @@ export const ClassRoomsPage = () => {
     </>
   )
 }
-export default ClassRoomsPage
+export default CoordenationHomePage

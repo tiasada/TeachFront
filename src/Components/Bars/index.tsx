@@ -9,7 +9,7 @@ type Props = {
   placeholder: string
   value?: string | number | readonly string[]
   onChange?: React.ChangeEventHandler<HTMLInputElement>
-  onClick?: (() => void)
+  onClick: (() => void)
 }
 
 const Search = ({ color, placeholder, value, onChange, onClick }: Props) => {
@@ -21,6 +21,9 @@ const Search = ({ color, placeholder, value, onChange, onClick }: Props) => {
         type="text"
         value={value}
         onChange={onChange}
+        onKeyPress={event => {
+          if (event.key === 'Enter') { onClick() }
+        }}
       />
       <FontAwesomeIcon
         onClick={onClick}

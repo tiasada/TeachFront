@@ -5,16 +5,12 @@ import {
   Login,
   ClassPage,
   Classes,
-  ClassroomsPage,
+  CoordenationHomePage,
   Schedule,
   StudentInfo,
-  CoordTeacher,
   TeacherInfo,
   NotFound,
-  TeacherRegister,
-  StudentRegister,
-  ParentRegistration,
-  ClassroomRegister
+  Registers
 } from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -28,14 +24,9 @@ export default function App () {
         <Route path="/class/:id" component={ClassPage} />
         <Route path="/teacher" component={Classes} />
         <Route path="/studentprofile" component={StudentInfo} />
-        <Route path="/classroomspage" component={ClassroomsPage} />
-        <Route path="/teacherpage" component={CoordTeacher} />
+        <Route path="/classroomspage" component={CoordenationHomePage} />
         <Route path="/teacherprofile" component={TeacherInfo} />
-        <Route path="/teacherregister" component={TeacherRegister} />
-        <Route path="/studentregister" component={StudentRegister} />
-        <Route path="/classroomregister" component={ClassroomRegister} />
-        <Route path="/parentregister" component={ParentRegistration} />
-        {/* <Route path="/classtable" component={ClassTable} /> */}
+        <Route path="/registers" component={Registers} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>

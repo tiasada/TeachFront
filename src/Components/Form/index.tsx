@@ -12,7 +12,7 @@ const Form = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     login({ username, password })
-      .then(() => history.push(`/${localStorage.getItem('UserProfile')}`))
+      .then(() => history.push('/home'))
       .catch(() => alert('Login inválido'))
   }
   return (

@@ -4,6 +4,7 @@ import { useEffectOnce } from 'react-use'
 import Search from '/components/Bars'
 import { get, Classroom, Student, Teacher } from '/api'
 import Tabs from '/ui/Tabs'
+import Modal from '../Modal'
 
 type RowProps = {
   classroom: Classroom
@@ -30,6 +31,9 @@ const ClassroomListTable = () => {
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [students, setStudents] = useState<Student[]>([])
   const [teachers, setTeachers] = useState<Teacher[]>([])
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   const getTables = () => {
     get<Student[]>(
@@ -65,6 +69,10 @@ const ClassroomListTable = () => {
         <StudentsTable students={students} />
         <TeacherTable teachers={teachers}/>
       </Tabs>
+      <Modal open={show} onClose={handleClose}>
+        <p>funcionando</p>
+      </Modal>
+      <button onClick={handleShow}>x</button>
     </>
   )
 }

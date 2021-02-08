@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useEffectOnce, useToggle } from 'react-use'
-import CheckPresence from '/ui/Inputs'
+import CheckPresence from '/ui/Checkbox'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'

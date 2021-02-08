@@ -1,14 +1,16 @@
+// Common Pages
 export { default as Login } from './Login'
-export { default as ClassPage } from './TeachersPages/ClassPage'
-export { default as ClassroomsPage } from './CoordenationPG/ClassroomsPage'
-export { default as Schedule } from './StudentPages/Schedule2'
-export { default as Classes } from './TeachersPages/ClassesPage'
-export { default as StudentInfo } from './CoordenationPG/studentProfile'
-export { default as CoordTeacher } from './CoordenationPG/TeacherPage'
-export { default as TeacherInfo } from './CoordenationPG/TeacherProfile'
 export { default as NotFound } from './NotFound/Index'
-export { default as TeacherRegister } from './CoordenationPG/teacherRegister'
-export { default as StudentRegister } from './CoordenationPG/studentRegister'
-export { default as ParentRegistration } from './CoordenationPG/ParentRegister'
-export { default as ClassroomRegister } from './CoordenationPG/ClassroomRegister'
-export { default as ClassTable } from './CoordenationPG/classTable'
+
+// Teacher's Pages
+export { default as ClassPage } from './TeachersPages/ClassPage'
+export { default as Classes } from './TeachersPages/ClassesPage'
+
+// Student's Pages
+export { default as Schedule } from './StudentPages/Schedule2'
+
+// Cordnation's Pages
+export { default as CoordenationHomePage } from './CoordenationPG/CoordenationHomePage'
+export { default as StudentInfo } from './CoordenationPG/StudentProfile'
+export { default as TeacherInfo } from './CoordenationPG/TeacherProfile'
+export { default as Registers } from './CoordenationPG/Registers'
