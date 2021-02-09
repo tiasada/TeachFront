@@ -5,7 +5,7 @@ import CheckPresence from '/ui/Checkbox'
 import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'
-import Search from '/components/Bars'
+import Search from '../Bars'
 import { get, Student } from '/api'
 
 type RowProps = {

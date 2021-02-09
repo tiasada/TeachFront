@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useEffectOnce } from 'react-use'
-import Search from '/components/Bars'
+import Search from '../Bars'
 import { get, Classroom, Student, Teacher } from '/api'
 import Tabs from '/ui/Tabs'
 import Modal from '../Modal'

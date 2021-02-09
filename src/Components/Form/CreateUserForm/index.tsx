@@ -22,7 +22,6 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
   const [cpf, setCpf] = useState('')
   const [phonenumber, setPhonenumber] = useState('')
   const [birthdate, setBirth] = useState('')
-
   const [registration, setRegistration] = useState('')
 
   const inputs: Inputs[] = [

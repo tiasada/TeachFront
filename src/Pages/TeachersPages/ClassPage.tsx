@@ -1,7 +1,7 @@
 import React from 'react'
 import { ClassTitle } from '../../components/Texts/Titles/styles'
 import { Navbarmenu } from '../../components/NavBars'
-import ClassroomTable from '/components/ClassroomTable'
+import ClassroomTable from '../../components/ClassroomTable'
 
 export const ClassPage = () => {
   return (

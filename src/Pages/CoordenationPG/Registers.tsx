@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateUserForm from '../../components/Form/CreateUserForm'
-import Add from '/components/Add'
-import CreateClassroomForm from '/components/CreateClassroomForm'
+import Add from '../../components/Add'
+import CreateClassroomForm from '../../components/CreateClassroomForm'
 import Tabs from '/ui/Tabs'
 
 export const Registers = () => (

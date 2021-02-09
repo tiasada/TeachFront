@@ -16,3 +16,4 @@ export const NavClass = styled(Navmenu)<Props>`
     display: flex;
     justify-content: space-between;
 `
+
