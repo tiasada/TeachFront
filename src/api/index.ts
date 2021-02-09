@@ -7,6 +7,7 @@ export type Student = {
   registration: string
   userid: string
   parentid?: string
+  id: string
 }
 export type Teacher = {
   name: string
@@ -16,6 +17,7 @@ export type Teacher = {
   ermail?: string
   userid: string
   classrooms?: Classroom []
+  id: string
 }
 export type Classroom = {
   name: string
@@ -90,10 +92,17 @@ export const getclassroom = (id: string) => {
   return axiosInstance
     .get<Classroom>('/classrooms')
 }
+export const addStudent = (student: string, classroom: string) => {
+  return axiosInstance
+    .patch<string>(`/classrooms/${classroom}/addstudent/${student}`)
+}
 
 export const post = <T>(url: string, data: any) => (
   axiosInstance.post<T>(`/${url}`, data)
 )
 export const get = <T>(url: string, params?: object) => (
   axiosInstance.get<T>(`/${url}`, { params })
+)
+export const patch = <T>(url: string, params?: object) => (
+  axiosInstance.patch<T>(`/${url}`, { params })
 )

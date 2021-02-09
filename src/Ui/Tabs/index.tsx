@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Nav } from 'react-bootstrap'
-import Button from '../Buttons/button'
 import { NavClass } from './styles'
 import { DivTableBox } from '/components/DivBox'
 
