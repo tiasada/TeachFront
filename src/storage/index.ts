@@ -11,5 +11,5 @@ export const getData = () => {
 }
 
 export const store = (store: Store) => {
-  localStorage.setItem(KEY, JSON.stringify({ ...getData(), store }))
+  localStorage.setItem(KEY, JSON.stringify({ ...getData(), ...store }))
 }
