@@ -150,7 +150,7 @@ export const TeacherTable = ({ teachers }: TeachersProps) => {
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th className="w-25" >Matricula</th>
+            <th className="w-25" >CPF</th>
             <th className="w-100">Nome</th>
           </tr>
         </thead>

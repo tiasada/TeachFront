@@ -4,7 +4,7 @@ import { Label as InputLabel } from '/ui/Label'
 import { createclassrom } from '/api'
 import Input from '/ui/Input'
 
-const CreateClassroomForm = () => {
+const CreateClassroomForm =   () => {
   const [name, setName] = useState('')
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
