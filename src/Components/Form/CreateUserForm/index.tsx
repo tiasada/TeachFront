@@ -22,7 +22,7 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
   const [cpf, setCpf] = useState('')
   const [phonenumber, setPhonenumber] = useState('')
   const [birthdate, setBirth] = useState('')
-
+  const [email, setEmail] = useState('')
   const [registration, setRegistration] = useState('')
 
   const inputs: Inputs[] = [
@@ -35,7 +35,7 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
     },
     {
       type: 'text',
-      title: 'cpf',
+      title: 'CPF',
       value: cpf,
       holder: '00011100011',
       set: setCpf
@@ -54,17 +54,24 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
     },
     {
       type: 'text',
-      title: 'registration',
+      title: 'email',
+      value: email,
+      holder: 'meuemail@email.com',
+      set: setEmail
+    },
+    {
+      type: 'text',
+      title: 'matrícula',
       value: registration,
       holder: 'Matricula',
       set: setRegistration
-    }
+    },
   ]
 
   const user = { name, cpf, phonenumber, birthdate, registration, role }
 
   if (role === 'teacher') {
-    inputs.splice(4, 1)
+    inputs.splice(5, 1)
   }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {

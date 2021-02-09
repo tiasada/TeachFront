@@ -1,8 +1,12 @@
-import styled from 'styled-components'
-import { Navbar } from 'react-bootstrap'
+import styled, { css } from 'styled-components'
+import { Nav, Navbar } from 'react-bootstrap'
 
 type Props = {
     color: string
+}
+type TabProps = {
+    color: string
+    active?: boolean
 }
 
 export const Navmenu = styled(Navbar)<Props>`
@@ -16,3 +20,15 @@ export const NavClass = styled(Navmenu)<Props>`
     display: flex;
     justify-content: space-between;
 `
+export const TabItem = styled(Nav.Item)<TabProps>`
+    background-image: none;
+    margin-right: 15px; 
+    background-color: ${({ active, color }) => active ? 'rgba(180,180,180,0.3)' : color};
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+    &:hover {
+        background-color: #ddd;
+    }
+    `

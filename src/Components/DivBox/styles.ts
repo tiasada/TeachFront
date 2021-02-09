@@ -23,8 +23,7 @@ export const DivTabBox = styled.div`
   border-radius: 8px;
   border: 1px solid #ddd;
   margin-left: auto;
-  margin-right: auto;
-
+  margin-right: auto; 
 
   height: auto;
   display: block;

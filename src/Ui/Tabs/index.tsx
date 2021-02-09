@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Nav } from 'react-bootstrap'
 import Button from '../Buttons/button'
-import { NavClass } from './styles'
+import { NavClass, TabItem} from './styles'
 import { DivTableBox } from '/components/DivBox'
+import { Colors, colors} from '/theme/colors'
 
 type Props = {
   children: JSX.Element[]
@@ -23,10 +24,9 @@ const Tabs = ({ children, tabs, title }: Props) => {
         <NavClass.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             {tabs.map((tabTitle, index) => (
-              // active={currentTab === index}
-              <Nav.Item onClick={() => setCurrentTab(index)} key={index}>
+              <TabItem active={currentTab === index} onClick={() => setCurrentTab(index)} key={index}>
                 {tabTitle}
-              </Nav.Item>
+              </TabItem>
             ))}
           </Nav>
         </NavClass.Collapse>
