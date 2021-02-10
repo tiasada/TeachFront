@@ -1,44 +1,31 @@
-// import React from 'react'
-// import { getData } from '../storage'
+import React from 'react'
 
-// // types of roles
-// enum Roles {
-//   Teacher = 0,
-//   Student = 1,
-//   Parent = 2,
-//   School = 3
-// }
+import useUserData, { Role } from '../hooks/useUserData'
+import CoordenationHomePage from './CoordenationPG/CoordenationHomePage'
+import ClassesPage from './TeachersPages/ClassesPage'
 
-// // geted role
-// const userRole = Roles.Student
+// permit the userby role
+const Permissions = ({ children, roles }: { children: React.ReactNode, roles: Role[] }) => {
+  const { role } = useUserData()
 
-// // get from localStore
-// const useUserData = () => {
-//   getData()
-// }
-// // permit the userby role
-// const Permissions = ({ children, roles }: { children: React.ReactNode, roles: Roles[] }) => {
-//   const { role } = useUserData()
+  return (
+    <>
+      {roles.includes(role) && children}
+    </>
+  )
+}
 
-//   return (
-//     <>
-//       {roles.includes(role) && children}
-//     </>
-//   )
-// }
+const HomePage = () => {
+  return (
+    <>
+      <Permissions roles={[Role.School]}>
+        <CoordenationHomePage />
+      </Permissions>
+      <Permissions roles={[Role.Teacher]}>
+        <ClassesPage />
+      </Permissions>
+    </>
+  )
+}
 
-// const HomePage = () => {
-//   return (
-//     <>
-//       <Permissions roles={[Roles.School, Roles.Teacher]}>
-//         <ClassesList />
-//       </Permissions>
-
-//       <Permissions roles={[Roles.Student]}>
-//         <UserSomething />
-//       </Permissions>
-//     </>
-//   )
-// }
-
-// export default HomePage
+export default HomePage

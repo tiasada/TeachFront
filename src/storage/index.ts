@@ -1,7 +1,7 @@
 const KEY = 'Teach-Front'
 
 type Store = {
-  token?: string
+  token: string
 }
 
 export const getData = () => {

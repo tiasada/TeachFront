@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getData, store } from '/storage'
 
 export type Student = {
   name: string
@@ -30,7 +31,6 @@ export type Classroom = {
   id: string
 }
 
-const USER_TOKEN = 'UserToken'
 type LoginRequest = {
   username: string
   password: string
@@ -60,7 +60,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use(config => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem(USER_TOKEN)}`
+  config.headers.Authorization = `Bearer ${getData().token}`
   return config
 }
 )
@@ -69,32 +69,26 @@ export const login = (loginRequest: LoginRequest) => {
   return axiosInstance
     .post<LoginResponse>('/auth/login', loginRequest)
     .then(resp => {
-      localStorage.setItem('UserToken', resp.data.token)
-      localStorage.setItem('UserProfile', resp.data.profile)
+      store({ token: resp.data.token })
     })
 }
 
 export const register = (registerRequest: RegisterRequest) => axiosInstance.post<string>(`/${registerRequest.role}s`, registerRequest)
 
 export const createclassrom = (createClassroom: CreateClassroomRequest) => {
-  return axiosInstance
-    .post<string>('/classrooms', createClassroom)
+  return post<string>('/classrooms', createClassroom)
 }
 export const getclassrooms = () => {
-  return axiosInstance
-    .get<Classroom[]>('/classrooms')
+  return get<Classroom[]>('/classrooms')
 }
 export const getStudents = () => {
-  return axiosInstance
-    .get<Student[]>('/students')
+  return get<Student[]>('/students')
 }
 export const getclassroom = (id: string) => {
-  return axiosInstance
-    .get<Classroom>('/classrooms')
+  return get<Classroom>(`/classrooms/${id}`)
 }
-export const addStudent = (student: string, classroom: string) => {
-  return axiosInstance
-    .patch<string>(`/classrooms/${classroom}/addstudent/${student}`)
+export const addStudent = (studentId: string, classroomId: string) => {
+  return patch<string>(`/classrooms/${classroomId}/student`, { studentId })
 }
 
 export const post = <T>(url: string, data: any) => (

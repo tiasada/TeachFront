@@ -10,7 +10,8 @@ import {
   StudentInfo,
   TeacherInfo,
   NotFound,
-  Registers
+  Registers,
+  Home
 } from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -19,6 +20,7 @@ export default function App () {
   return (
     <Router>
       <Switch>
+        <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/schedule" component={Schedule} />
         <Route path="/class/:id" component={ClassPage} />

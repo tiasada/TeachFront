@@ -7,7 +7,8 @@
     "dev": "parcel src/index.html",
     "lint": "eslint src/**/*.ts{,x}",
     "compile": "tsc --build",
-    "quality": "npm run lint && npm run compile"
+    "quality": "npm run lint && npm run compile",
+    "test" : "tsc Test.ts"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "jwt-decode": "^3.1.2",
     "parcel-bundler": "^1.12.4",
     "popper.js": "^1.16.1",
     "react": "^17.0.1",

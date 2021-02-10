@@ -44,13 +44,12 @@ const AddStudent = () => {
     get<Student[]>(
       'students',
       search ? { name: search } : undefined
-    )
-      .then(resp => setStudents(resp.data))
+    ).then(resp => setStudents(resp.data))
+
     get<Classroom[]>(
       'classrooms',
       search ? { name: search } : undefined
-    )
-      .then(resp => setClassrooms(resp.data))
+    ).then(resp => setClassrooms(resp.data))
   }
 
   useEffectOnce(getData)
