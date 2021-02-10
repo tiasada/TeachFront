@@ -16,7 +16,23 @@ export const DivBx = styled.div<Props>`
   border: 1px solid #000000;
   border-radius: 8px;
   box-sizing: border-box;
+  
 `
+export const DivBxRegister= styled.div<Props>`
+  position: absolute;
+  width: 1083px;
+  height: 500px;
+  top: 100px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+
+  background: ${({ color }) => color};
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+`
+
 export const DivTabBox = styled.div`
   position: static;
   width: 80%;
