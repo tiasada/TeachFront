@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivBx, DivTabBox, DivTabL, DivTabR, ProfileBox } from './styles'
+import { DivBx, DivBxRegister, DivTabBox, DivTabL, DivTabR, ProfileBox } from './styles'
 import { Colors, colors } from '/theme/colors'
 
 type Props = {
@@ -10,7 +10,9 @@ type Props = {
 export const Divbox = ({ color, children }: Props) => (
     <DivBx color={colors[color]}>{ children }</DivBx>
 )
-
+export const DivboxRegister = ({ color, children }: Props) => (
+    <DivBxRegister color={colors[color]}>{ children }</DivBxRegister>
+)
 export const DivTableBox = ({ children }: Props) => (
     <DivTabBox>{ children }</DivTabBox>
 )

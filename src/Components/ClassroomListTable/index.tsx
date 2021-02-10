@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useEffectOnce } from 'react-use'
-import Search from '/components/Bars'
+import Search from '../Bars'
 import { get, Classroom, Student, Teacher } from '/api'
 import Tabs from '/ui/Tabs'
 import Modal from '../Modal'
@@ -150,7 +150,7 @@ export const TeacherTable = ({ teachers }: TeachersProps) => {
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th className="w-25" >Matricula</th>
+            <th className="w-25" >CPF</th>
             <th className="w-100">Nome</th>
           </tr>
         </thead>
