@@ -11,7 +11,7 @@ type Props = {
 
 const Button = ({ color, children, type = 'submit', ...rest }: Props) => {
   return (
-    <LoginButton type={type} color ={colors[color]} {...rest}>{children}</LoginButton>
+    <LoginButton type={type} color={colors[color]} {...rest}>{children}</LoginButton>
   )
 }
 
