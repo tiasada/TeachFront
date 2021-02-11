@@ -74,23 +74,23 @@ export const login = (loginRequest: LoginRequest) => {
 }
 
 export const register = (registerRequest: RegisterRequest) => {
-  return post<string>(`/${registerRequest.role}s`, registerRequest)
+  return post<string>(`${registerRequest.role}s`, registerRequest)
 }
 
 export const createclassrom = (createClassroom: CreateClassroomRequest) => {
-  return post<string>('/classrooms', createClassroom)
+  return post<string>('classrooms', createClassroom)
 }
 export const getclassrooms = () => {
   return get<Classroom[]>('/classrooms')
 }
 export const getStudentsByClassroom = (id: string, params?: object) => {
-  return axiosInstance.get<Student[]>(`/classrooms/${id}/students`, { params })
+  return get<Student[]>(`classrooms/${id}/students`, { params })
 }
 export const getclassroom = (id: string) => {
-  return get<Classroom>(`/classrooms/${id}`)
+  return get<Classroom>(`classrooms/${id}`)
 }
 export const addStudent = (studentId: string, classroomId: string) => {
-  return axiosInstance.post<string>(`/classrooms/${classroomId}/students`, { id: studentId })
+  return post<string>(`classrooms/${classroomId}/students`, { id: studentId })
 }
 
 export const post = <T>(url: string, data: any) => (
