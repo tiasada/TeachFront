@@ -1,9 +1,10 @@
 import React from 'react'
-import CreateUserForm from '../../components/Form/CreateUserForm'
 import Add from '../../components/Add'
 import CreateClassroomForm from '../../components/CreateClassroomForm'
+import CreateParentForm from '/components/CreateParentForm'
+import CreateStudentForm from '/components/CreateStudentForm'
+import CreateTeacherForm from '/components/CreateTeacherForm'
 import Tabs from '/ui/Tabs'
-import { DivboxRegister } from '/components/DivBox'
 
 export const Registers = () => (
   <>
@@ -15,9 +16,9 @@ export const Registers = () => (
     ]}
       title='Registers'
     >
-      <CreateUserForm title='Cadastro do Professor' buttonText='Cadastrar' role='teacher' />
-      <CreateUserForm title='Cadastro do Estudante' buttonText='Cadastrar' role='student' />
-      <CreateUserForm title='Cadastro do Responsáveis' buttonText='Cadastrar' role='parent' />
+      <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar'/>
+      <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar'/>
+      <CreateParentForm title='Cadastro do Responsáveis' buttonText='Cadastrar'/>
       <CreateClassroomForm />
     </Tabs>
     <Add />

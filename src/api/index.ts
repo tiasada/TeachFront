@@ -73,7 +73,9 @@ export const login = (loginRequest: LoginRequest) => {
     })
 }
 
-export const register = (registerRequest: RegisterRequest) => axiosInstance.post<string>(`/${registerRequest.role}s`, registerRequest)
+export const register = (registerRequest: RegisterRequest) => {
+  return post<string>(`/${registerRequest.role}s`, registerRequest)
+}
 
 export const createclassrom = (createClassroom: CreateClassroomRequest) => {
   return post<string>('/classrooms', createClassroom)
@@ -81,14 +83,14 @@ export const createclassrom = (createClassroom: CreateClassroomRequest) => {
 export const getclassrooms = () => {
   return get<Classroom[]>('/classrooms')
 }
-export const getStudents = () => {
-  return get<Student[]>('/students')
+export const getStudentsByClassroom = (id: string, params?: object) => {
+  return axiosInstance.get<Student[]>(`/classrooms/${id}/students`, { params })
 }
 export const getclassroom = (id: string) => {
   return get<Classroom>(`/classrooms/${id}`)
 }
 export const addStudent = (studentId: string, classroomId: string) => {
-  return patch<string>(`/classrooms/${classroomId}/student`, { studentId })
+  return axiosInstance.post<string>(`/classrooms/${classroomId}/students`, { id: studentId })
 }
 
 export const post = <T>(url: string, data: any) => (
@@ -96,7 +98,4 @@ export const post = <T>(url: string, data: any) => (
 )
 export const get = <T>(url: string, params?: object) => (
   axiosInstance.get<T>(`/${url}`, { params })
-)
-export const patch = <T>(url: string, params?: object) => (
-  axiosInstance.patch<T>(`/${url}`, { params })
 )

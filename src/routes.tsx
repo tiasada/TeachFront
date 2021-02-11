@@ -5,7 +5,6 @@ import {
   Login,
   ClassPage,
   Classes,
-  CoordenationHomePage,
   Schedule,
   StudentInfo,
   TeacherInfo,
@@ -15,20 +14,20 @@ import {
 } from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute'
 
 export default function App () {
   return (
     <Router>
       <Switch>
-        <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/schedule" component={Schedule} />
-        <Route path="/class/:id" component={ClassPage} />
-        <Route path="/teacher" component={Classes} />
-        <Route path="/studentprofile" component={StudentInfo} />
-        <Route path="/classroomspage" component={CoordenationHomePage} />
-        <Route path="/teacherprofile" component={TeacherInfo} />
-        <Route path="/registers" component={Registers} />
+        <PrivateRoute path="/home"><Home/></PrivateRoute>
+        <PrivateRoute path="/schedule"><Schedule/></PrivateRoute>
+        <PrivateRoute path="/class/:id"><ClassPage/></PrivateRoute>
+        <PrivateRoute path="/teacher"><Classes/></PrivateRoute>
+        <PrivateRoute path="/studentprofile"><StudentInfo/></PrivateRoute>
+        <PrivateRoute path="/teacherprofile"><TeacherInfo/></PrivateRoute>
+        <PrivateRoute path="/registers"><Registers/></PrivateRoute>
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>

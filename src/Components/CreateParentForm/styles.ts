@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../../../ui/Buttons/button'
+import Button from '../../ui/Buttons/button'
 
 export const Title = styled.h1`
   color: black;

@@ -1,13 +1,12 @@
 import React, { FormEvent, useState } from 'react'
 import { CreateButton, Title } from './styles'
-import { Label as InputLabel } from '../../../ui/Label'
+import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
 import Input from '/ui/Input'
 
 type Props = {
   title: string
   buttonText: string
-  role: string
 }
 type Inputs = {
   type: string
@@ -17,14 +16,12 @@ type Inputs = {
   set: React.Dispatch<React.SetStateAction<string>>
 }
 
-const CreateUserForm = ({ title, buttonText, role }: Props) => {
+const CreateTeacherForm = ({ title, buttonText }: Props) => {
   const [name, setName] = useState('')
   const [cpf, setCpf] = useState('')
   const [phonenumber, setPhonenumber] = useState('')
   const [birthdate, setBirth] = useState('')
   const [email, setEmail] = useState('')
-
-  const [registration, setRegistration] = useState('')
 
   const inputs: Inputs[] = [
     {
@@ -59,26 +56,15 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
       value: email,
       holder: 'meuemail@email.com',
       set: setEmail
-    },
-    {
-      type: 'text',
-      title: 'matrícula',
-      value: registration,
-      holder: 'Matricula',
-      set: setRegistration
-    },
+    }
   ]
 
-  const user = { name, cpf, phonenumber, birthdate, registration, role }
-
-  if (role === 'teacher') {
-    inputs.splice(5, 1)
-  }
+  const user = { name, cpf, phonenumber, birthdate, email, role: 'Teacher' }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     register(user)
-      .then(() => alert('good'))
+      .then(() => alert('Teacher Created'))
   }
 
   return (
@@ -105,4 +91,4 @@ const CreateUserForm = ({ title, buttonText, role }: Props) => {
   )
 }
 
-export default CreateUserForm
+export default CreateTeacherForm

@@ -8,7 +8,7 @@
     "lint": "eslint src/**/*.ts{,x}",
     "compile": "tsc --build",
     "quality": "npm run lint && npm run compile",
-    "test" : "tsc Test.ts"
+    "test": "tsc Test.ts"
   },
   "repository": {
     "type": "git",

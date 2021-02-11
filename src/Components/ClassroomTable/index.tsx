@@ -6,7 +6,8 @@ import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'
 import Search from '../Bars'
-import { get, Student } from '/api'
+import { getStudentsByClassroom, Student } from '/api'
+import { useLocation } from 'react-router-dom'
 
 type RowProps = {
   student: Student
@@ -22,10 +23,13 @@ type TableProps = {
 const ClassroomTable = () => {
   const [search, setSearch] = useState('')
   const [students, setStudents] = useState<Student[]>([])
+  const location = useLocation()
+  // cuting /class/
+  const id = location.pathname.slice(7)
 
   const getStudents = () => {
-    get<Student[]>(
-      'students',
+    getStudentsByClassroom(
+      id,
       search ? { name: search } : undefined
     )
       .then(resp => setStudents(resp.data))

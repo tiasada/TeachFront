@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
-import { Title } from '../Form/CreateUserForm/styles'
+import { Title } from '../CreateStudentForm/styles'
 import { addStudent, Classroom, get, Student } from '/api'
 import { LoginButton } from '/ui/Buttons/button/styles'
 import Tabs from '/ui/Tabs'
@@ -28,14 +28,14 @@ const AddStudent = () => {
   const [search, setSearch] = useState('')
 
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
-  const [classroom, setClassroom] = useState<string>('')
+  const [classroomId, setClassroomId] = useState<string>('')
 
   const [students, setStudents] = useState<Student[]>([])
-  const [student, setStudent] = useState<string>('')
+  const [studentId, setStudentId] = useState<string>('')
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    addStudent(student, classroom)
+    addStudent(studentId, classroomId)
       .then(() => alert('aluno adicionado'))
       .catch(() => alert('algo deu errado'))
   }
@@ -66,16 +66,16 @@ const AddStudent = () => {
       <form onSubmit={onSubmit}>
         <Title>Adicionar Aluno a Turma</Title>
         <select
-          value={classroom}
-          onChange={e => setClassroom(e.target.value)}>
+          value={classroomId}
+          onChange={e => setClassroomId(e.target.value)}>
           <option></option>
           {classrooms.map(item => (
             <option key={item.id} value={item.id}>{item.name}</option>
           ))}
         </select>
         <select
-          value={student}
-          onChange={e => setStudent(e.target.value)}>
+          value={studentId}
+          onChange={e => setStudentId(e.target.value)}>
           <option></option>
           {students.map(item => (
             <option key={item.id} value={item.id}>{item.name}</option>

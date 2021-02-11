@@ -1,11 +1,11 @@
-☐ Criar uma pagina Home (Compartilhada entre os Usuarios)
-☐ Separar Formularios.
+✔ Criar uma pagina Home (Compartilhada entre os Usuarios) @done(21-02-11 14:41)
+✔ Separar Formularios. @done(21-02-11 14:41)
 ☐ Usar React Hook Form.
-☐ Criar Class Form.
+✔ Criar Class Form. @done(21-02-11 15:54)
 ☐ Criar Grades Form.
-☐ Criar add Student 
-☐ Criar Teacher to Class
-☐ Criar Filtro
+✔ Criar add Student @done(21-02-11 14:41)
+✔ Criar Teacher to Class @done(21-02-11 14:42)
+✔ Criar Filtro @done(21-02-11 14:42)
 ☐ usar react-input-mask no input de numero de telefone
 ☐ Criar um botão nas Notas para Fixar nota
 ☐ Criar uma Chegada tardia na Chamada
