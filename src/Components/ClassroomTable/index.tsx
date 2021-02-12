@@ -8,6 +8,7 @@ import Tabs from '/ui/Tabs'
 import Search from '../Bars'
 import { getStudentsByClassroom, Student } from '/api'
 import { useLocation } from 'react-router-dom'
+import { NavbarClassBottom } from '../NavBars/NavTeacher'
 
 type RowProps = {
   student: Student
@@ -39,12 +40,12 @@ const ClassroomTable = () => {
   return (
     <>
       <Search
-          color='secondary'
-          placeholder='...'
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          onClick={getStudents}
-        />
+        color='secondary'
+        placeholder='...'
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        onClick={getStudents}
+      />
       <Tabs tabs={['Chamada', 'Notas']} title='Turma'>
         <TeacherClassCall students={students} />
         <TeacherClassGrades students={students} />
@@ -54,6 +55,7 @@ const ClassroomTable = () => {
 }
 
 export default ClassroomTable
+
 // CallTable
 const Row = ({ student }: RowProps) => {
   const [present, setPrecense] = useToggle(false)
@@ -93,7 +95,9 @@ const gradeslist: Grade[] = [
   }
 ]
 
-export const TeacherClassCall = ({ students }:TableProps) => {
+export const TeacherClassCall = ({ students }: TableProps) => {
+  // const [presences, setPresences] = useState<Presence>()
+
   return (
     <>
       <Table striped bordered hover size="sm">
@@ -103,7 +107,6 @@ export const TeacherClassCall = ({ students }:TableProps) => {
             <th className="w-100">Nome</th>
             <th className="w-25">Chamada</th>
             <th className="w-25">Falta Justificada</th>
-
           </tr>
         </thead>
         <tbody>
@@ -112,7 +115,9 @@ export const TeacherClassCall = ({ students }:TableProps) => {
           ))}
         </tbody>
       </Table>
-
+      <NavbarClassBottom color="primary">
+        <Button type="button" color="primary">Enviar</Button>
+      </NavbarClassBottom>
     </>
   )
 }

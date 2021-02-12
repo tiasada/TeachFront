@@ -17,8 +17,17 @@ export const StyledModal = styled.div<Props>`
 `
 export const StyledContent = styled.div`
   background-color: #fefefe;
+  z-index: 2;
   margin: 15% auto;;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+`
+export const Overlay = styled.div`
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 `

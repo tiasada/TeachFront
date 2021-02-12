@@ -16,3 +16,9 @@ export const NavClass = styled(Navmenu)<Props>`
     display: flex;
     justify-content: space-between;
 `
+export const Tr = styled.tr`
+    &:hover {
+        transform: scaleY(1.2);
+        cursor: pointer;
+    }
+`

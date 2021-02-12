@@ -5,6 +5,7 @@ import Search from '../Bars'
 import { get, Classroom, Student, Teacher } from '/api'
 import Tabs from '/ui/Tabs'
 import Modal from '../Modal'
+import { Tr } from './styles'
 
 type RowProps = {
   classroom: Classroom
@@ -17,6 +18,7 @@ type StudentsProps = {
 }
 type StudentRowProps = {
   student: Student
+  onClick: () => void
 }
 type TeachersProps = {
   teachers: Teacher[]
@@ -31,9 +33,7 @@ const ClassroomListTable = () => {
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [students, setStudents] = useState<Student[]>([])
   const [teachers, setTeachers] = useState<Teacher[]>([])
-  const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+
 
   const getTables = () => {
     get<Student[]>(
@@ -69,10 +69,6 @@ const ClassroomListTable = () => {
         <StudentsTable students={students} />
         <TeacherTable teachers={teachers}/>
       </Tabs>
-      <Modal open={show} onClose={handleClose}>
-        <p>funcionando</p>
-      </Modal>
-      <button onClick={handleShow}>x</button>
     </>
   )
 }
@@ -81,10 +77,10 @@ export default ClassroomListTable
 // CallTable
 const Row = ({ classroom }: RowProps) => {
   return (
-    <tr >
+    <Tr >
       <td>{classroom.name}</td>
       <td>{classroom.students.length}</td>
-    </tr>
+    </Tr>
   )
 }
 export const ClassroomsTable = ({ classrooms }: ClassroomsProps) => {
@@ -108,9 +104,9 @@ export const ClassroomsTable = ({ classrooms }: ClassroomsProps) => {
   )
 }
 // students list
-const StudentRow = ({ student }: StudentRowProps) => {
+const StudentRow = ({ student, onClick }: StudentRowProps) => {
   return (
-    <tr >
+    <tr onClick={onClick} >
       <td>{student.registration}</td>
       <td>{student.name}</td>
     </tr>
@@ -118,8 +114,15 @@ const StudentRow = ({ student }: StudentRowProps) => {
 }
 
 export const StudentsTable = ({ students }: StudentsProps) => {
+  const [currentStudent, setCurrentStudent] = useState<Student>()
+  const handleClose = () => setCurrentStudent(undefined)
+
+  console.log(currentStudent)
   return (
     <>
+      <Modal open={!!currentStudent} onClose={handleClose}>
+        <p>{currentStudent?.name}</p>
+      </Modal>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
@@ -129,7 +132,7 @@ export const StudentsTable = ({ students }: StudentsProps) => {
         </thead>
         <tbody>
           {students.map(item => (
-            <StudentRow student={item} key={item.registration} />
+            <StudentRow student={item} key={item.registration} onClick={() => setCurrentStudent(item)} />
           ))}
         </tbody>
       </Table>

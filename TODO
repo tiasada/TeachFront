@@ -9,3 +9,14 @@
 ☐ usar react-input-mask no input de numero de telefone
 ☐ Criar um botão nas Notas para Fixar nota
 ☐ Criar uma Chegada tardia na Chamada
+☐ Separar os componentes do ClassroomslistTable
+☐ Arrumar o modal que esta somente na tabela de aluno em ClassroomsListTable
+☐ fazer chamada funcional {objteo chamada : data , aluno , bool}
+☐ Arrumar criar notas
+☐ Fixar nota
+☐ Arrumar Sider em notas (/teacher)
+☐ Estilizar componentes usados:
+  ☐ input
+    input style :
+      width: 60px;
+      text-align: center;
