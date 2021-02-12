@@ -5,7 +5,7 @@ import { createclassrom } from '/api'
 import Input from '/ui/Input'
 import { RegisterTitle } from '../Texts/Titles/styles'
 
-const CreateClassroomForm =   () => {
+const CreateClassroomForm = () => {
   const [name, setName] = useState('')
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {

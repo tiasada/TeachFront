@@ -9,7 +9,6 @@ export const ClassPage = () => {
       <header role='banner'>
         <div ><Navbarmenu /></div>
         <div>
-          <p>{location.pathname.slice(6)}</p>
           <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
         </div>
           <ClassroomTable />

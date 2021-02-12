@@ -11,7 +11,7 @@ import {
   NotFound,
   Registers,
   Home
-} from './Pages'
+} from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
