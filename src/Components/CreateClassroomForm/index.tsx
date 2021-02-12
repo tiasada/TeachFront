@@ -1,8 +1,9 @@
 import React, { FormEvent, useState } from 'react'
-import { CreateButton, Title } from './styles'
+import { CreateButton } from './styles'
 import { Label as InputLabel } from '/ui/Label'
 import { createclassrom } from '/api'
 import Input from '/ui/Input'
+import { RegisterTitle } from '../Texts/Titles/styles'
 
 const CreateClassroomForm =   () => {
   const [name, setName] = useState('')
@@ -15,7 +16,7 @@ const CreateClassroomForm =   () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <Title>Criar Turma</Title>
+      <RegisterTitle>Criar Turma</RegisterTitle>
       <div>
         <InputLabel>Nome da Turma</InputLabel>
         <Input

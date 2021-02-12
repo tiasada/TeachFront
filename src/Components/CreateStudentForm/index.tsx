@@ -1,8 +1,9 @@
 import React, { FormEvent, useState } from 'react'
-import { CreateButton, Title } from './styles'
+import { CreateButton } from './styles'
 import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
 import Input from '/ui/Input'
+import { RegisterTitle } from '../Texts/Titles/styles'
 
 type Props = {
   title: string
@@ -27,7 +28,7 @@ const CreateStudentForm = ({ title, buttonText }: Props) => {
   const inputs: Inputs[] = [
     {
       type: 'text',
-      title: 'name',
+      title: 'Nome',
       value: name,
       holder: 'nome',
       set: setName
@@ -41,26 +42,26 @@ const CreateStudentForm = ({ title, buttonText }: Props) => {
     },
     {
       type: 'number',
-      title: 'phonenumber',
+      title: 'Contato',
       value: phonenumber,
       set: setPhonenumber
     },
     {
       type: 'date',
-      title: 'birthdate',
+      title: 'Data de nascimento',
       value: birthdate,
       set: setBirth
     },
     {
       type: 'text',
-      title: 'email',
+      title: 'Email',
       value: email,
       holder: 'meuemail@email.com',
       set: setEmail
     },
     {
       type: 'text',
-      title: 'matrícula',
+      title: 'Matrícula',
       value: registration,
       holder: 'Matricula',
       set: setRegistration
@@ -77,7 +78,7 @@ const CreateStudentForm = ({ title, buttonText }: Props) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <Title>{title}</Title>
+      <RegisterTitle>{title}</RegisterTitle>
       <div>
         {inputs.map((item, index) =>
           (

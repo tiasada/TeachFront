@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
-import { Title } from '../CreateStudentForm/styles'
+import { RegisterTitle } from '../Texts/Titles/styles'
 import { addStudent, Classroom, get, Student } from '/api'
 import { LoginButton } from '/ui/Buttons/button/styles'
 import Tabs from '/ui/Tabs'
@@ -14,7 +14,7 @@ import Tabs from '/ui/Tabs'
 const Add = () => {
   return (
     <Tabs
-      title='Adiconar'
+      title='Adicionar'
       tabs={['Aluno na Turma  |', 'Professor na Turma  |', 'Turma a Alguem  |']}>
       <AddStudent />
       <p>add teacher</p>
@@ -64,7 +64,7 @@ const AddStudent = () => {
         onClick={getData}
       />
       <form onSubmit={onSubmit}>
-        <Title>Adicionar Aluno a Turma</Title>
+        <RegisterTitle>Adicionar Aluno a Turma</RegisterTitle>
         <select
           value={classroomId}
           onChange={e => setClassroomId(e.target.value)}>
