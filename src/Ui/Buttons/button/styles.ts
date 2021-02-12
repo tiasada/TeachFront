@@ -51,17 +51,26 @@ export const ClsBtn = styled.button`
 `
 export const LoginButton = styled.button<Props>`
   padding: 12px 20px;
-  border-radius: 40px;
+  border-radius: 8px;
   width: 150px;
   border: none;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px ;
   display: block;
   background-color: ${({ color }) => color};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 &:focus {
   background-color: #D1F6FF;
+  border: 1px;
+  border-color: #0098DB;
+}
+
+&:hover {
+  background-color: #D1F6FF;
+  border-width: 10px;
+  border-color: #0098DB;
   outline: none;
 }
 `
