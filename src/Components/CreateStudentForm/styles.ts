@@ -1,11 +1,6 @@
 import styled from 'styled-components'
-import Button from '../../ui/Buttons/button'
 
-export const CreateButton = styled(Button).attrs({
-  color: 'primary'
-})`
-  margin-top: 16px;
-`
+
 export const RegisterInput = styled.input`
   padding: 12px 20px;
   width: 200px;

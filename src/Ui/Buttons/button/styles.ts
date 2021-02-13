@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/esm/Button'
 import styled from 'styled-components'
 
 type Props ={
@@ -73,4 +74,10 @@ export const LoginButton = styled.button<Props>`
   border-color: #0098DB;
   outline: none;
 }
+`
+export const ButtonRegisters = styled(Button).attrs({
+  color: 'primary'
+})`
+  margin-top: 16px;
+  text-align: 'center'
 `

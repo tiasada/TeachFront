@@ -8,8 +8,8 @@ export const SearchBar = styled.input`
   border: none;
   border-radius: 40px;
   background-color: ${({ color }) => color};
-  margin-bottom: 100px;
-  margin-top: 80px;
+  margin-bottom: 60px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: 15px;
   display: inline-block;

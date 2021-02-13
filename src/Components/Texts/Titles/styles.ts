@@ -34,7 +34,7 @@ export const ClassTitle = styled(LoginTitle)`
 
 `
 export const RegisterTitle = styled.h1`
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
   color: black;
   font-size: 24px;

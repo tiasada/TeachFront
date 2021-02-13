@@ -1,9 +1,9 @@
 import React, { FormEvent, useState } from 'react'
-import { CreateButton } from './styles'
 import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
 import Input from '/ui/Input'
 import { RegisterTitle } from '../Texts/Titles/styles'
+import { ButtonRegisters } from '/ui/Buttons/button/styles'
 
 type Props = {
   title: string
@@ -70,8 +70,8 @@ const CreateTeacherForm = ({ title, buttonText }: Props) => {
 
   return (
     <form onSubmit={onSubmit}>
+      <div style= {{textAlign: 'center'}}>
       <RegisterTitle>{title}</RegisterTitle>
-      <div>
         {inputs.map((item, index) =>
           (
               <section key={index}>
@@ -87,7 +87,7 @@ const CreateTeacherForm = ({ title, buttonText }: Props) => {
           )
         )}
       </div>
-      <CreateButton type="submit">{buttonText}</CreateButton>
+      <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
     </form>
   )
 }
