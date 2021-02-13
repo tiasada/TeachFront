@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
 import { Nav } from 'react-bootstrap'
 import Button from '../Buttons/button'
-import { NavClass, TabItem} from './styles'
-import { DivTableBox } from '/components/DivBox'
+import { NavClass, TabItem, TabDiv } from './styles'
 import { Colors, colors} from '/theme/colors'
 
 type Props = {
   children: JSX.Element[]
   tabs: string[]
-  title: string
+  title?: string
 }
 
 const Tabs = ({ children, tabs, title }: Props) => {
   const [currentTab, setCurrentTab] = useState(0)
 
   return (
-    <DivTableBox color='primary'>
+    <TabDiv color='primary'>
       <NavClass expand="lg">
         <NavClass.Brand >
           {title}
@@ -35,7 +34,7 @@ const Tabs = ({ children, tabs, title }: Props) => {
       <NavClass color="primary">
       {/* <Button type="button" color="primary">Enviar</Button> */}
     </NavClass>
-    </DivTableBox>
+    </TabDiv>
   )
 }
 

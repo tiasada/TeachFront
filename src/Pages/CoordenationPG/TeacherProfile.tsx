@@ -13,7 +13,7 @@ export const TeacherInfo = () => (
           <h2 style = {{ marginTop: 70 }}>Dados do professor(a)</h2>
         </div>
         <div style = {{ marginTop: 110, marginLeft: '10%' }}>
-        <img style={{ width: 230, marginLeft: 200, marginRight: 30 }} src= "https://i1.rgstatic.net/ii/profile.image/419546390384642-1477039062102_Q512/Nick_Tregenza.jpg"></img>
+        <img style={{ width: 230, marginLeft: 200, marginRight: 30 }} src= "https://i1.rgstatic.net/ii/profile.image/419546390384642-1477039062102_Q512/Nick_Tregenza.jpg" alt="Mario da Silva" title="Mario da Silva"></img>
           <DivProfile color='primary'>
               <h3>CPF: 4544356651</h3>
               <h3>Matéria: Matemática</h3>

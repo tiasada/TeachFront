@@ -6,6 +6,7 @@ export const LoginInput = styled.input`
   border: none;
   border-radius: 40px;
   background-color: #E5E5E5;
+  margin-top: 8px;
   margin-bottom: 4px;
   margin-left: auto;
   margin-right: auto;

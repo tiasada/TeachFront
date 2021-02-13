@@ -6,9 +6,10 @@ import Button from '/ui/Buttons/button'
 import Sider from '/ui/Sider'
 import Tabs from '/ui/Tabs'
 import Search from '../Bars'
-import { getStudentsByClassroom, Student } from '/api'
+import { Classroom, getclassroom, getStudentsByClassroom, Student } from '/api'
 import { useLocation } from 'react-router-dom'
 import { NavbarClassBottom } from '../NavBars/NavTeacher'
+import { TeacherClassGrades } from '../ClassGradeTable'
 
 type RowProps = {
   student: Student
@@ -24,9 +25,11 @@ type TableProps = {
 const ClassroomTable = () => {
   const [search, setSearch] = useState('')
   const [students, setStudents] = useState<Student[]>([])
+  const [classroom, setClassroom] = useState<Classroom>()
   const location = useLocation()
   // cuting /class/
   const id = location.pathname.slice(7)
+  const getClassroom = () => { getclassroom(id).then(resp => setClassroom(resp.data)) }
 
   const getStudents = () => {
     getStudentsByClassroom(
@@ -35,7 +38,12 @@ const ClassroomTable = () => {
     )
       .then(resp => setStudents(resp.data))
   }
-  useEffectOnce(getStudents)
+  const getData = () => {
+    getClassroom()
+    getStudents()
+  }
+
+  useEffectOnce(getData)
 
   return (
     <>
@@ -46,7 +54,7 @@ const ClassroomTable = () => {
         onChange={e => setSearch(e.target.value)}
         onClick={getStudents}
       />
-      <Tabs tabs={['Chamada', 'Notas']} title='Turma'>
+      <Tabs tabs={['Chamada', 'Notas']} title={classroom?.name}>
         <TeacherClassCall students={students} />
         <TeacherClassGrades students={students} />
       </Tabs>
@@ -86,15 +94,6 @@ const Row = ({ student }: RowProps) => {
   )
 }
 
-const gradeslist: Grade[] = [
-  {
-    name: 'prova 1'
-  },
-  {
-    name: 'avaliaçao 1'
-  }
-]
-
 export const TeacherClassCall = ({ students }: TableProps) => {
   // const [presences, setPresences] = useState<Presence>()
 
@@ -121,67 +120,79 @@ export const TeacherClassCall = ({ students }: TableProps) => {
     </>
   )
 }
+
 // Grades Table
-// row
-const RowGrades = ({ student }: RowProps) => {
-  return (
-    <tr >
-      <td>{student.registration}</td>
-      <td>{student.name}</td>
-      {gradeslist.map(item => (
-        <td key={item.name}><input type="number" style={{ marginTop: '8px' }} /></td>))}
-    </tr>
-  )
-}
-// context
-export const TeacherClassGrades = ({ students }: TableProps) => {
-  // const setStudent = (student: Student) => {
-  //   const updatedStudents = students.map(
-  //     current => current.registration === student.registration ? student : current)
-  //   setStudents(updatedStudents)
-  // }
-  const [showSider, setShowSider] = useState(false)
-  const [newGrade, setNewgrade] = useState('')
-  //
-  const [grades, setGrades] = useState<Grade[]>([])
-  const setUpdatedGrades = () => {
-    const updatedGrades = grades.concat([{ name: newGrade }])
-    setGrades(updatedGrades)
-  }
-  return (
-    <>
-      <div style={{ display: 'flex' }}>
-        <Table striped bordered hover size="sm">
-          <thead>
-            <tr>
-              <th className="w-25" >Matricula</th>
-              <th className="w-100">Nome</th>
-              {gradeslist.map((item, index) => (
-                <th className="w-25" key={index}>{item.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {students.map(item => (
-              <RowGrades student={item} key={item.registration} />
-            ))}
-            <Button type="button" color="primary" onClick={setUpdatedGrades}>+</Button>
-          </tbody>
-        </Table>
-        <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-          <input
-            type='text'
-            name='gradeName'
-            placeholder='Nova Avaliação'
-            value={newGrade}
-            onChange={e => setNewgrade(e.target.value)}
-          />
-        </Sider>
-      </div>
-      {/* <NavbarClassBottom color="primary">
-        <Button type="button" color="primary">Enviar</Button>
-        <Button type="button" color="primary" onClick={() => setShowSider(true)}>Adicionar Avaliação</Button>
-      </NavbarClassBottom> */}
-    </>
-  )
-}
+
+// const gradeslist: Grade[] = [
+//   {
+//     name: 'prova 1'
+//   },
+//   {
+//     name: 'avaliaçao 1'
+//   }
+// ]
+
+// // row
+
+// const RowGrades = ({ student }: RowProps) => {
+//   return (
+//     <tr >
+//       <td>{student.registration}</td>
+//       <td>{student.name}</td>
+//       {gradeslist.map(item => (
+//         <td key={item.name}><input type="number" style={{ marginTop: '8px' }} /></td>))}
+//     </tr>
+//   )
+// }
+
+// export const TeacherClassGrades = ({ students }: TableProps) => {
+//   // const setStudent = (student: Student) => {
+//   //   const updatedStudents = students.map(
+//   //     current => current.registration === student.registration ? student : current)
+//   //   setStudents(updatedStudents)
+//   // }
+//   const [showSider, setShowSider] = useState(false)
+//   const [newGrade, setNewgrade] = useState('')
+//   //
+//   const [grades, setGrades] = useState<Grade[]>([])
+//   const setUpdatedGrades = () => {
+//     const updatedGrades = grades.concat([{ name: newGrade }])
+//     setGrades(updatedGrades)
+//   }
+//   return (
+//     <>
+//       <div style={{ display: 'flex' }}>
+//         <Table striped bordered hover size="sm">
+//           <thead>
+//             <tr>
+//               <th className="w-25" >Matricula</th>
+//               <th className="w-100">Nome</th>
+//               {gradeslist.map((item, index) => (
+//                 <th className="w-25" key={index}>{item.name}</th>
+//               ))}
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {students.map(item => (
+//               <RowGrades student={item} key={item.registration} />
+//             ))}
+//             <Button type="button" color="primary" onClick={setUpdatedGrades}>+</Button>
+//           </tbody>
+//         </Table>
+//         <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+//           <input
+//             type='text'
+//             name='gradeName'
+//             placeholder='Nova Avaliação'
+//             value={newGrade}
+//             onChange={e => setNewgrade(e.target.value)}
+//           />
+//         </Sider>
+//       </div>
+//       {/* <NavbarClassBottom color="primary">
+//         <Button type="button" color="primary">Enviar</Button>
+//         <Button type="button" color="primary" onClick={() => setShowSider(true)}>Adicionar Avaliação</Button>
+//       </NavbarClassBottom> */}
+//     </>
+//   )
+// }
