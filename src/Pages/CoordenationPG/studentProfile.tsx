@@ -12,7 +12,7 @@ export const StudentInfo = () => (
           <h2 style = {{ marginTop: 70 }}>Dados do aluno(a)</h2>
         </div>
         <div style = {{ marginTop: 110, marginLeft: '10%' }}>
-        <img style={{ width: 230, marginLeft: 200, marginRight: 30 }} src= "https://justplayproducts.com/wp-content/uploads/2020/06/95865_95772-PJ-Masks-Diecast-Vehicles-Owlette-Lifestyle-scaled.jpg"></img>
+        <img style={{ width: 230, marginLeft: 200, marginRight: 30}} src= "https://justplayproducts.com/wp-content/uploads/2020/06/95865_95772-PJ-Masks-Diecast-Vehicles-Owlette-Lifestyle-scaled.jpg" alt="Enzo Gabriel JR" title="Enzo Gabriel JR"></img>
           <DivProfile color='primary'>
               <h3>Matrícula: 4544356651</h3>
               <h3>Turma: Infem</h3>
