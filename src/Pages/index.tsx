@@ -11,6 +11,4 @@ export { default as Classes } from './TeachersPages/ClassesPage'
 export { default as Schedule } from './StudentPages/Schedule2'
 
 // Cordnation's Pages
-export { default as StudentInfo } from './CoordenationPG/StudentProfile'
-export { default as TeacherInfo } from './CoordenationPG/TeacherProfile'
 export { default as Registers } from './CoordenationPG/Registers'

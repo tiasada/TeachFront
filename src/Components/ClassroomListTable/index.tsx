@@ -1,31 +1,11 @@
 import React, { useState } from 'react'
-import { Table } from 'react-bootstrap'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { get, Classroom, Student, Teacher } from '/api'
 import Tabs from '/ui/Tabs'
-import Modal from '../Modal'
-import { Tr } from './styles'
-
-type RowProps = {
-  classroom: Classroom
-}
-type ClassroomsProps = {
-  classrooms: Classroom[]
-}
-type StudentsProps = {
-  students: Student[]
-}
-type StudentRowProps = {
-  student: Student
-  onClick: () => void
-}
-type TeachersProps = {
-  teachers: Teacher[]
-}
-type TeacherRowProps = {
-  teacher: Teacher
-}
+import ClassroomsTable from '../tables/ClassroomsTable'
+import StudentsTable from '../tables/StudentsTable'
+import TeachersTable from '../tables/TeachersTable'
 
 // Main Classroom component
 const ClassroomListTable = () => {
@@ -33,7 +13,6 @@ const ClassroomListTable = () => {
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [students, setStudents] = useState<Student[]>([])
   const [teachers, setTeachers] = useState<Teacher[]>([])
-
 
   const getTables = () => {
     get<Student[]>(
@@ -67,102 +46,10 @@ const ClassroomListTable = () => {
       <Tabs tabs={['Turmas', 'Alunos', 'Professores']} title='Escola'>
         <ClassroomsTable classrooms={classrooms} />
         <StudentsTable students={students} />
-        <TeacherTable teachers={teachers}/>
+        <TeachersTable teachers={teachers}/>
       </Tabs>
     </>
   )
 }
 
 export default ClassroomListTable
-// CallTable
-const Row = ({ classroom }: RowProps) => {
-  return (
-    <Tr >
-      <td>{classroom.name}</td>
-      <td>{classroom.students.length}</td>
-    </Tr>
-  )
-}
-export const ClassroomsTable = ({ classrooms }: ClassroomsProps) => {
-  return (
-    <>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th className="w-50">Turma</th>
-            <th className="w-50">Número de Alunos</th>
-          </tr>
-        </thead>
-        <tbody>
-          {classrooms.map(item => (
-            <Row classroom={item} key={item.id} />
-          ))}
-        </tbody>
-      </Table>
-
-    </>
-  )
-}
-// students list
-const StudentRow = ({ student, onClick }: StudentRowProps) => {
-  return (
-    <tr onClick={onClick} >
-      <td>{student.registration}</td>
-      <td>{student.name}</td>
-    </tr>
-  )
-}
-
-export const StudentsTable = ({ students }: StudentsProps) => {
-  const [currentStudent, setCurrentStudent] = useState<Student>()
-  const handleClose = () => setCurrentStudent(undefined)
-
-  console.log(currentStudent)
-  return (
-    <>
-      <Modal open={!!currentStudent} onClose={handleClose}>
-        <p>{currentStudent?.name}</p>
-      </Modal>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th className="w-25" >Matricula</th>
-            <th className="w-100">Nome</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map(item => (
-            <StudentRow student={item} key={item.registration} onClick={() => setCurrentStudent(item)} />
-          ))}
-        </tbody>
-      </Table>
-    </>
-  )
-}
-const TeacherRow = ({ teacher }: TeacherRowProps) => {
-  return (
-    <tr >
-      <td>{teacher.cpf}</td>
-      <td>{teacher.name}</td>
-    </tr>
-  )
-}
-export const TeacherTable = ({ teachers }: TeachersProps) => {
-  return (
-    <>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th className="w-25" >CPF</th>
-            <th className="w-100">Nome</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teachers.map(item => (
-            <TeacherRow teacher={item} key={item.cpf} />
-          ))}
-        </tbody>
-      </Table>
-    </>
-  )
-}

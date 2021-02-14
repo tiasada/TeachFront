@@ -22,6 +22,7 @@ export const StyledContent = styled.div`
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  height: max-content;
 `
 export const Overlay = styled.div`
   position: fixed;

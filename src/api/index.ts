@@ -15,7 +15,7 @@ export type Teacher = {
   cpf: string
   phonenumber: string
   birthDate: string
-  ermail?: string
+  email?: string
   userid: string
   classrooms?: Classroom []
   id: string

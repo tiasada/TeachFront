@@ -6,8 +6,6 @@ import {
   ClassPage,
   Classes,
   Schedule,
-  StudentInfo,
-  TeacherInfo,
   NotFound,
   Registers,
   Home
@@ -25,8 +23,6 @@ export default function App () {
         <PrivateRoute path="/schedule"><Schedule/></PrivateRoute>
         <PrivateRoute path="/class/:id"><ClassPage/></PrivateRoute>
         <PrivateRoute path="/teacher"><Classes/></PrivateRoute>
-        <PrivateRoute path="/studentprofile"><StudentInfo/></PrivateRoute>
-        <PrivateRoute path="/teacherprofile"><TeacherInfo/></PrivateRoute>
         <PrivateRoute path="/registers"><Registers/></PrivateRoute>
         <Route path="*" component={NotFound} />
       </Switch>

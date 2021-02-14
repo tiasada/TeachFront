@@ -37,7 +37,8 @@ const RowGrades = ({ student }: RowProps) => {
   )
 }
 // context
-export const TeacherClassGrades = ({ students }: TableProps) => {
+export const ClassGradeTable = ({ students }: TableProps) => {
+  const [classStudents, setStudents] = useState<Student[]>(students)
   const setStudent = (student: Student) => {
     const updatedStudents = students.map(
       current => current.registration === student.registration ? student : current)
@@ -72,7 +73,7 @@ export const TeacherClassGrades = ({ students }: TableProps) => {
             </tr>
           </thead>
           <tbody>
-            {students.map(item => (
+            {classStudents.map(item => (
               <RowGrades student={item} key={item.registration} />
             ))}
           </tbody>
@@ -92,3 +93,4 @@ export const TeacherClassGrades = ({ students }: TableProps) => {
     </>
   )
 }
+export default ClassGradeTable
