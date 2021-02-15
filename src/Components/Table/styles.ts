@@ -6,3 +6,9 @@ export const Tr = styled.tr`
         cursor: pointer;
     }
 `
+export const Td = styled.td`
+    text-align: center;
+`
+export const Th = styled.th`
+    text-align: center;
+`

@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import StudentsTable from '../StudentsTable'
 import { Classroom, getStudentsByClassroom, Student } from '/api'
 import Modal from '/components/Modal'
-import TableRow from '/components/Table'
+import TableRow, { TableData, TableHead } from '/components/Table'
 
 type RowProps = {
   classroom: Classroom
@@ -16,8 +16,7 @@ type Props = {
 const Row = ({ classroom, onClick }: RowProps) => {
   return (
     <TableRow onClick={onClick} >
-      <td>{classroom.name}</td>
-      <td>{classroom.students.length}</td>
+      <TableData>{classroom.name}</TableData>
     </TableRow>
   )
 }
@@ -40,8 +39,7 @@ const ClassroomsTable = ({ classrooms }: Props) => {
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th className="w-50">Turma</th>
-            <th className="w-50">Número de Alunos</th>
+            <TableHead >Turmas</TableHead>
           </tr>
         </thead>
         <tbody>
