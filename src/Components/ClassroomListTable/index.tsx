@@ -6,6 +6,13 @@ import Tabs from '/ui/Tabs'
 import ClassroomsTable from '../tables/ClassroomsTable'
 import StudentsTable from '../tables/StudentsTable'
 import TeachersTable from '../tables/TeachersTable'
+import Sider from '/ui/Sider'
+import CreateClassroomForm from '../CreateClassroomForm'
+import CreateStudentForm from '../CreateStudentForm'
+import CreateTeacherForm from '../CreateTeacherForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import Add from '../Add'
 
 // Main Classroom component
 const ClassroomListTable = () => {
@@ -13,6 +20,8 @@ const ClassroomListTable = () => {
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [students, setStudents] = useState<Student[]>([])
   const [teachers, setTeachers] = useState<Teacher[]>([])
+
+  const [showSider, setShowSider] = useState(false)
 
   const getTables = () => {
     get<Student[]>(
@@ -43,11 +52,35 @@ const ClassroomListTable = () => {
         onChange={e => setSearch(e.target.value)}
         onClick={getTables}
       />
+      <FontAwesomeIcon
+        style={{ position: 'absolute', right: '180px' }}
+        icon={faPlus}
+        color='black'
+        onClick={() => setShowSider(true)}
+      />
       <Tabs tabs={['Turmas', 'Alunos', 'Professores']} title='Escola'>
-        <ClassroomsTable classrooms={classrooms} />
-        <StudentsTable students={students} />
-        <TeachersTable teachers={teachers}/>
+        <div style={{ display: 'flex' }}>
+          <ClassroomsTable classrooms={classrooms} />
+          <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+            <CreateClassroomForm />
+          </Sider>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <StudentsTable students={students} />
+          <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+            <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' />
+          </Sider>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <TeachersTable teachers={teachers} />
+          <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+            <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' />
+          </Sider>
+        </div>
       </Tabs>
+      <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+        <Add/>
+      </Sider>
     </>
   )
 }

@@ -8,12 +8,14 @@ export enum Role {
   Parent = 'Parent',
   School = 'School'
 }
-
+type Name = {
+  username: string
+}
 // get from localStore
 const useUserData = () => {
   const { token } = getData()
   console.log(token)
-  return jwtDecode<{ role: Role }>(token)
+  return jwtDecode<{ role: Role, username: Name }>(token)
 }
 
 export default useUserData

@@ -24,13 +24,16 @@ export type Classroom = {
   name: string
   subjects: string[]
   subjectsString: string
-  students: string[]
-  teachers: string[]
-  grades: string[]
+  students: Student[]
+  teachers: Teacher[]
+  grades: Grades[]
   classDays: string[]
   id: string
 }
-
+export type Grades = {
+  day: string
+  student: string
+}
 type LoginRequest = {
   username: string
   password: string
@@ -91,6 +94,9 @@ export const getclassroom = (id: string) => {
 }
 export const addStudent = (studentId: string, classroomId: string) => {
   return post<string>(`classrooms/${classroomId}/students`, { id: studentId })
+}
+export const addTeacher = (teacherId: string, classroomId: string) => {
+  return post<string>(`classrooms/${classroomId}/teachers`, { id: teacherId })
 }
 
 export const post = <T>(url: string, data: any) => (

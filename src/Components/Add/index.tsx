@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { RegisterTitle } from '../Texts/Titles/styles'
-import { addStudent, Classroom, get, Student } from '/api'
+import { addStudent, addTeacher, Classroom, get, Student, Teacher } from '/api'
 import { LoginButton } from '/ui/Buttons/button/styles'
 import Tabs from '/ui/Tabs'
 
@@ -17,7 +17,7 @@ const Add = () => {
       title='Adicionar'
       tabs={['Aluno na Turma  |', 'Professor na Turma  |', 'Turma a Alguem  |']}>
       <AddStudent />
-      <p>add teacher</p>
+      <AddTeacher />
       <p>add classroom</p>
     </Tabs>
   )
@@ -78,6 +78,68 @@ const AddStudent = () => {
           onChange={e => setStudentId(e.target.value)}>
           <option></option>
           {students.map(item => (
+            <option key={item.id} value={item.id}>{item.name}</option>
+          ))}
+        </select>
+        <LoginButton color='primary'>{'Adicionar'}</LoginButton>
+      </form>
+    </>
+  )
+}
+const AddTeacher = () => {
+  const [search, setSearch] = useState('')
+
+  const [classrooms, setClassrooms] = useState<Classroom[]>([])
+  const [classroomId, setClassroomId] = useState<string>('')
+
+  const [teachers, setTeachers] = useState<Teacher[]>([])
+  const [teacherId, setTeacherId] = useState<string>('')
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    addTeacher(teacherId, classroomId)
+      .then(() => alert('aluno adicionado'))
+      .catch(() => alert('algo deu errado'))
+  }
+
+  const getData = () => {
+    get<Teacher[]>(
+      'teachers',
+      search ? { name: search } : undefined
+    ).then(resp => setTeachers(resp.data))
+
+    get<Classroom[]>(
+      'classrooms',
+      search ? { name: search } : undefined
+    ).then(resp => setClassrooms(resp.data))
+  }
+
+  useEffectOnce(getData)
+
+  return (
+    <>
+      <Search
+        color='secondary'
+        placeholder='...'
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        onClick={getData}
+      />
+      <form onSubmit={onSubmit}>
+        <RegisterTitle>Adicionar Aluno a Turma</RegisterTitle>
+        <select
+          value={classroomId}
+          onChange={e => setClassroomId(e.target.value)}>
+          <option></option>
+          {classrooms.map(item => (
+            <option key={item.id} value={item.id}>{item.name}</option>
+          ))}
+        </select>
+        <select
+          value={teacherId}
+          onChange={e => setTeacherId(e.target.value)}>
+          <option></option>
+          {teachers.map(item => (
             <option key={item.id} value={item.id}>{item.name}</option>
           ))}
         </select>

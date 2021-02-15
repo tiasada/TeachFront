@@ -18,7 +18,7 @@ type Inputs = {
   set: React.Dispatch<React.SetStateAction<string>>
 }
 
-const CreateStudentForm =  ({ title, buttonText }: Props) => {
+const CreateStudentForm = ({ title, buttonText }: Props) => {
   const [name, setName] = useState('')
   const [cpf, setCpf] = useState('')
   const [phonenumber, setPhonenumber] = useState('')
@@ -79,24 +79,22 @@ const CreateStudentForm =  ({ title, buttonText }: Props) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div style= {{textAlign: 'center'}}>
+      <div style={{ textAlign: 'center' }}>
         <RegisterTitle>{title}</RegisterTitle>
-        {inputs.map((item, index) =>
-          (
-              <section key={index}>
-                <InputLabel>{item.title}</InputLabel>
-                <Input
-                  type={item.type}
-                  name={item.title}
-                  placeholder={item.holder}
-                  value={item.value}
-                  onChange={e => item.set(e.target.value)}
-                />
-              </section>
-          )
+        {inputs.map((item, index) => (
+        <section key={index}>
+            <InputLabel>{item.title}</InputLabel>
+            <Input
+              type={item.type}
+              name={item.title}
+              placeholder={item.holder}
+              value={item.value}
+              onChange={e => item.set(e.target.value)}
+            />
+          </section>)
         )}
+        <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
       </div>
-      <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
     </form>
   )
 }

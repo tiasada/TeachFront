@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Nav } from 'react-bootstrap'
-import Button from '../Buttons/button'
 import { NavClass, TabItem, TabDiv } from './styles'
-import { Colors, colors} from '/theme/colors'
 
 type Props = {
   children: JSX.Element[]

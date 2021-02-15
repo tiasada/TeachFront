@@ -78,24 +78,23 @@ const CreateParentForm = ({ title, buttonText }: Props) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div style= {{textAlign: 'center'}}>
-      <RegisterTitle>{title}</RegisterTitle>
-        {inputs.map((item, index) =>
-          (
-              <section key={index}>
-                <InputLabel>{item.title}</InputLabel>
-                <Input
-                  type={item.type}
-                  name={item.title}
-                  placeholder={item.holder}
-                  value={item.value}
-                  onChange={e => item.set(e.target.value)}
-                />
-              </section>
-          )
+      <div style={{ textAlign: 'center' }}>
+        <RegisterTitle>{title}</RegisterTitle>
+        {inputs.map((item, index) => (
+          <section key={index}>
+            <InputLabel>{item.title}</InputLabel>
+            <Input
+              type={item.type}
+              name={item.title}
+              placeholder={item.holder}
+              value={item.value}
+              onChange={e => item.set(e.target.value)}
+            />
+          </section>
+        )
         )}
+        <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
       </div>
-      <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
     </form>
   )
 }
