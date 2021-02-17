@@ -13,6 +13,8 @@ import CreateTeacherForm from '../CreateTeacherForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import Add from '../Add'
+import { ButtonSecundary } from '/ui/Buttons/button'
+import { colors } from '/theme/colors'
 
 // Main Classroom component
 const ClassroomListTable = () => {
@@ -52,12 +54,11 @@ const ClassroomListTable = () => {
         onChange={e => setSearch(e.target.value)}
         onClick={getTables}
       />
-      <FontAwesomeIcon
-        style={{ position: 'absolute', right: '180px' }}
-        icon={faPlus}
-        color='black'
-        onClick={() => setShowSider(true)}
-      />
+      <ButtonSecundary
+        style={{ position: 'absolute', right: '30px' }}
+        onClick={()=> setShowSider(true)} 
+        color="black"
+      >{'Criar/Adicionar'}</ButtonSecundary>
       <Tabs tabs={['Turmas', 'Alunos', 'Professores']} title='Escola'>
         <div style={{ display: 'flex' }}>
           <ClassroomsTable classrooms={classrooms} />

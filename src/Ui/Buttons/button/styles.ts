@@ -7,7 +7,6 @@ type Props ={
 
 export const MenuBtn = styled.button<Props>`
   padding: 12px 20px;
-  min-width: 100%;
   border: 10px;
   border-radius: 8px;
   background-color: transparent;

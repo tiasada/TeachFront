@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { Colors, colors } from '../../../theme/colors'
 import { LoginButton, MenuBtn } from './styles'
 
@@ -7,6 +7,7 @@ type Props = {
   onClick?: () => void
   type?: 'submit' | 'button' | 'reset'
   color: Colors
+  style?: CSSProperties
 }
 
 const Button = ({ color, children, type = 'submit', ...rest }: Props) => {
