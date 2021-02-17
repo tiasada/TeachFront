@@ -68,12 +68,12 @@ const CreateParentForm = ({ title, buttonText }: Props) => {
     }
   ]
 
-  const user = { name, cpf, phonenumber, birthdate, registration, email, role: 'Parent' }
+  const user = { name, cpf, phonenumber, birthdate, email, registration, role: 'Parent' }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     register(user)
-      .then(() => alert('Parent Created'))
+      .then(() => alert('Parente criado'))
   }
 
   return (
