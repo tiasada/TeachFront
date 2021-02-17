@@ -11,6 +11,7 @@ type RowProps = {
 }
 type Props = {
   parents: Parent[]
+  onClickEmptyRow: () => void
 }
 
 const Row = ({ parent, onClick }: RowProps) => {
@@ -20,14 +21,14 @@ const Row = ({ parent, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const ParentsTable = ({ parents }: Props) => {
+const ParentsTable = ({ parents, onClickEmptyRow }: Props) => {
   const [currentParent, setCurrentParent] = useState<Parent>()
   const handleClose = () => setCurrentParent(undefined)
 
   return (
     <>
       <Modal open={!!currentParent} onClose={handleClose}>
-        <ParentProfile parent={currentParent}/>
+        <ParentProfile parent={currentParent} />
       </Modal>
       <Table striped bordered hover size="sm">
         <thead>
@@ -37,6 +38,9 @@ const ParentsTable = ({ parents }: Props) => {
           </tr>
         </thead>
         <tbody>
+          <TableRow onClick={onClickEmptyRow}>
+            <td style={{ color: 'blue' }} colSpan={2}>Adicionar Responsável</td>
+          </TableRow>
           {parents.map(item => (
             <Row parent={item} key={item.student.registration} onClick={() => setCurrentParent(item)} />
           ))}

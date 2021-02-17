@@ -11,6 +11,7 @@ type RowProps = {
 }
 type Props = {
   students: Student[]
+  onClickEmptyRow: () => void
 }
 
 const Row = ({ student, onClick }: RowProps) => {
@@ -21,7 +22,7 @@ const Row = ({ student, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const StudentsTable = ({ students }: Props) => {
+const StudentsTable = ({ students, onClickEmptyRow }: Props) => {
   const [currentStudent, setCurrentStudent] = useState<Student>()
   const handleClose = () => setCurrentStudent(undefined)
 
@@ -38,6 +39,9 @@ const StudentsTable = ({ students }: Props) => {
           </tr>
         </thead>
         <tbody>
+          <TableRow onClick={onClickEmptyRow}>
+            <td style={{ color: 'blue' }} colSpan={2}>Adicionar Aluno</td>
+          </TableRow>
           {students.map(item => (
             <Row student={item} key={item.registration} onClick={() => setCurrentStudent(item)} />
           ))}

@@ -11,6 +11,7 @@ type RowProps = {
 }
 type Props = {
   teachers: Teacher[]
+  onClickEmptyRow: () => void
 }
 
 const Row = ({ teacher, onClick }: RowProps) => {
@@ -21,14 +22,14 @@ const Row = ({ teacher, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const TeacherTable = ({ teachers }: Props) => {
+const TeacherTable = ({ teachers, onClickEmptyRow }: Props) => {
   const [currentTeacher, setCurrentTeacher] = useState<Teacher>()
   const handleClose = () => setCurrentTeacher(undefined)
 
   return (
     <>
       <Modal open={!!currentTeacher} onClose={handleClose}>
-        <TeacherProfile teacher={currentTeacher}/>
+        <TeacherProfile teacher={currentTeacher} />
       </Modal>
       <Table striped bordered hover size="sm">
         <thead>
@@ -38,6 +39,9 @@ const TeacherTable = ({ teachers }: Props) => {
           </tr>
         </thead>
         <tbody>
+          <TableRow onClick={onClickEmptyRow}>
+            <td style={{ color: 'blue' }} colSpan={2}>Adicionar Professor</td>
+          </TableRow>
           {teachers.map(item => (
             <Row teacher={item} key={item.cpf} onClick={() => setCurrentTeacher(item)} />
           ))}

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { getData, store } from '/storage'
 
+export type User = Student | Teacher | Parent
+
 export type Student = {
   name: string
   cpf: string

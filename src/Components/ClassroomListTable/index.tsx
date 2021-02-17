@@ -65,27 +65,27 @@ const ClassroomListTable = () => {
         onClick={() => setShowSider(true)}
         color="black"
       >{'Criar/Adicionar'}</ButtonSecondary>
-      <Tabs tabs={['Turmas', 'Alunos', 'Professores']} title='Escola'>
+      <Tabs tabs={['Turmas', 'Alunos', 'Professores', 'Responsaveis']} title='Escola'>
         <div style={{ display: 'flex' }}>
-          <ClassroomsTable classrooms={classrooms} />
+            <ClassroomsTable classrooms={classrooms} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateClassroomForm />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <StudentsTable students={students} />
+          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)}/>
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <TeachersTable teachers={teachers} />
+          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <ParentsTable parents={parents} />
+          <ParentsTable parents={parents} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateParentForm title='Cadastro do Responsável' buttonText='Cadastrar' />
           </Sider>
