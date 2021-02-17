@@ -5,30 +5,6 @@ type Props ={
   color: string
 }
 
-export const MenuBtn = styled.button<Props>`
-  padding: 12px 20px;
-  min-width: 100%;
-  border: 10px;
-  border-radius: 8px;
-  background-color: transparent;
-  border-color: black;
-  display: inline-block;
-  color: ${({ color }) => color};
-  &:focus {
-    background-color: #ddd;
-    color: black;
-    border-color: black;
-    outline: none;
-  }
-  &:hover {
-    background-color: ${({ color }) => color};
-    opacity: 0.5;
-    outline-color: black;
-    outline-width: 4px;
-    color: white;
-  }
-`
-
 export const ClsBtn = styled.button`
 
   padding: 20px 20px;

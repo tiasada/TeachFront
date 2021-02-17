@@ -1,6 +1,6 @@
 import React from 'react'
 import { Colors, colors } from '../../../theme/colors'
-import { LoginButton, MenuBtn } from './styles'
+import { LoginButton } from './styles'
 
 type Props = {
   children?: string
@@ -16,9 +16,3 @@ const Button = ({ color, children, type = 'submit', ...rest }: Props) => {
 }
 
 export default Button
-
-export const ButtonSecundary = ({ color, children, type = 'submit', ...rest }: Props) => {
-  return (
-    <MenuBtn type={type} color ={colors[color]} {...rest}>{children}</MenuBtn>
-  )
-}

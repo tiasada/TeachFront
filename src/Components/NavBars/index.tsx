@@ -1,22 +1,16 @@
 import React from 'react'
-import { NavClassList, NavTeacherListBottom } from './NavCoord'
 import { NavbarStudent } from './NavStudent'
 import { NavbarTeacher } from './NavTeacher'
 
+type Props = {
+    onClick?: () => void
+}
 // teachers pages
-export const Navbarmenu = () => (
-    <NavbarTeacher color='primary'>Teach</NavbarTeacher>
+export const Navbarmenu = ({ onClick }: Props) => (
+    <NavbarTeacher color='primary' onClick={onClick}>Teach</NavbarTeacher>
 )
 
 // students pages
 export const NavbarStudents = () => (
     <NavbarStudent color='primary'/>
-)
-
-// Coordenation pages
-export const NavCoordTeachList = () => (
-    <NavClassList color='secondary' />
-)
-export const NavCoordTeacherBottom = () => (
-    <NavTeacherListBottom />
 )

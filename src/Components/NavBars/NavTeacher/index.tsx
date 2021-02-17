@@ -2,14 +2,17 @@ import React from 'react'
 import { Nav } from 'react-bootstrap'
 import { Navmenu, NavClass } from './styles'
 import { NavIcon } from '../../../assets/Images'
+import { Colors, colors } from '../../../theme/colors'
+import Button from '/ui/Buttons/button'
 
 type Props = {
     children: React.ReactNode
-    color: string
+    color: Colors
+    onClick?: () => void
 }
 
-export const NavbarTeacher = ({ color, children }: Props) => (
-    <Navmenu color={color} expand="lg">
+export const NavbarTeacher = ({ color, children, onClick }: Props) => (
+    <Navmenu color={colors[color]} expand="lg">
         <Navmenu.Brand href="/teacher">
             <NavIcon />{' '}
             {children}
@@ -19,6 +22,7 @@ export const NavbarTeacher = ({ color, children }: Props) => (
             <Nav className="mr-auto">
             </Nav>
         </Navmenu.Collapse>
+        <Button color='terciary' onClick={onClick}>Logout</Button>
     </Navmenu>
 )
 

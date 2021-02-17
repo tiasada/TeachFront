@@ -13,3 +13,6 @@ export const getData = () => {
 export const store = (store: Store) => {
   localStorage.setItem(KEY, JSON.stringify({ ...getData(), ...store }))
 }
+export const logout = () => {
+  localStorage.removeItem('Teach-Front')
+}
