@@ -36,8 +36,8 @@ const AddStudent = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     addStudent(studentId, classroomId)
-      .then(() => alert('aluno adicionado'))
-      .catch(() => alert('algo deu errado'))
+      .then(() => alert('Aluno adicionado'))
+      .catch(() => alert('Algo deu errado :('))
   }
 
   const getData = () => {
@@ -98,8 +98,8 @@ const AddTeacher = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     addTeacher(teacherId, classroomId)
-      .then(() => alert('aluno adicionado'))
-      .catch(() => alert('algo deu errado'))
+      .then(() => alert('Professor adicionado'))
+      .catch(() => alert('Algo deu errado :('))
   }
 
   const getData = () => {

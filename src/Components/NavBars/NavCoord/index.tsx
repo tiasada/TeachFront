@@ -47,3 +47,11 @@ export const NavStudentListBottom = () => (
         </Nav>
     </NavClass>
 )
+
+export const NavParentListBottom = () => (
+    <NavClass expand="lg">
+        <Nav className="mr-auto">
+            <Nav.Link href="/parentregister">Cadastrar</Nav.Link>
+        </Nav>
+    </NavClass>
+)

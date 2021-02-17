@@ -9,7 +9,20 @@ export type Student = {
   userid: string
   parentid?: string
   id: string
+  parent: Parent 
+  classrooms: Classroom []
 }
+
+export type Parent = {
+  name: string
+  cpf: string
+  phonenumber: string
+  registration: string
+  email?: string
+  id: string
+  student: Student
+}
+
 export type Teacher = {
   name: string
   cpf: string

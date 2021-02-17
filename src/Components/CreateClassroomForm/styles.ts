@@ -6,4 +6,5 @@ export const CreateButton = styled(Button).attrs({
 })`
   margin-bottom: 20px;
   margin-top: 20px;
+  text-align: center;
 `

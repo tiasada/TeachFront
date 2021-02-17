@@ -11,7 +11,7 @@ const CreateClassroomForm = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     createclassrom({ name })
-      .then(() => alert('Turma Criada!'))
+      .then(() => alert('Turma criada'))
   }
 
   return (

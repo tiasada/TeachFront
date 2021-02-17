@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
-import { get, Classroom, Student, Teacher } from '/api'
+import { get, Classroom, Student, Teacher, Parent } from '/api'
 import Tabs from '/ui/Tabs'
 import ClassroomsTable from '../tables/ClassroomsTable'
 import StudentsTable from '../tables/StudentsTable'
@@ -14,7 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import Add from '../Add'
 import { ButtonSecundary } from '/ui/Buttons/button'
-import { colors } from '/theme/colors'
+import ParentsTable from '../tables/ParentsTable'
+import CreateParentForm from '../CreateParentForm'
 
 // Main Classroom component
 const ClassroomListTable = () => {
@@ -22,6 +23,8 @@ const ClassroomListTable = () => {
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
   const [students, setStudents] = useState<Student[]>([])
   const [teachers, setTeachers] = useState<Teacher[]>([])
+  const [parents, setParents] = useState<Parent[]>([])
+
 
   const [showSider, setShowSider] = useState(false)
 
@@ -39,8 +42,15 @@ const ClassroomListTable = () => {
     get<Teacher[]>(
       'teachers',
       search ? { name: search } : undefined
-    )
+    )  
       .then(resp => setTeachers(resp.data))
+      
+      get<Parent[]>(
+        'parents',
+        search ? { name: search } : undefined
+      )
+      .then(resp => setParents(resp.data))
+    
   }
 
   useEffectOnce(getTables)
@@ -76,6 +86,12 @@ const ClassroomListTable = () => {
           <TeachersTable teachers={teachers} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' />
+          </Sider>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <ParentsTable parents={parents} />
+          <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
+            <CreateParentForm title='Cadastro do Responsável' buttonText='Cadastrar' />
           </Sider>
         </div>
       </Tabs>
