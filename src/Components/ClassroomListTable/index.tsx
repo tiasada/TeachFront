@@ -24,7 +24,6 @@ const ClassroomListTable = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([])
   const [parents, setParents] = useState<Parent[]>([])
 
-
   const [showSider, setShowSider] = useState(false)
 
   const getTables = () => {
@@ -41,15 +40,14 @@ const ClassroomListTable = () => {
     get<Teacher[]>(
       'teachers',
       search ? { name: search } : undefined
-    )  
+    )
       .then(resp => setTeachers(resp.data))
-      
-      get<Parent[]>(
-        'parents',
-        search ? { name: search } : undefined
-      )
+
+    get<Parent[]>(
+      'parents',
+      search ? { name: search } : undefined
+    )
       .then(resp => setParents(resp.data))
-    
   }
 
   useEffectOnce(getTables)
@@ -96,7 +94,7 @@ const ClassroomListTable = () => {
         </div>
       </Tabs>
       <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-        <Add/>
+        <Add />
       </Sider>
     </>
   )

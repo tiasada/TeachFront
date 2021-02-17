@@ -9,7 +9,7 @@ export type Student = {
   userid: string
   parentid?: string
   id: string
-  parent: Parent 
+  parent: Parent
   classrooms: Classroom []
 }
 

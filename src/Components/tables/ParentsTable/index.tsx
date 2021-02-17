@@ -3,7 +3,6 @@ import { Table } from 'react-bootstrap'
 import { Parent } from '/api'
 import Modal from '/components/Modal'
 import ParentProfile from '/components/ParentProfile'
-import StudentProfile from '/components/StudentProfile'
 import TableRow from '/components/Table'
 
 type RowProps = {
@@ -34,7 +33,7 @@ const ParentsTable = ({ parents }: Props) => {
         <thead>
           <tr>
             <th className="w-100">Nome</th>
-            <th className="w-25" >Matricula do filho</th> 
+            <th className="w-25" >Matricula do filho</th>
           </tr>
         </thead>
         <tbody>

@@ -3,11 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { LoginButton } from '../../ui/Buttons/button/styles'
 import { LoginInput } from './styles'
 import { login } from '/api'
-import { Colors, colors } from '/theme/colors'
-
-type Props = {
-  color: Colors
-}
+import { colors } from '/theme/colors'
 
 const Form = () => {
   const [username, setUsername] = useState('')
