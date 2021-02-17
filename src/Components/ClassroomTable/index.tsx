@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useEffectOnce } from 'react-use'
-import Tabs from '/ui/Tabs'
+import Tabs from '../../ui/Tabs'
 import Search from '../Bars'
 import { Classroom, getclassroom, getStudentsByClassroom, Student } from '/api'
 import { useLocation } from 'react-router-dom'

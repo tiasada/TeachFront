@@ -3,7 +3,7 @@ import { Nav } from 'react-bootstrap'
 import { Navmenu, NavClass } from './styles'
 import { NavIcon } from '../../../assets/Images'
 import { Colors, colors } from '../../../theme/colors'
-import Button from '/ui/Buttons/button'
+import Button from '../../../ui/Buttons/button'
 
 type Props = {
     children: React.ReactNode

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useToggle } from 'react-use'
-import CheckPresence from '/ui/Checkbox'
+import CheckPresence from '../../ui/Checkbox'
 import { Student } from '/api'
 
 type RowProps = {

@@ -104,6 +104,9 @@ export const getclassrooms = () => {
 export const getStudentsByClassroom = (id: string, params?: object) => {
   return get<Student[]>(`classrooms/${id}/students`, { params })
 }
+export const getTeachersByClassroom = (id: string, params?: object) => {
+  return get<Teacher[]>(`classrooms/${id}/teachers`, { params })
+}
 export const getclassroom = (id: string) => {
   return get<Classroom>(`classrooms/${id}`)
 }

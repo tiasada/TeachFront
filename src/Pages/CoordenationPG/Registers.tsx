@@ -4,7 +4,7 @@ import CreateClassroomForm from '../../components/CreateClassroomForm'
 import CreateParentForm from '/components/CreateParentForm'
 import CreateStudentForm from '/components/CreateStudentForm'
 import CreateTeacherForm from '/components/CreateTeacherForm'
-import Tabs from '/ui/Tabs'
+import Tabs from '../../ui/Tabs'
 
 export const Registers = () => (
   <>

@@ -2,7 +2,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import { AddTCTdiv } from './styled'
+import { AddTCTdiv } from './styles'
 import { User } from '/api'
 import TableRow from '/components/Table'
 
@@ -43,7 +43,7 @@ const AddToClassTable = ({ users, onClick, show, onClose }: Props) => {
         <tbody>
           {users.map(item => (
             <Row user={item} key={item.id} onClick={() => onClick(item.id)} />
-          ))}100
+          ))}
         </tbody>
       </Table>
     </AddTCTdiv>

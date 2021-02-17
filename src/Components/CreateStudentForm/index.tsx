@@ -1,9 +1,9 @@
 import React, { FormEvent, useState } from 'react'
 import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
-import Input from '/ui/Input'
+import Input from '../../ui/Input'
 import { RegisterTitle } from '../Texts/Titles/styles'
-import { ButtonRegisters } from '/ui/Buttons/button/styles'
+import { ButtonRegisters } from '../../ui/Buttons/button/styles'
 
 type Props = {
   title: string

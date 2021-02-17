@@ -1,8 +1,8 @@
 import React, { FormEvent, useState } from 'react'
 import { CreateButton } from './styles'
-import { Label as InputLabel } from '/ui/Label'
+import { Label as InputLabel } from '../../ui/Label'
 import { createclassrom } from '/api'
-import Input from '/ui/Input'
+import Input from '../../ui/Input'
 import { RegisterTitle } from '../Texts/Titles/styles'
 
 const CreateClassroomForm = () => {

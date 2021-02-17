@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { get, Classroom, Student, Teacher, Parent } from '/api'
-import Tabs from '/ui/Tabs'
+import Tabs from '../../ui/Tabs'
 import ClassroomsTable from '../tables/ClassroomsTable'
 import StudentsTable from '../tables/StudentsTable'
 import TeachersTable from '../tables/TeachersTable'
-import Sider from '/ui/Sider'
+import Sider from '../../ui/Sider'
 import CreateClassroomForm from '../CreateClassroomForm'
 import CreateStudentForm from '../CreateStudentForm'
 import CreateTeacherForm from '../CreateTeacherForm'
 import Add from '../Add'
-import { ButtonSecondary } from '/ui/Buttons/button'
+import { ButtonSecondary } from '../../ui/Buttons/button'
 import ParentsTable from '../tables/ParentsTable'
 import CreateParentForm from '../CreateParentForm'
 
@@ -60,11 +60,6 @@ const ClassroomListTable = () => {
         onChange={e => setSearch(e.target.value)}
         onClick={getTables}
       />
-      <ButtonSecondary
-        style={{ position: 'absolute', right: '30px' }}
-        onClick={() => setShowSider(true)}
-        color="black"
-      >{'Criar/Adicionar'}</ButtonSecondary>
       <Tabs tabs={['Turmas', 'Alunos', 'Professores', 'Responsaveis']} title='Escola'>
         <div style={{ display: 'flex' }}>
             <ClassroomsTable classrooms={classrooms} onClickEmptyRow={() => setShowSider(true)} />
@@ -73,13 +68,13 @@ const ClassroomListTable = () => {
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)}/>
+          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} show={true}/>
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} />
+          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} show={true}/>
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' />
           </Sider>
@@ -91,9 +86,6 @@ const ClassroomListTable = () => {
           </Sider>
         </div>
       </Tabs>
-      <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-        <Add />
-      </Sider>
     </>
   )
 }

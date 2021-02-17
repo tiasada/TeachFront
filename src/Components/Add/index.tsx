@@ -3,8 +3,8 @@ import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { RegisterTitle } from '../Texts/Titles/styles'
 import { addStudent, addTeacher, Classroom, get, Student, Teacher } from '/api'
-import { LoginButton } from '/ui/Buttons/button/styles'
-import Tabs from '/ui/Tabs'
+import { LoginButton } from '../../ui/Buttons/button/styles'
+import Tabs from '../../ui/Tabs'
 
 // type AddStudentProps = {
 //   classrooms: Classroom[]

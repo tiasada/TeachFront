@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
+import { TeachersTableDiv } from './styles'
 import { Teacher } from '/api'
 import Modal from '/components/Modal'
 import TableRow from '/components/Table'
@@ -12,6 +13,7 @@ type RowProps = {
 type Props = {
   teachers: Teacher[]
   onClickEmptyRow: () => void
+  show: boolean
 }
 
 const Row = ({ teacher, onClick }: RowProps) => {
@@ -22,12 +24,12 @@ const Row = ({ teacher, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const TeacherTable = ({ teachers, onClickEmptyRow }: Props) => {
+const TeacherTable = ({ teachers, onClickEmptyRow, show }: Props) => {
   const [currentTeacher, setCurrentTeacher] = useState<Teacher>()
   const handleClose = () => setCurrentTeacher(undefined)
 
   return (
-    <>
+    <TeachersTableDiv show={show}>
       <Modal open={!!currentTeacher} onClose={handleClose}>
         <TeacherProfile teacher={currentTeacher} />
       </Modal>
@@ -47,7 +49,7 @@ const TeacherTable = ({ teachers, onClickEmptyRow }: Props) => {
           ))}
         </tbody>
       </Table>
-    </>
+    </TeachersTableDiv>
   )
 }
 export default TeacherTable
