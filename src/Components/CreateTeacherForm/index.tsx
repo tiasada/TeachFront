@@ -65,7 +65,7 @@ const CreateTeacherForm = ({ title, buttonText }: Props) => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     register(user)
-      .then(() => alert('Teacher Created'))
+      .then(() => alert('Professor criado'))
   }
 
   return (

@@ -69,12 +69,12 @@ const CreateStudentForm = ({ title, buttonText }: Props) => {
     }
   ]
 
-  const user = { name, cpf, phonenumber, birthdate, registration, email, role: 'Student' }
+  const user = { name, cpf, phonenumber, birthdate, email, registration, role: 'Student' }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     register(user)
-      .then(() => alert('Student Created'))
+      .then(() => alert('Estudante criado'))
   }
 
   return (
