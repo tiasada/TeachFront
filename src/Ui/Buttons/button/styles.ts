@@ -6,7 +6,6 @@ type Props ={
 }
 
 export const ClsBtn = styled.button`
-
   padding: 20px 20px;
   min-width: 20%;
   margin: 4px;

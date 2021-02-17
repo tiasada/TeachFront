@@ -1,4 +1,4 @@
-export type Colors = 'primary' | 'secondary' | 'terciary' | 'black'| 'error' 
+export type Colors = 'primary' | 'secondary' | 'terciary' | 'black'| 'error'
 
 export const colors: Record<Colors, string> = {
   primary: '#0098DB',

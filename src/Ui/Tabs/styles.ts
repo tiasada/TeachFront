@@ -36,7 +36,7 @@ export const TabItem = styled(Nav.Item) <TabProps>`
 export const TabDiv = styled.div<Props>`
   position: static;
   width: 80%;
-  height: 600px;
+  height: fit-content;
   top: 100px;
   margin-left: auto;
   margin-right: auto;

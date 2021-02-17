@@ -19,5 +19,4 @@ const PrivateRoute = ({ children, path }: Props) => (
   </Route>
 )
 
-
 export default PrivateRoute

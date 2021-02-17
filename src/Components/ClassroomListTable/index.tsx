@@ -10,10 +10,8 @@ import Sider from '/ui/Sider'
 import CreateClassroomForm from '../CreateClassroomForm'
 import CreateStudentForm from '../CreateStudentForm'
 import CreateTeacherForm from '../CreateTeacherForm'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import Add from '../Add'
-import { ButtonSecundary } from '/ui/Buttons/button'
+import { ButtonSecondary } from '/ui/Buttons/button'
 import ParentsTable from '../tables/ParentsTable'
 import CreateParentForm from '../CreateParentForm'
 
@@ -62,11 +60,11 @@ const ClassroomListTable = () => {
         onChange={e => setSearch(e.target.value)}
         onClick={getTables}
       />
-      <ButtonSecundary
+      <ButtonSecondary
         style={{ position: 'absolute', right: '30px' }}
-        onClick={()=> setShowSider(true)} 
+        onClick={() => setShowSider(true)}
         color="black"
-      >{'Criar/Adicionar'}</ButtonSecundary>
+      >{'Criar/Adicionar'}</ButtonSecondary>
       <Tabs tabs={['Turmas', 'Alunos', 'Professores']} title='Escola'>
         <div style={{ display: 'flex' }}>
           <ClassroomsTable classrooms={classrooms} />

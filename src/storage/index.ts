@@ -1,3 +1,4 @@
+
 const KEY = 'Teach-Front'
 
 type Store = {

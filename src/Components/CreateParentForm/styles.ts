@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const RegisterInput = styled.input`
   padding: 12px 20px;
   width: 200px;

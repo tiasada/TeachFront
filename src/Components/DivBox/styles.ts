@@ -18,7 +18,7 @@ export const DivBx = styled.div<Props>`
   box-sizing: border-box;
   
 `
-export const DivBxRegister= styled.div<Props>`
+export const DivBxRegister = styled.div<Props>`
   position: absolute;
   width: 1083px;
   height: 500px;

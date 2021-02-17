@@ -3,7 +3,6 @@ import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
 import Input from '/ui/Input'
 import { RegisterTitle } from '../Texts/Titles/styles'
-import { DivboxRegister } from '../DivBox'
 import { ButtonRegisters } from '/ui/Buttons/button/styles'
 
 type Props = {

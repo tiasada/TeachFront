@@ -1,8 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
-import { NavClassList, NavParentListBottom, NavTeacherListBottom } from './NavCoord'
->>>>>>> 553ddc3c6461be5f971ddd78652d8b0cab8d5fd5
 import { NavbarStudent } from './NavStudent'
 import { NavbarTeacher } from './NavTeacher'
 

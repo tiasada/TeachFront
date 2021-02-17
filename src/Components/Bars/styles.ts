@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export const SearchBar = styled.input`
   padding: 12px 30px;

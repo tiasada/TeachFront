@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 import { Colors, colors } from '../../../theme/colors'
-import { LoginButton } from './styles'
+import { ButtonRegisters, LoginButton } from './styles'
 
 type Props = {
   children?: string
@@ -13,6 +13,11 @@ type Props = {
 const Button = ({ color, children, type = 'submit', ...rest }: Props) => {
   return (
     <LoginButton type={type} color={colors[color]} {...rest}>{children}</LoginButton>
+  )
+}
+export const ButtonSecondary = ({ color, children, type = 'submit', ...rest }: Props) => {
+  return (
+    <ButtonRegisters type={type} color={colors[color]} {...rest}>{children}</ButtonRegisters>
   )
 }
 

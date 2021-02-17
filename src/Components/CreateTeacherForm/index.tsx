@@ -72,8 +72,7 @@ const CreateTeacherForm = ({ title, buttonText }: Props) => {
     <form onSubmit={onSubmit}>
       <div style={{ textAlign: 'center' }}>
         <RegisterTitle>{title}</RegisterTitle>
-        {inputs.map((item, index) =>
-        (
+        {inputs.map((item, index) => (
           <section key={index}>
             <InputLabel>{item.title}</InputLabel>
             <Input
