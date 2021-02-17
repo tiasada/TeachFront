@@ -6,19 +6,22 @@ export type User = Student | Teacher | Parent
 export type Student = {
   name: string
   cpf: string
-  phonenumber: string
+  birthDate: string
+  phoneNumber: string
   registration: string
+  email?: string
   userid: string
   parentid?: string
   id: string
   parent: Parent
-  classrooms: Classroom []
+  classrooms: ClassroomRelation []
 }
 
 export type Parent = {
   name: string
   cpf: string
-  phonenumber: string
+  birthDate: string
+  phoneNumber: string
   registration: string
   email?: string
   id: string
@@ -28,13 +31,18 @@ export type Parent = {
 export type Teacher = {
   name: string
   cpf: string
-  phonenumber: string
   birthDate: string
+  phoneNumber: string
   email?: string
   userid: string
-  classrooms?: Classroom []
+  classrooms?: ClassroomRelation []
   id: string
 }
+
+export type ClassroomRelation = {
+  classroom: Classroom
+}
+
 export type Classroom = {
   name: string
   subjects: string[]

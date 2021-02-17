@@ -17,6 +17,7 @@ type Props = {
 const Row = ({ parent, onClick }: RowProps) => {
   return (
     <TableRow onClick={onClick} >
+      <td>{parent.student.registration}</td>
       <td>{parent.name}</td>
     </TableRow>
   )
@@ -33,8 +34,8 @@ const ParentsTable = ({ parents, onClickEmptyRow }: Props) => {
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th className="w-100">Nome</th>
             <th className="w-25" >Matricula do filho</th>
+            <th className="w-100">Nome</th>
           </tr>
         </thead>
         <tbody>
