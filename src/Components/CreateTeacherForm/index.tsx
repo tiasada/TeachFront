@@ -8,6 +8,7 @@ import { ButtonRegisters } from '../../ui/Buttons/button/styles'
 type Props = {
   title: string
   buttonText: string
+  updateFunction: () => void
 }
 type Inputs = {
   type: string
@@ -17,7 +18,7 @@ type Inputs = {
   set: React.Dispatch<React.SetStateAction<string>>
 }
 
-const CreateTeacherForm = ({ title, buttonText }: Props) => {
+const CreateTeacherForm = ({ title, buttonText, updateFunction }: Props) => {
   const [name, setName] = useState('')
   const [cpf, setCpf] = useState('')
   const [phonenumber, setPhonenumber] = useState('')
@@ -65,7 +66,10 @@ const CreateTeacherForm = ({ title, buttonText }: Props) => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     register(user)
-      .then(() => alert('Professor criado'))
+      .then(() => {
+        updateFunction()
+        alert('Professor criado')
+      })
   }
 
   return (

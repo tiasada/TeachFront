@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { get, Classroom, Student, Teacher, Parent } from '/api'
@@ -41,7 +41,6 @@ const ClassroomListTable = () => {
       search ? { name: search } : undefined
     )
       .then(resp => setTeachers(resp.data))
-
     get<Parent[]>(
       'parents',
       search ? { name: search } : undefined
@@ -50,6 +49,8 @@ const ClassroomListTable = () => {
   }
 
   useEffectOnce(getTables)
+
+  useEffect(getTables, [search])
 
   return (
     <>
@@ -64,25 +65,25 @@ const ClassroomListTable = () => {
         <div style={{ display: 'flex' }}>
             <ClassroomsTable classrooms={classrooms} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-            <CreateClassroomForm />
+            <CreateClassroomForm title='Criar Turma' buttonText='Criar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
           <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} show={true}/>
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-            <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' />
+            <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
           <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} show={true}/>
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-            <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' />
+            <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
           <ParentsTable parents={parents} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
-            <CreateParentForm title='Cadastro do Responsável' buttonText='Cadastrar' />
+            <CreateParentForm title='Cadastro do Responsável' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>
         </div>
       </Tabs>
