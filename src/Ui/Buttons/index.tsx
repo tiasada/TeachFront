@@ -7,7 +7,6 @@ type Props = {
 }
 
 export const ClassesButton = ({ children, onClick, ...rest }: Props) => {
-  console.log(rest)
   return (
     <ClsBtn onClick={onClick} {...rest}>{children}</ClsBtn>
   )

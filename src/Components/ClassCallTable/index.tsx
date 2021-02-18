@@ -16,7 +16,6 @@ type TableProps = {
 
 // CallTable
 const Row = ({ student, setPresence, presence }: RowProps) => {
-  console.log(presence.ispresent)
   return (
     <tr >
       <td>{student.registration}</td>

@@ -14,7 +14,6 @@ type Name = {
 // get from localStore
 const useUserData = () => {
   const { token } = getData()
-  console.log(token)
   return jwtDecode<{ role: Role, username: Name }>(token)
 }
 

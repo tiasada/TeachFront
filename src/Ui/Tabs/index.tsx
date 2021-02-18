@@ -21,7 +21,7 @@ const Tabs = ({ children, tabs, title }: Props) => {
         <NavClass.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             {tabs.map((tabTitle, index) => (
-              <TabItem active={currentTab === index} onClick={() => setCurrentTab(index)} key={index}>
+              <TabItem active={(currentTab === index).toString()} onClick={() => setCurrentTab(index)} key={index}>
                 {tabTitle}
               </TabItem>
             ))}
