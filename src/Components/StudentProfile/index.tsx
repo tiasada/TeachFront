@@ -17,7 +17,6 @@ const StudentProfile = ({ student }: Props) => {
         <h3>{`Email: ${student?.email ? student?.email : 'Nenhum Email Adicionado'}`}</h3>
         <h3>{`Matrícula: ${student?.registration}`}</h3>
         <h3>{`Pai/Responsável: ${student?.parent ? student?.parent?.name : 'Nenhum Responsável Associado'}`}</h3>
-        <h3>{`Turmas: ${student?.classrooms?.map((x) => x.classroom.name).join(', ')}`}</h3>
       </div>
     </>
   )

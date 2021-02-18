@@ -13,7 +13,6 @@ type RowProps = {
 type Props = {
   students: Student[]
   onClickEmptyRow: () => void
-  show: boolean
 }
 
 const Row = ({ student, onClick }: RowProps) => {
@@ -24,12 +23,12 @@ const Row = ({ student, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const StudentsTable = ({ students, onClickEmptyRow, show }: Props) => {
+const StudentsTable = ({ students, onClickEmptyRow }: Props) => {
   const [currentStudent, setCurrentStudent] = useState<Student>()
   const handleClose = () => setCurrentStudent(undefined)
 
   return (
-    <StudentsTableDiv show={show}>
+    <StudentsTableDiv>
       <Modal open={!!currentStudent} onClose={handleClose}>
         <StudentProfile student={currentStudent}/>
       </Modal>

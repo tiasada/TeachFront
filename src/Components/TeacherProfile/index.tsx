@@ -15,7 +15,6 @@ const TeacherProfile = ({ teacher }: Props) => {
         <h3>{`Data de Nascimento: ${teacher?.birthDate.slice(0, 10).split('-').reverse().join('/')}`}</h3>
         <h3>{`Contato: ${teacher?.phoneNumber}`}</h3>
         <h3>{`Email: ${teacher?.email ? teacher?.email : 'Nenhum Email Adicionado'}`}</h3>
-        <h3>{`Turmas: ${teacher?.classrooms?.map((x) => x.classroom.name).join(', ')}`}</h3>
       </div>
     </>
   )

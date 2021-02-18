@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-type Props = {
-  show: boolean
-}
-
-export const TeachersTableDiv = styled.div<Props>`
-	display: ${({ show }) => show ? 'block' : 'none'};
+export const TeachersTableDiv = styled.div`
+	display: 'block';
   width: 100%;
 `

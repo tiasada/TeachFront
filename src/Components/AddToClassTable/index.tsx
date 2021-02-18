@@ -1,8 +1,5 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import { AddTCTdiv } from './styles'
 import { User } from '/api'
 import TableRow from '/components/Table'
 
@@ -13,8 +10,6 @@ type RowProps = {
 type Props = {
   users: User[]
   onClick: (id: string) => void
-  show: boolean
-  onClose: () => void
 }
 
 const Row = ({ user, onClick }: RowProps) => {
@@ -25,14 +20,9 @@ const Row = ({ user, onClick }: RowProps) => {
     </TableRow>
   )
 }
-const AddToClassTable = ({ users, onClick, show, onClose }: Props) => {
+const AddToClassTable = ({ users, onClick }: Props) => {
   return (
-    <AddTCTdiv show={show}>
-      <FontAwesomeIcon
-        icon={faTimes}
-        color='black'
-        onClick={onClose}
-      />
+    <>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
@@ -46,7 +36,7 @@ const AddToClassTable = ({ users, onClick, show, onClose }: Props) => {
           ))}
         </tbody>
       </Table>
-    </AddTCTdiv>
+    </>
   )
 }
 export default AddToClassTable

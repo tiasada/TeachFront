@@ -50,7 +50,7 @@ const ClassroomListTable = () => {
 
   useEffectOnce(getTables)
 
-  useEffect(getTables, [search])
+  // useEffect(getTables, [search])
 
   return (
     <>
@@ -63,19 +63,19 @@ const ClassroomListTable = () => {
       />
       <Tabs tabs={['Turmas', 'Alunos', 'Professores', 'Responsaveis']} title='Escola'>
         <div style={{ display: 'flex' }}>
-            <ClassroomsTable classrooms={classrooms} onClickEmptyRow={() => setShowSider(true)} />
+          <ClassroomsTable classrooms={classrooms} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateClassroomForm title='Criar Turma' buttonText='Criar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} show={true}/>
+          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} show={true} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} show={true}/>
+          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} show={true} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>

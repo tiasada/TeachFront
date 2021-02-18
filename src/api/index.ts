@@ -49,20 +49,33 @@ export type ClassroomRelation = {
   classroom: Classroom
 }
 
+export type StudentRelation = {
+  student: Student
+}
+
+export type TeacherRelation = {
+  teacher: Teacher
+}
+
 export type Classroom = {
   name: string
   subjects: string[]
   subjectsString: string
-  students: Student[]
-  teachers: Teacher[]
-  grades: Grades[]
-  classDays: string[]
+  students: StudentRelation[]
+  teachers: TeacherRelation[]
+  // grades: Grade[]
   id: string
 }
-export type Grades = {
-  day: string
-  student: string
+
+export type StudentGrade = {
+  studentId: string
+  grade: number
 }
+export type Grade = {
+  name: string
+  studentGrades: StudentGrade[]
+}
+
 type LoginRequest = {
   username: string
   password: string

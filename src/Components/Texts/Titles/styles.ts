@@ -31,7 +31,7 @@ export const ScheduleTitle = styled(LoginTitle)`
 export const ClassTitle = styled(LoginTitle)`
   font-size: 35px;
   padding: 4px;
-
+  margin-top: 70px;
 `
 export const RegisterTitle = styled.h1`
   margin-top: 20px;

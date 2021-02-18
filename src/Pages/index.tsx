@@ -4,7 +4,7 @@ export { default as Home } from './Home'
 export { default as NotFound } from './NotFound/Index'
 
 // Teacher's Pages
-export { default as ClassPage } from './TeachersPages/ClassPage'
+export { default as ClassPage } from './ClassPage'
 export { default as Classes } from './TeachersPages/ClassesPage'
 
 // Student's Pages

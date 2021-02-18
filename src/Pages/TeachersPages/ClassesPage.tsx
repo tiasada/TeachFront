@@ -30,9 +30,6 @@ export const ClassesPage = () => {
         <Navbarmenu />
       </div>
       <div>
-        <ClassTitle>Escola E.E.F.Rubrivira</ClassTitle>
-      </div>
-      <div>
         <ClassTitle>Suas Turmas</ClassTitle>
         <Search
           color='secondary'
