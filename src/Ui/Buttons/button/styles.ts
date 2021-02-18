@@ -28,7 +28,6 @@ export const ClsBtn = styled.button`
 export const LoginButton = styled.button<Props>`
   padding: 12px 20px;
   border-radius: 8px;
-  width: 150px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px ;
@@ -39,7 +38,6 @@ export const LoginButton = styled.button<Props>`
 
 &:focus {
   background-color: #D1F6FF;
-  border: 1px;
   border-color: #0098DB;
   outline: none;
 }
@@ -47,7 +45,6 @@ export const LoginButton = styled.button<Props>`
 &:hover {
   transition: 200ms;
   background-color: #D1F6FF;
-  border-width: 1px;
   border-color: #0098DB;
   outline: none;
 }

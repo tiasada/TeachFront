@@ -14,10 +14,10 @@ export const Header = styled.div<Props>`
 export const Wrapper = styled.div<Props>`
   max-width: ${({ open }) => open ? '100%' : '0%'};
   background-color: ${({ color }) => color};
-  top: 0;
+  top: 78px;
   right: 0;
   bottom: 0;
-  position: static;
+  position: absolute;
   transition: max-width 0.7s ease-out;
 `
 

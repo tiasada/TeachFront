@@ -39,6 +39,12 @@ export type Teacher = {
   id: string
 }
 
+export type Presence = {
+  studentid: string
+  ispresent: boolean
+  reason: string
+}
+
 export type ClassroomRelation = {
   classroom: Classroom
 }

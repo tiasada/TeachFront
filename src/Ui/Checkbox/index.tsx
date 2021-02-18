@@ -7,7 +7,7 @@ type Props = {
 
 }
 const CheckPresence = ({ value, onChange } : Props) => (
-    <Checkbox type="checkbox" value={value.toString()} onChange={onChange} />
+    <Checkbox type="checkbox" checked={value} onChange={onChange} />
 )
 
 export default CheckPresence

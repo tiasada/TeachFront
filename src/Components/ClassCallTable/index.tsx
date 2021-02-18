@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { useToggle } from 'react-use'
+import { useParams } from 'react-router-dom'
 import CheckPresence from '../../ui/Checkbox'
-import { Student } from '/api'
+import { post, Presence, Student } from '/api'
+import Button from '/ui/Buttons/button'
 
 type RowProps = {
+  setPresence: (presence: Presence) => void
+  presence: Presence
   student: Student
 }
 type TableProps = {
@@ -12,29 +15,26 @@ type TableProps = {
 }
 
 // CallTable
-const Row = ({ student }: RowProps) => {
-  const [present, setPrecense] = useToggle(false)
-  const [reason, setReason] = useState('')
-
+const Row = ({ student, setPresence, presence }: RowProps) => {
+  console.log(presence.ispresent)
   return (
     <tr >
       <td>{student.registration}</td>
       <td>{student.name}</td>
       <td style={{ display: 'flex', margin: '4px' }}>
-        <CheckPresence value={present} onChange={() => {
-          setReason('')
-          setPrecense()
+        <CheckPresence value={presence.ispresent} onChange={() => {
+          setPresence({ ...presence, ispresent: !presence.ispresent, reason: presence.ispresent ? presence.reason : '' })
         }} />
         <label style={{ margin: '4px' }}>Presença</label>
       </td>
       <td>
         <input
-          disabled={present}
+          disabled={presence.ispresent}
           style={{ marginTop: '8px' }}
           name='reason'
           placeholder='Motivo da falta'
-          value={reason}
-          onChange={e => setReason(e.target.value)}
+          value={presence?.reason}
+          onChange={e => setPresence({ ...presence, reason: e.target.value })}
         />
       </td>
     </tr>
@@ -42,7 +42,30 @@ const Row = ({ student }: RowProps) => {
 }
 
 export const ClassCallTable = ({ students }: TableProps) => {
-  // const [presences, setPresences] = useState<Presence>()
+  const [presences, setPresences] = useState<Presence[]>([])
+
+  const { id } = useParams()
+
+  const setPresence = (presence: Presence) => {
+    const updatedPresences = presences.map(
+      current => current.studentid === presence.studentid ? presence : current)
+    setPresences(updatedPresences)
+  }
+  const sendPresences = () => {
+    post<Presence[]>(
+      `classrooms/${id}/presences`,
+      presences
+    ).then(() => alert('CONFIRMADO!'))
+      .catch(() => alert('Algo deu errado :('))
+  }
+
+  useEffect(() => {
+    setPresences(students.map(item => ({
+      studentid: item.id,
+      ispresent: true,
+      reason: ''
+    })))
+  }, [students])
 
   return (
     <>
@@ -57,10 +80,20 @@ export const ClassCallTable = ({ students }: TableProps) => {
         </thead>
         <tbody>
           {students.map(item => (
-            <Row student={item} key={item.registration} />
+            <Row
+              key={item.id}
+              student={item}
+              setPresence={setPresence}
+              presence={presences.find(x => x.studentid === item.id) || {
+                studentid: item.id,
+                ispresent: true,
+                reason: ''
+              }}
+            />
           ))}
         </tbody>
       </Table>
+      <Button color='primary' onClick={sendPresences} >Confirmar</Button>
     </>
   )
 }

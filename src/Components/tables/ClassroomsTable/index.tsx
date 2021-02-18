@@ -70,12 +70,12 @@ const ClassroomsTable = ({ classrooms, onClickEmptyRow }: Props) => {
             <StudentsTable
               students={currentStudents}
               onClickEmptyRow={openAddToClass}
-              show={addShow == false}
+              show={!addShow}
             />
             <AddToClassTable
               onClose={() => setAddShow(false)}
               show={addShow}
-              users={allStudents.filter(x => !currentStudents.some(y => y.id == x.id))}
+              users={allStudents.filter(x => !currentStudents.some(y => y.id === x.id))}
               onClick={(id) => addStudentToClass(id)}
             />
           </div>
@@ -83,12 +83,12 @@ const ClassroomsTable = ({ classrooms, onClickEmptyRow }: Props) => {
             <TeachersTable
               teachers={currentTeachers}
               onClickEmptyRow={openAddToClass}
-              show={addShow == false}
+              show={!addShow}
             />
             <AddToClassTable
               onClose={() => setAddShow(false)}
               show={addShow}
-              users={allTeachers.filter(x => !currentTeachers.some(y => y.id == x.id))}
+              users={allTeachers.filter(x => !currentTeachers.some(y => y.id === x.id))}
               onClick={(id) => addTeacherToClass(id)}
             />
           </div>

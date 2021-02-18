@@ -6,7 +6,7 @@ type Props = {
 }
 type TabProps = {
   color: string
-  active?: boolean
+  active: boolean
 }
 
 export const Navmenu = styled(Navbar) <Props>`
