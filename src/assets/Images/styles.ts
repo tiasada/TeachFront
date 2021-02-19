@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const NavIconSt = styled.img`
-    width: 20px;
-    height: 35px;
+    width: 136px;
+    height: 51px;
     display: inline-block;
     align-self: top ;
     margin-top: 0px;

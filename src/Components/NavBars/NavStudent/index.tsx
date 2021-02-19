@@ -11,7 +11,6 @@ export const NavbarStudent = ({ color }: Props) => (
     <Navmenu expand="lg">
         <Navmenu.Brand href="/student">
             <NavIcon />{' '}
-            Teach
         </Navmenu.Brand>
         <Navmenu.Toggle aria-controls="basic-navbar-nav" />
         <Navmenu.Collapse id="basic-navbar-nav">

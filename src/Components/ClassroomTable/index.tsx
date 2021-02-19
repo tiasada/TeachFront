@@ -16,8 +16,6 @@ const ClassroomTable = () => {
     subjectsString: '',
     students: [],
     teachers: [],
-    grades: [],
-    classDays: [],
     id: ''
   })
   const { id } = useParams()
@@ -48,7 +46,7 @@ const ClassroomTable = () => {
       />
       <Tabs tabs={['Chamada', 'Notas']} title={classroom?.name}>
         <ClassCallTable students={classroom.students.map(x => x.student) } />
-        <ClassGradeTable students={classroom.students.map(x => x.student) } grades={classroom.grades} />
+        <ClassGradeTable students={classroom.students.map(x => x.student) } />
       </Tabs>
     </>
   )

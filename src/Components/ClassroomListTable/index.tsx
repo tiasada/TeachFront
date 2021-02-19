@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Search from '../Bars'
 import { get, Classroom, Student, Teacher, Parent } from '/api'
@@ -10,8 +10,6 @@ import Sider from '../../ui/Sider'
 import CreateClassroomForm from '../CreateClassroomForm'
 import CreateStudentForm from '../CreateStudentForm'
 import CreateTeacherForm from '../CreateTeacherForm'
-import Add from '../Add'
-import { ButtonSecondary } from '../../ui/Buttons/button'
 import ParentsTable from '../tables/ParentsTable'
 import CreateParentForm from '../CreateParentForm'
 
@@ -69,13 +67,13 @@ const ClassroomListTable = () => {
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} show={true} />
+          <StudentsTable students={students} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateStudentForm title='Cadastro do Estudante' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>
         </div>
         <div style={{ display: 'flex' }}>
-          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} show={true} />
+          <TeachersTable teachers={teachers} onClickEmptyRow={() => setShowSider(true)} />
           <Sider open={showSider} color="secondary" onClose={() => setShowSider(false)}>
             <CreateTeacherForm title='Cadastro do Professor' buttonText='Cadastrar' updateFunction={getTables} />
           </Sider>

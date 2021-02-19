@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffectOnce } from 'react-use'
 import Tabs from '../../ui/Tabs'
-import { addStudent, addTeacher, Classroom, get, getclassroom, getStudentsByClassroom, getTeachersByClassroom, Student, Teacher } from '/api'
+import { addStudent, addTeacher, Classroom, get, getclassroom, Student, Teacher } from '/api'
 import { useParams } from 'react-router-dom'
 import StudentsTable from '../tables/StudentsTable'
 import AddToClassTable from '../AddToClassTable'

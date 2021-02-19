@@ -15,7 +15,7 @@ export const Navbarmenu = ({ onClick }: Props) => {
     history.push('/login')
   }
   return (
-    <NavbarTeacher color='primary' onClick={handleClick}>Teach</NavbarTeacher>
+    <NavbarTeacher color='primary' onClick={handleClick}></NavbarTeacher>
   )
 }
 
