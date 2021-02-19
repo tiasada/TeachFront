@@ -2,17 +2,28 @@ import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
 import Button from '../../ui/Buttons/button'
 import Sider from '../../ui/Sider'
-import { Student, Grade } from '/api'
+import { Student } from '/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 type RowProps = {
   student: Student
 }
+type Grade = {
+  name: string
+}
 type TableProps = {
   students: Student[]
-  grades: Grade[]
 }
+
+const gradeslist: Grade[] = [
+  {
+    name: 'Prova Surpresa'
+  },
+  {
+    name: 'Redação sobre Kant'
+  }
+]
 
 // Grades Table
 // row
@@ -21,13 +32,13 @@ const RowGrades = ({ student }: RowProps) => {
     <tr >
       <td>{student.registration}</td>
       <td>{student.name}</td>
-      {grades.map(item => (
+      {gradeslist.map(item => (
         <td key={item.name}><input type="number" style={{ marginTop: '8px' }} /></td>))}
     </tr>
   )
 }
 // context
-export const ClassGradeTable = ({ students, grades }: TableProps ) => {
+export const ClassGradeTable = ({ students }: TableProps ) => {
   const [classStudents, setStudents] = useState<Student[]>(students)
   const setStudent = (student: Student) => {
     const updatedStudents = students.map(

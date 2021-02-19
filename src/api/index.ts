@@ -63,17 +63,7 @@ export type Classroom = {
   subjectsString: string
   students: StudentRelation[]
   teachers: TeacherRelation[]
-  // grades: Grade[]
   id: string
-}
-
-export type StudentGrade = {
-  studentId: string
-  grade: number
-}
-export type Grade = {
-  name: string
-  studentGrades: StudentGrade[]
 }
 
 type LoginRequest = {
@@ -81,14 +71,12 @@ type LoginRequest = {
   password: string
 }
 type RegisterRequest = {
-
   name: string
   cpf: string
   phonenumber: string
   birthdate: string
   registration?: string
   role: string
-
 }
 type LoginResponse = {
   token: string

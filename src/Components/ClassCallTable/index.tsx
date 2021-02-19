@@ -54,7 +54,7 @@ export const ClassCallTable = ({ students }: TableProps) => {
     post<Presence[]>(
       `classrooms/${id}/presences`,
       presences
-    ).then(() => alert('CONFIRMADO!'))
+    ).then(() => alert('Confirmado!'))
       .catch(() => alert('Algo deu errado :('))
   }
 
