@@ -14,7 +14,6 @@ export type Student = {
   parentid?: string
   id: string
   parent: Parent
-  classrooms: ClassroomRelation []
 }
 
 export type Parent = {
@@ -35,7 +34,6 @@ export type Teacher = {
   phoneNumber: string
   email?: string
   userid: string
-  classrooms?: ClassroomRelation []
   id: string
 }
 
@@ -43,10 +41,6 @@ export type Presence = {
   studentid: string
   ispresent: boolean
   reason: string
-}
-
-export type ClassroomRelation = {
-  classroom: Classroom
 }
 
 export type StudentRelation = {
