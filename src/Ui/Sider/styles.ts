@@ -19,6 +19,7 @@ export const Wrapper = styled.div<Props>`
   bottom: 0;
   position: fixed;
   transition: max-width 0.7s ease-out;
+  overflow: auto;
 `
 
 export const Content = styled.div`
