@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { Navbarmenu } from '../NavBars'
+import { Main } from './styles'
 import { getData } from '/storage'
 
 type Props = {
@@ -14,7 +16,12 @@ const PrivateRoute = ({ children, path }: Props) => (
 
       if (!token) history.push('/login')
 
-      return children
+      return ( 
+        <>
+        <Navbarmenu />
+        <Main>{children}</Main>
+        </>
+        )
     }}
   </Route>
 )

@@ -4,14 +4,7 @@ import ClassroomListTable from '../../components/ClassroomListTable'
 
 export const CoordenationHomePage = () => {
   return (
-    <>
-        <div>
-          <Navbarmenu />
-        </div>
-        <div>
-          <ClassroomListTable />
-        </div>
-    </>
+    <ClassroomListTable />
   )
 }
 export default CoordenationHomePage

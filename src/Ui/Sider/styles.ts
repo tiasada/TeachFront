@@ -17,7 +17,7 @@ export const Wrapper = styled.div<Props>`
   top: 78px;
   right: 0;
   bottom: 0;
-  position: absolute;
+  position: fixed;
   transition: max-width 0.7s ease-out;
 `
 
