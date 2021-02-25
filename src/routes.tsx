@@ -5,11 +5,8 @@ import {
   Login,
   ClassPage,
   Classes,
-  Schedule,
   NotFound,
-  Registers,
-  Home,
-  Notes
+  Home
 } from './pages'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -21,11 +18,8 @@ export default function App () {
       <Switch>
         <Route path="/login" component={Login} />
         <PrivateRoute path="/home"><Home/></PrivateRoute>
-        <PrivateRoute path="/schedule"><Schedule/></PrivateRoute>
-        <PrivateRoute path="/studentnotes"><Notes/></PrivateRoute>
         <PrivateRoute path="/class/:id"><ClassPage/></PrivateRoute>
         <PrivateRoute path="/teacher"><Classes/></PrivateRoute>
-        <PrivateRoute path="/registers"><Registers/></PrivateRoute>
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>

@@ -13,7 +13,6 @@ import CreateTeacherForm from '../CreateTeacherForm'
 import ParentsTable from '../tables/ParentsTable'
 import CreateParentForm from '../CreateParentForm'
 
-// Main Classroom component
 const ClassroomListTable = () => {
   const [search, setSearch] = useState('')
   const [classrooms, setClassrooms] = useState<Classroom[]>([])
@@ -47,8 +46,6 @@ const ClassroomListTable = () => {
   }
 
   useEffectOnce(getTables)
-
-  // useEffect(getTables, [search])
 
   return (
     <>

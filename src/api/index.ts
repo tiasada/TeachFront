@@ -11,7 +11,6 @@ export type Student = {
   registration: string
   email?: string
   userid: string
-  parentid?: string
   id: string
   parent: Parent
 }
@@ -53,8 +52,6 @@ export type TeacherRelation = {
 
 export type Classroom = {
   name: string
-  subjects: string[]
-  subjectsString: string
   students: StudentRelation[]
   teachers: TeacherRelation[]
   id: string
@@ -74,7 +71,6 @@ type RegisterRequest = {
 }
 type LoginResponse = {
   token: string
-  profile: string
 }
 
 type CreateClassroomRequest = {
@@ -104,17 +100,8 @@ export const register = (registerRequest: RegisterRequest) => {
   return post<string>(`${registerRequest.role}s`, registerRequest)
 }
 
-export const createclassrom = (createClassroom: CreateClassroomRequest) => {
+export const createclassroom = (createClassroom: CreateClassroomRequest) => {
   return post<string>('classrooms', createClassroom)
-}
-export const getclassrooms = () => {
-  return get<Classroom[]>('/classrooms')
-}
-export const getStudentsByClassroom = (id: string, params?: object) => {
-  return get<Student[]>(`classrooms/${id}/students`, { params })
-}
-export const getTeachersByClassroom = (id: string, params?: object) => {
-  return get<Teacher[]>(`classrooms/${id}/teachers`, { params })
 }
 export const getclassroom = (id: string) => {
   return get<Classroom>(`classrooms/${id}`)

@@ -7,7 +7,6 @@ type Prop ={
   open: boolean
   children: React.ReactNode
   onClose: () => void
-
 }
 
 const Modal = ({ open, onClose, children }: Prop) => (

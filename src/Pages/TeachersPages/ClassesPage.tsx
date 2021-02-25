@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { ClassTitle } from '../../components/Texts/Titles/styles'
 import { ClassesButton } from '../../ui/Buttons'
 import Search from '../../components/Bars'
-import { DivClasslist } from '../../components/DivBox/Overflows'
+import { DivClasslist } from '../../components/Overflows'
 import { Navbarmenu } from '../../components/NavBars'
 import { useHistory } from 'react-router-dom'
 import { Classroom, get } from '/api'
 import { useEffectOnce } from 'react-use'
+import { colors } from '/theme/colors'
+import Typography from '/ui/Typography'
 
 export const ClassesPage = () => {
   const history = useHistory()
@@ -27,10 +28,12 @@ export const ClassesPage = () => {
   return (
     <main>
       <div >
-        <Navbarmenu />
+        <Navbarmenu color={ colors.primary }/>
+      </div>
+      <div style={{ paddingTop: '70px', justifyContent: 'center', display: 'flex' }}>
+        <Typography variant='h1'>Suas Turmas</Typography>
       </div>
       <div>
-        <ClassTitle>Suas Turmas</ClassTitle>
         <Search
           color='secondary'
           placeholder='...'
@@ -40,7 +43,7 @@ export const ClassesPage = () => {
         />
         <DivClasslist center>
           {classrooms.map(item => (
-            <ClassesButton onClick={() => handleClick(item.id)} key={item.id}>{item.name}</ClassesButton>
+            <ClassesButton onClick={() => handleClick(item.id)} color='secondary' key={item.id}>{item.name}</ClassesButton>
           ))}
         </DivClasslist>
       </div>

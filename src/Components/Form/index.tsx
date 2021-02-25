@@ -1,9 +1,8 @@
 import React, { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { LoginButton } from '../../ui/Buttons/button/styles'
+import Button from '../../ui/Buttons'
 import { LoginInput } from './styles'
 import { login } from '/api'
-import { colors } from '/theme/colors'
 
 const Form = () => {
   const [username, setUsername] = useState('')
@@ -20,10 +19,10 @@ const Form = () => {
     <form onSubmit={onSubmit}>
       <div>
         <LoginInput
-        type= 'text'
-        placeholder='Login'
-        value={username}
-        onChange={e => setUsername(e.target.value)}
+          type='text'
+          placeholder='Login'
+          value={username}
+          onChange={e => setUsername(e.target.value)}
         />
       </div>
       <div>
@@ -35,7 +34,7 @@ const Form = () => {
           onChange={e => setPassword(e.target.value)}
         />
       </div>
-      <LoginButton color={colors.primary}>{'Login'}</LoginButton>
+      <Button color='primary'>{'Login'}</Button>
     </form>
   )
 }

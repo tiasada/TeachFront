@@ -16,27 +16,18 @@ const ClassroomTableCoord = () => {
   const [allStudents, setAllStudents] = useState<Student[]>([])
   const [allTeachers, setAllTeachers] = useState<Teacher[]>([])
   const [currentClassroom, setCurrentClassroom] = useState<Classroom>()
-  const { id } = useParams()
-  const getClassroom = () => { getclassroom(id).then(resp => {
-    setCurrentClassroom(resp.data)
-    setCurrentStudents(resp.data.students.map(x => x.student))
-    setCurrentTeachers(resp.data.teachers.map(x => x.teacher))
-  }) }
+  const { id } = useParams<{ id: string }>()
+  const getClassroom = () => {
+    getclassroom(id).then(resp => {
+      setCurrentClassroom(resp.data)
+      setCurrentStudents(resp.data.students.map(x => x.student))
+      setCurrentTeachers(resp.data.teachers.map(x => x.teacher))
+    })
+  }
 
   const [showSider, setShowSider] = useState(false)
 
-  // const getStudents = (id: string) => {
-  //   getStudentsByClassroom(id, undefined)
-  //     .then(resp => setCurrentStudents(resp.data))
-  // }
-  // const getTeachers = (id: string) => {
-  //   getTeachersByClassroom(id, undefined)
-  //     .then(resp => setCurrentTeachers(resp.data))
-  // }
-
   const getData = () => {
-    // getStudents(id)
-    // getTeachers(id)
     get<Student[]>(
       'students'
     ).then(resp => setAllStudents(resp.data))

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { StudentsTableDiv } from './styles'
 import { Student } from '/api'
 import Modal from '/components/Modal'
 import StudentProfile from '/components/StudentProfile'
@@ -28,9 +27,9 @@ const StudentsTable = ({ students, onClickEmptyRow }: Props) => {
   const handleClose = () => setCurrentStudent(undefined)
 
   return (
-    <StudentsTableDiv>
+    <div style={{ display: 'block', width: '100%' }}>
       <Modal open={!!currentStudent} onClose={handleClose}>
-        <StudentProfile student={currentStudent}/>
+        <StudentProfile student={currentStudent} />
       </Modal>
       <Table striped bordered hover size="sm">
         <thead>
@@ -48,7 +47,7 @@ const StudentsTable = ({ students, onClickEmptyRow }: Props) => {
           ))}
         </tbody>
       </Table>
-    </StudentsTableDiv>
+    </div>
   )
 }
 export default StudentsTable

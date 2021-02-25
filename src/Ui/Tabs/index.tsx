@@ -30,7 +30,6 @@ const Tabs = ({ children, tabs, title }: Props) => {
       </NavClass>
       {children[currentTab]}
       <NavClass color="primary">
-      {/* <Button type="button" color="primary">Enviar</Button> */}
     </NavClass>
     </TabDiv>
   )

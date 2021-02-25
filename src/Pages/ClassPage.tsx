@@ -1,9 +1,9 @@
 import React from 'react'
 import useUserData, { Role } from '../hooks/useUserData'
-import { ClassTitle } from '../components/Texts/Titles/styles'
 import { Navbarmenu } from '../components/NavBars'
 import ClassroomTable from '../components/ClassroomTable'
 import ClassroomTableCoord from '/components/ClassroomTableCoord'
+import { colors } from '/theme/colors'
 
 const Permissions = ({ children, roles }: { children: React.ReactNode, roles: Role[] }) => {
   const { role } = useUserData()
@@ -19,7 +19,7 @@ export const ClassPage = () => {
   return (
     <main>
       <header role='banner'>
-        <div ><Navbarmenu /></div>
+        <div ><Navbarmenu color={ colors.primary }/></div>
         <>
           <Permissions roles={[Role.School]}>
             <ClassroomTableCoord />

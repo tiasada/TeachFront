@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
-import Button from '../../ui/Buttons/button'
+import Button from '../../ui/Buttons'
 import Sider from '../../ui/Sider'
 import { Student } from '/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,6 +16,7 @@ type TableProps = {
   students: Student[]
 }
 
+// Temporary mock
 const gradeslist: Grade[] = [
   {
     name: 'Prova Surpresa'
@@ -25,8 +26,6 @@ const gradeslist: Grade[] = [
   }
 ]
 
-// Grades Table
-// row
 const RowGrades = ({ student }: RowProps) => {
   return (
     <tr >
@@ -37,22 +36,10 @@ const RowGrades = ({ student }: RowProps) => {
     </tr>
   )
 }
-// context
-export const ClassGradeTable = ({ students }: TableProps ) => {
-  const [classStudents, setStudents] = useState<Student[]>(students)
-  const setStudent = (student: Student) => {
-    const updatedStudents = students.map(
-      current => current.registration === student.registration ? student : current)
-    setStudents(updatedStudents)
-  }
+
+const ClassGradeTable = ({ students }: TableProps) => {
   const [showSider, setShowSider] = useState(false)
   const [newGrade, setNewgrade] = useState('')
-  //
-  const [grades, setGrades] = useState<Grade[]>([])
-  const setUpdatedGrades = () => {
-    const updatedGrades = grades.concat([{ name: newGrade }])
-    setGrades(updatedGrades)
-  }
   return (
     <>
       <div style={{ display: 'flex' }}>
@@ -74,7 +61,7 @@ export const ClassGradeTable = ({ students }: TableProps ) => {
             </tr>
           </thead>
           <tbody>
-            {classStudents.map(item => (
+            {students.map(item => (
               <RowGrades student={item} key={item.registration} />
             ))}
           </tbody>
@@ -90,7 +77,6 @@ export const ClassGradeTable = ({ students }: TableProps ) => {
           <Button type="button" color="primary" onClick={() => setShowSider(true)}>Adicionar Avaliação</Button>
         </Sider>
       </div>
-
     </>
   )
 }

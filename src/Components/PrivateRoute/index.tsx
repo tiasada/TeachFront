@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { Navbarmenu } from '../NavBars'
-import { Main } from './styles'
 import { getData } from '/storage'
+import { colors } from '/theme/colors'
 
 type Props = {
   children: React.ReactNode
@@ -16,12 +16,12 @@ const PrivateRoute = ({ children, path }: Props) => (
 
       if (!token) history.push('/login')
 
-      return ( 
+      return (
         <>
-        <Navbarmenu />
-        <Main>{children}</Main>
+          <Navbarmenu color={colors.primary} />
+          <main style={{ marginTop: '78px' }}>{children}</main>
         </>
-        )
+      )
     }}
   </Route>
 )

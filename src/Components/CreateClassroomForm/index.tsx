@@ -1,9 +1,9 @@
 import React, { FormEvent, useState } from 'react'
-import { CreateButton } from './styles'
 import { Label as InputLabel } from '../../ui/Label'
-import { createclassrom } from '/api'
+import { createclassroom } from '/api'
 import Input from '../../ui/Input'
-import { RegisterTitle } from '../Texts/Titles/styles'
+import { ButtonRegister } from '/ui/Buttons'
+import Typography from '/ui/Typography'
 
 type Props = {
   title: string
@@ -16,27 +16,30 @@ const CreateClassroomForm = ({ title, buttonText, updateFunction }: Props) => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    createclassrom({ name })
+    createclassroom({ name })
       .then(() => {
         updateFunction()
         alert('Turma criada')
       })
+      .catch(() => alert('Algo deu errado :('))
   }
 
   return (
     <form onSubmit={onSubmit}>
-      <RegisterTitle>{title}</RegisterTitle>
+      <div style={{ marginTop: '20px', marginBottom: '30px' }}>
+        <Typography variant='h3'>{title}</Typography>
+      </div>
       <div>
         <InputLabel>Nome da Turma</InputLabel>
         <Input
           type='text'
           name='name'
-          placeholder='000 Example'
+          placeholder='Nome da Turma'
           value={name}
           onChange={e => setName(e.target.value)}
         />
-      <CreateButton type="submit">{buttonText}</CreateButton>
       </div>
+      <ButtonRegister color='primary' type="submit">{buttonText}</ButtonRegister>
     </form>
   )
 }

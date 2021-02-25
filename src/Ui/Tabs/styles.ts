@@ -9,12 +9,9 @@ type TabProps = {
   active: boolean
 }
 
-export const Navmenu = styled(Navbar) <Props>`
+export const NavClass = styled(Navbar) <Props>`
     position: sticky;
     width: 100% ; 
-    background-color: ${({ color }) => color};
-`
-export const NavClass = styled(Navmenu) <Props>`
     background-image: none;
     background-color: ${({ color }) => color};
     display: flex;

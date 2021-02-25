@@ -1,8 +1,8 @@
 import React from 'react'
 import { NotFoundImage } from '/assets/Images'
-import { TextPattern } from '../../components/Texts'
-import Button from '../../ui/Buttons/button'
+import Button from '../../ui/Buttons'
 import { useHistory } from 'react-router-dom'
+import Typography from '/ui/Typography'
 
 export const NotFound = () => {
   const history = useHistory()
@@ -13,10 +13,9 @@ export const NotFound = () => {
     <main>
       <NotFoundImage />
       <div style={{ display: 'inline-block' }}>
-        <TextPattern>Página não encontrada</TextPattern>
-        <TextPattern>Error 404</TextPattern>
+        <Typography variant='h1'>Página não encontrada</Typography>
+        <Typography variant='h1'>Error 404</Typography>
         <Button type="button" color="primary" onClick={handleClick} >Home</Button>
-        {/* <Button type="button" color="primary" >Support</Button> */}
       </div>
     </main>
   )

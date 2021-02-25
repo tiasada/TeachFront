@@ -2,8 +2,8 @@ import React, { FormEvent, useState } from 'react'
 import { Label as InputLabel } from '../../ui/Label'
 import { register } from '/api'
 import Input from '../../ui/Input'
-import { RegisterTitle } from '../Texts/Titles/styles'
-import { ButtonRegisters } from '../../ui/Buttons/button/styles'
+import { ButtonRegister } from '../../ui/Buttons'
+import Typography from '/ui/Typography'
 
 type Props = {
   title: string
@@ -78,12 +78,15 @@ const CreateParentForm = ({ title, buttonText, updateFunction }: Props) => {
         updateFunction()
         alert('Parente criado')
       })
+      .catch(() => alert('Algo deu errado :('))
   }
 
   return (
     <form onSubmit={onSubmit}>
       <div style={{ textAlign: 'center' }}>
-        <RegisterTitle>{title}</RegisterTitle>
+        <div style={{ marginTop: '20px', marginBottom: '30px' }}>
+          <Typography variant='h3'>{title}</Typography>
+        </div>
         {inputs.map((item, index) => (
           <section key={index}>
             <InputLabel>{item.title}</InputLabel>
@@ -97,7 +100,7 @@ const CreateParentForm = ({ title, buttonText, updateFunction }: Props) => {
           </section>
         )
         )}
-        <ButtonRegisters type="submit">{buttonText}</ButtonRegisters>
+        <ButtonRegister color='primary' type="submit">{buttonText}</ButtonRegister>
       </div>
     </form>
   )

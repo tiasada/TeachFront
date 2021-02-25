@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import CheckPresence from '../../ui/Checkbox'
 import { post, Presence, Student } from '/api'
-import Button from '/ui/Buttons/button'
+import Button from '../../ui/Buttons'
 
 type RowProps = {
   setPresence: (presence: Presence) => void
@@ -14,7 +14,6 @@ type TableProps = {
   students: Student[]
 }
 
-// CallTable
 const Row = ({ student, setPresence, presence }: RowProps) => {
   return (
     <tr >
@@ -40,10 +39,10 @@ const Row = ({ student, setPresence, presence }: RowProps) => {
   )
 }
 
-export const ClassCallTable = ({ students }: TableProps) => {
+const ClassCallTable = ({ students }: TableProps) => {
   const [presences, setPresences] = useState<Presence[]>([])
 
-  const { id } = useParams()
+  const { id } = useParams<{ id: string }>()
 
   const setPresence = (presence: Presence) => {
     const updatedPresences = presences.map(

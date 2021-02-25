@@ -6,13 +6,9 @@ type Props = {
 }
 
 export const Navmenu = styled(Navbar)<Props>`
-    position: sticky;
+    position: fixed;
+    z-index: 1;
+    top: 0;
     width: 100% ; 
     background-color: ${({ color }) => color};
-`
-export const NavClass = styled(Navmenu)<Props>`
-    background-image: none;
-    background-color: ${({ color }) => color};
-    display: flex;
-    justify-content: space-between;
 `
